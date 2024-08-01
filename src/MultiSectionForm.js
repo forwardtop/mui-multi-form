@@ -451,7 +451,7 @@ const MultiSectionForm = () => {
             </Typography>
           </Box>
         </Box>
-        <FormGroup>
+        <FormGroup sx={{ paddingLeft: "2rem" }}>
           <FormControlLabel
             control={<Checkbox color="primary" />}
             label="To satisfy 100 point of ID, take copy of DL (Front & Back)"
