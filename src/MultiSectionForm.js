@@ -134,7 +134,7 @@ const MultiSectionForm = () => {
                   <Typography
                     variant="h6"
                     gutterBottom
-                    color="secondary"
+                    color="secondary.main"
                     sx={{
                       backgroundColor: "black",
                       color: "white",
@@ -152,7 +152,7 @@ const MultiSectionForm = () => {
                 <Box>
                   <Typography
                     variant="body1"
-                    color="secondary"
+                    color="secondary.main"
                     sx={{ marginLeft: "0.5rem" }}
                   >
                     This is a Business Application
@@ -160,7 +160,7 @@ const MultiSectionForm = () => {
                   <Typography
                     variant="body1"
                     gutterBottom
-                    color="secondary"
+                    color="secondary.main"
                     sx={{ marginLeft: "0.5rem" }}
                   >
                     (see Eligibility for Services).
@@ -168,7 +168,7 @@ const MultiSectionForm = () => {
                   <Typography
                     variant="body1"
                     gutterBottom
-                    color="secondary"
+                    color="secondary.main"
                     sx={{ marginLeft: "0.5rem" }}
                   >
                     One application per site location
@@ -182,7 +182,7 @@ const MultiSectionForm = () => {
               sm={6}
               sx={{
                 border: 3,
-                borderColor: "secondary",
+                borderColor: "secondary.main",
                 paddingTop: "0px!important",
                 paddingLeft: "0px!important",
               }}
@@ -259,7 +259,7 @@ const MultiSectionForm = () => {
               <Typography
                 variant="h6"
                 gutterBottom
-                color="secondary"
+                color="secondary.main"
                 sx={{
                   backgroundColor: "black",
                   color: "white",
@@ -277,7 +277,7 @@ const MultiSectionForm = () => {
             <Box>
               <Typography
                 variant="h6"
-                color="secondary"
+                color="secondary.main"
                 sx={{ marginLeft: "0.5rem" }}
               >
                 Client Details
@@ -345,7 +345,7 @@ const MultiSectionForm = () => {
               <Typography
                 variant="h6"
                 gutterBottom
-                color="secondary"
+                color="secondary.main"
                 sx={{
                   backgroundColor: "black",
                   color: "white",
@@ -363,7 +363,7 @@ const MultiSectionForm = () => {
             <Box>
               <Typography
                 variant="h6"
-                color="secondary"
+                color="secondary.main"
                 sx={{ marginLeft: "0.5rem" }}
               >
                 Site Address
@@ -464,7 +464,7 @@ const MultiSectionForm = () => {
               <Typography
                 variant="h6"
                 gutterBottom
-                color="secondary"
+                color="secondary.main"
                 sx={{
                   backgroundColor: "black",
                   color: "white",
@@ -482,7 +482,7 @@ const MultiSectionForm = () => {
             <Box>
               <Typography
                 variant="h6"
-                color="secondary"
+                color="secondary.main"
                 sx={{ marginLeft: "0.5rem" }}
               >
                 Contact Details
@@ -616,7 +616,7 @@ const MultiSectionForm = () => {
               <Typography
                 variant="h6"
                 gutterBottom
-                color="secondary"
+                color="secondary.main"
                 sx={{
                   backgroundColor: "black",
                   color: "white",
@@ -634,7 +634,7 @@ const MultiSectionForm = () => {
             <Box>
               <Typography
                 variant="h6"
-                color="secondary"
+                color="secondary.main"
                 sx={{ marginLeft: "0.5rem" }}
               >
                 Documents
@@ -680,7 +680,7 @@ const MultiSectionForm = () => {
               <Typography
                 variant="h6"
                 gutterBottom
-                color="secondary"
+                color="secondary.main"
                 sx={{
                   backgroundColor: "black",
                   color: "white",
@@ -698,7 +698,7 @@ const MultiSectionForm = () => {
             <Box>
               <Typography
                 variant="h6"
-                color="secondary"
+                color="secondary.main"
                 sx={{ marginLeft: "0.5rem" }}
               >
                 For direct debit from a bank account
