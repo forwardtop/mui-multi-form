@@ -107,7 +107,12 @@ const MultiSectionForm = () => {
 
   return (
     <Container maxWidth="md" sx={{ marginTop: "2rem" }}>
-      <Typography variant="h4" gutterBottom align="center" color="primary">
+      <Typography
+        variant="h4"
+        gutterBottom
+        align="center"
+        color="secondary.main"
+      >
         Client Information Form (CIF)
       </Typography>
 
