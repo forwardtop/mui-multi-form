@@ -1,12 +1,21 @@
-// src/App.js
 import React from "react";
-import MultiSectionForm from "./MultiSectionForm";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import UserList from "./components/UserList";
+import MultiSectionForm from "./components/MultiSectionForm";
+import { Container } from "@mui/material";
 
 function App() {
   return (
-    <div>
-      <MultiSectionForm />
-    </div>
+    <Router>
+      <Container>
+        <h1>Customer Manager</h1>
+        <Routes>
+          <Route path="/" element={<UserList />} />
+          <Route path="/customer/:id" element={<MultiSectionForm />} />
+          <Route path="/customer/new" element={<MultiSectionForm />} />
+        </Routes>
+      </Container>
+    </Router>
   );
 }
 

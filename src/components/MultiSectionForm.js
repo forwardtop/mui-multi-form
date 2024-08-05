@@ -78,7 +78,7 @@ const MultiSectionForm = () => {
     try {
       // Send the form data to the server
       const response = await fetch(
-        "https://businessmadebetter.com.au/wp-json/myplugin/v1/submit-form",
+        "https://businessmadebetter.com.au/wp-json/myplugin/v1/customers",
         {
           method: "POST",
           headers: {
@@ -95,7 +95,7 @@ const MultiSectionForm = () => {
       if (response.ok) {
         console.log("Success:", result);
         // Redirect to the thank you page
-        window.location.href = "https://businessmadebetter.com.au/thank-you"; // Change "/thank-you" to your desired URL
+        window.location.href = "/"; // Change "/thank-you" to your desired URL
       } else {
         console.error("Failed to submit form:", result);
       }
@@ -780,7 +780,7 @@ const MultiSectionForm = () => {
         >
           {loading ? (
             <Button variant="contained" color="primary" size="large">
-              Submitting...
+              Saving...
               <CircularProgress
                 size={20}
                 sx={{ color: "white", marginLeft: 1 }}
@@ -793,7 +793,7 @@ const MultiSectionForm = () => {
               size="large"
               onClick={handleSubmit}
             >
-              Submit Application
+              Save Document
             </Button>
           )}
         </Box>
