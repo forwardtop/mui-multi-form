@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Container,
   TextField,
@@ -9,11 +9,14 @@ import {
   FormControlLabel,
   Box,
   FormGroup,
+  CircularProgress,
 } from "@mui/material";
-import CircularProgress from "@mui/material/CircularProgress";
+import axios from "axios";
+import { useParams, useNavigate } from "react-router-dom"; // Import useParams and useNavigate
 
 const MultiSectionForm = () => {
-  // Define state for form fields
+  const { id } = useParams(); // Extract id from URL
+  const navigate = useNavigate(); // Initialize useNavigate hook
   const [formData, setFormData] = useState({
     clientAccount: "",
     approvedCredit: "",
@@ -40,71 +43,69 @@ const MultiSectionForm = () => {
     email: "",
     webUrl: "",
     bsb: "",
-    bankInstitution: "",
+    bank: "",
     accountNumber: "",
     branch: "",
     accountName: "",
-    documents: {
-      idCheck: false,
-      copyBills: false,
-    },
+    idCheck: false,
+    copyBills: false,
   });
   const [loading, setLoading] = useState(false);
-  // Handle input changes
+  const [isEditing, setIsEditing] = useState(false);
+
+  useEffect(() => {
+    if (id) {
+      // Fetch existing data if id is provided
+      const fetchData = async () => {
+        try {
+          const response = await axios.get(
+            `https://businessmadebetter.com.au/wp-json/myplugin/v1/clients_form/${id}`
+          );
+          console.log(response.data);
+          setFormData(response.data);
+          setIsEditing(true);
+        } catch (error) {
+          console.error("Error fetching client data:", error);
+        }
+      };
+      fetchData();
+    }
+  }, [id]);
+
   const handleChange = (event) => {
     const { name, value, type, checked } = event.target;
-    if (type === "checkbox") {
-      setFormData((prevData) => ({
-        ...prevData,
-        documents: {
-          ...prevData.documents,
-          [name]: checked,
-        },
-      }));
-    } else {
-      setFormData((prevData) => ({
-        ...prevData,
-        [name]: value,
-      }));
-    }
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: type === "checkbox" ? checked : value,
+    }));
   };
 
-  // Handle form submission
-  const handleSubmit = async (event) => {
-    event.preventDefault(); // Prevent the default form submission behavior
-    setLoading(true); // Set the loading state to true
-    console.log(formData);
-
+  const handleSave = async (event) => {
+    event.preventDefault();
+    setLoading(true);
     try {
-      // Send the form data to the server
-      const response = await fetch(
-        "https://businessmadebetter.com.au/wp-json/myplugin/v1/customers",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        }
-      );
-
-      const result = await response.json();
-      setLoading(false); // Set the loading state to false
-
-      // Check if the response indicates success
-      if (response.ok) {
-        console.log("Success:", result);
-        // Redirect to the thank you page
-        window.location.href = "/"; // Change "/thank-you" to your desired URL
+      if (isEditing) {
+        // Update existing client data
+        await axios.put(
+          `https://businessmadebetter.com.au/wp-json/myplugin/v1/clients_form/${id}`,
+          formData
+        );
+        console.log("Client updated successfully");
       } else {
-        console.error("Failed to submit form:", result);
+        // Create new client data
+        await axios.post(
+          "https://businessmadebetter.com.au/wp-json/myplugin/v1/clients_form",
+          formData
+        );
+        console.log("Client created successfully");
       }
+      navigate("/"); // Redirect after save
     } catch (error) {
-      console.error("Error:", error);
-      setLoading(false); // Set the loading state to false
+      console.error("Error submitting form:", error);
+    } finally {
+      setLoading(false);
     }
   };
-
   return (
     <Container maxWidth="md" sx={{ marginTop: "2rem" }}>
       <Typography
@@ -116,7 +117,7 @@ const MultiSectionForm = () => {
         Client Information Form (CIF)
       </Typography>
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSave}>
         {/* Section 1: Office USE */}
         <Box sx={{ marginY: "3rem" }}>
           <Grid container spacing={1.5}>
@@ -652,7 +653,7 @@ const MultiSectionForm = () => {
                 <Checkbox
                   color="primary"
                   name="idCheck"
-                  checked={formData.documents.idCheck}
+                  checked={formData.idCheck}
                   onChange={handleChange}
                 />
               }
@@ -663,7 +664,7 @@ const MultiSectionForm = () => {
                 <Checkbox
                   color="primary"
                   name="copyBills"
-                  checked={formData.documents.copyBills}
+                  checked={formData.copyBills}
                   onChange={handleChange}
                 />
               }
@@ -780,7 +781,7 @@ const MultiSectionForm = () => {
         >
           {loading ? (
             <Button variant="contained" color="primary" size="large">
-              Saving...
+              {isEditing ? "Updating ..." : "Creating ..."}
               <CircularProgress
                 size={20}
                 sx={{ color: "white", marginLeft: 1 }}
@@ -791,9 +792,9 @@ const MultiSectionForm = () => {
               variant="contained"
               color="primary"
               size="large"
-              onClick={handleSubmit}
+              type="submit"
             >
-              Save Document
+              {isEditing ? "Update Form" : "Create Form"}
             </Button>
           )}
         </Box>
