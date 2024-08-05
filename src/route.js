@@ -8,7 +8,7 @@ const AppRoutes = () => (
   <Router>
     <Container>
       <Routes>
-        <Route path="/" element={<ClientTable />} />
+        <Route exact path="/" element={<ClientTable />} />
         <Route path="/client_form/new" element={<MultiSectionForm />} />
         <Route path="/client_form/edit/:id" element={<MultiSectionForm />} />
       </Routes>

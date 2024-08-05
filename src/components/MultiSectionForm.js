@@ -106,6 +106,7 @@ const MultiSectionForm = () => {
       setLoading(false);
     }
   };
+
   return (
     <Container maxWidth="md" sx={{ marginTop: "2rem" }}>
       <Typography
