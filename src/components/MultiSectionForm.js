@@ -71,6 +71,8 @@ const MultiSectionForm = () => {
         }
       };
       fetchData();
+    } else {
+      setPageLoading(false);
     }
   }, [id]);
 
