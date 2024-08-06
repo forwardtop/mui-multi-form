@@ -3,6 +3,8 @@ import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import ClientTable from "./components/ClientTable";
 import MultiSectionForm from "./components/MultiSectionForm";
 import { Container } from "@mui/material";
+import "./App.css";
+import "./index.css";
 
 const App = () => (
   <Router>
