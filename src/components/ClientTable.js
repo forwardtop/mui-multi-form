@@ -100,7 +100,7 @@ const ClientTable = () => {
           {/* Logo Box */}
           <Box>
             <img
-              src="/images/logo.png" // Use the imported image variable
+              src={`${process.env.PUBLIC_URL}/images/logo.png`} // Use the imported image variable
               alt="Company Logo"
               style={{ maxWidth: "300px", maxHeight: "100px" }} // Adjust size as needed
             />
