@@ -125,9 +125,9 @@ const MultiSectionForm = () => {
               Client Information Form (CIF)
               <br /> Client Document List (CDL)
             </h1>
-            <span>
+            <p>
               Business Made Better, ABN 51 666 810 215 (“<strong>BMB</strong>”)
-            </span>
+            </p>
           </Box>
           {/* Logo Box */}
           <Box>
