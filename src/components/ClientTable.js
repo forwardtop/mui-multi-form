@@ -15,7 +15,6 @@ import {
 import { useNavigate } from "react-router-dom"; // Import useNavigate
 import BorderColorIcon from "@mui/icons-material/BorderColor";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
-import companyLogo from "./../assets/images/logo.png";
 
 const ClientTable = () => {
   const [clients, setClients] = useState([]);
@@ -101,7 +100,7 @@ const ClientTable = () => {
           {/* Logo Box */}
           <Box>
             <img
-              src={companyLogo} // Use the imported image variable
+              src="/images/logo.png" // Use the imported image variable
               alt="Company Logo"
               style={{ maxWidth: "300px", maxHeight: "100px" }} // Adjust size as needed
             />
@@ -287,9 +286,9 @@ const ClientTable = () => {
         {/* Logo Box */}
         <Box>
           <img
-            src={companyLogo} // Use the imported image variable
+            src="images/logo.png"
             alt="Company Logo"
-            style={{ maxWidth: "300px", maxHeight: "100px" }} // Adjust size as needed
+            style={{ maxWidth: "300px", maxHeight: "100px" }}
           />
           <h3 style={{ textAlign: "right", marginBottom: "0" }}>
             (07) 3339 7997

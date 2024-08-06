@@ -13,7 +13,6 @@ import {
 } from "@mui/material";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom"; // Import useParams and useNavigate
-import companyLogo from "./../assets/images/logo.png";
 
 const MultiSectionForm = () => {
   const { id } = useParams(); // Extract id from URL
@@ -133,7 +132,7 @@ const MultiSectionForm = () => {
           {/* Logo Box */}
           <Box>
             <img
-              src={companyLogo} // Use the imported image variable
+              src="/images/logo.png" // Use the imported image variable
               alt="Company Logo"
               style={{ maxWidth: "300px", maxHeight: "100px" }} // Adjust size as needed
             />
@@ -183,7 +182,7 @@ const MultiSectionForm = () => {
         {/* Logo Box */}
         <Box>
           <img
-            src={companyLogo} // Use the imported image variable
+            src='/images/logo.png' // Use the imported image variable
             alt="Company Logo"
             style={{ maxWidth: "300px", maxHeight: "100px" }} // Adjust size as needed
           />
