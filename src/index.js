@@ -16,9 +16,6 @@ const theme = createTheme({
       main: "rgb(244, 67, 54)",
     },
   },
-  typography: {
-    fontFamily: "Arial", // Use Arial font
-  },
 });
 
 // Create a root element

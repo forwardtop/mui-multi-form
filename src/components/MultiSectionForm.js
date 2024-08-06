@@ -13,6 +13,7 @@ import {
 } from "@mui/material";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom"; // Import useParams and useNavigate
+import companyLogo from "./../assets/images/logo.png";
 
 const MultiSectionForm = () => {
   const { id } = useParams(); // Extract id from URL
@@ -110,15 +111,42 @@ const MultiSectionForm = () => {
   };
   if (pageLoading) {
     return (
-      <Container maxWidth="md" sx={{ marginTop: "2rem" }}>
-        <Typography
-          variant="h4"
-          gutterBottom
-          align="center"
-          color="secondary.main"
+      <Container maxWidth="lg" sx={{ marginTop: "2rem" }}>
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "flex-start",
+            justifyContent: "space-between",
+            marginTop: "100px",
+          }}
         >
-          Client Information Form (CIF)
-        </Typography>
+          {/* Content Box */}
+          <Box>
+            <h1 style={{ marginTop: "0" }}>
+              Client Information Form (CIF)
+              <br /> Client Document List (CDL)
+            </h1>
+            <span>
+              Business Made Better, ABN 51 666 810 215 (“<strong>BMB</strong>”)
+            </span>
+          </Box>
+          {/* Logo Box */}
+          <Box>
+            <img
+              src={companyLogo} // Use the imported image variable
+              alt="Company Logo"
+              style={{ maxWidth: "300px", maxHeight: "100px" }} // Adjust size as needed
+            />
+            <h3 style={{ textAlign: "right", marginBottom: "0" }}>
+              (07) 3339 7997
+            </h3>
+            <p style={{ textAlign: "right", marginTop: "0" }}>
+              Level 5, 131 Wickham Terrace<br></br> Brisbane Queensland
+              Australia 4000 <br></br>E | accounts@uc8.com.au <br></br>W |
+              BusinessMadeBetter.com.au
+            </p>
+          </Box>
+        </Box>
         <Box
           sx={{
             display: "flex",
@@ -133,15 +161,42 @@ const MultiSectionForm = () => {
     );
   }
   return (
-    <Container maxWidth="md" sx={{ marginTop: "2rem" }}>
-      <Typography
-        variant="h4"
-        gutterBottom
-        align="center"
-        color="secondary.main"
+    <Container maxWidth="lg" sx={{ marginTop: "2rem" }}>
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "flex-start",
+          justifyContent: "space-between",
+          marginTop: "100px",
+        }}
       >
-        Client Information Form (CIF)
-      </Typography>
+        {/* Content Box */}
+        <Box>
+          <h1 style={{ marginTop: "0" }}>
+            Client Information Form (CIF)
+            <br /> Client Document List (CDL)
+          </h1>
+          <span>
+            Business Made Better, ABN 51 666 810 215 (“<strong>BMB</strong>”)
+          </span>
+        </Box>
+        {/* Logo Box */}
+        <Box>
+          <img
+            src={companyLogo} // Use the imported image variable
+            alt="Company Logo"
+            style={{ maxWidth: "300px", maxHeight: "100px" }} // Adjust size as needed
+          />
+          <h3 style={{ textAlign: "right", marginBottom: "0" }}>
+            (07) 3339 7997
+          </h3>
+          <p style={{ textAlign: "right", marginTop: "0" }}>
+            Level 5, 131 Wickham Terrace<br></br> Brisbane Queensland Australia
+            4000 <br></br>E | accounts@uc8.com.au <br></br>W |
+            BusinessMadeBetter.com.au
+          </p>
+        </Box>
+      </Box>
 
       <form onSubmit={handleSave}>
         {/* Section 1: Office USE */}

@@ -15,6 +15,8 @@ import {
 import { useNavigate } from "react-router-dom"; // Import useNavigate
 import BorderColorIcon from "@mui/icons-material/BorderColor";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
+import companyLogo from "./../assets/images/logo.png";
+
 const ClientTable = () => {
   const [clients, setClients] = useState([]);
   const [message, setMessage] = useState(""); // New state to hold the message
@@ -78,7 +80,41 @@ const ClientTable = () => {
     // Show loading indicator if data is being loaded
     return (
       <div>
-        <h1>Client Form Manager</h1>
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "flex-start",
+            justifyContent: "space-between",
+            marginTop: "100px",
+          }}
+        >
+          {/* Content Box */}
+          <Box>
+            <h1 style={{ marginTop: "0" }}>
+              Client Information Form (CIF)
+              <br /> Client Document List (CDL)
+            </h1>
+            <span>
+              Business Made Better, ABN 51 666 810 215 (“<strong>BMB</strong>”)
+            </span>
+          </Box>
+          {/* Logo Box */}
+          <Box>
+            <img
+              src={companyLogo} // Use the imported image variable
+              alt="Company Logo"
+              style={{ maxWidth: "300px", maxHeight: "100px" }} // Adjust size as needed
+            />
+            <h3 style={{ textAlign: "right", marginBottom: "0" }}>
+              (07) 3339 7997
+            </h3>
+            <p style={{ textAlign: "right", marginTop: "0" }}>
+              Level 5, 131 Wickham Terrace<br></br> Brisbane Queensland
+              Australia 4000 <br></br>E | accounts@uc8.com.au <br></br>W |
+              BusinessMadeBetter.com.au
+            </p>
+          </Box>
+        </Box>
         <Box sx={{ p: 2 }}>
           <Box textAlign={"right"}>
             <Button
@@ -230,8 +266,41 @@ const ClientTable = () => {
   }
   return (
     <div>
-      <h1>Client Form Manager</h1>
-
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "flex-start",
+          justifyContent: "space-between",
+          marginTop: "100px",
+        }}
+      >
+        {/* Content Box */}
+        <Box>
+          <h1 style={{ marginTop: "0" }}>
+            Client Information Form (CIF)
+            <br /> Client Document List (CDL)
+          </h1>
+          <span>
+            Business Made Better, ABN 51 666 810 215 (“<strong>BMB</strong>”)
+          </span>
+        </Box>
+        {/* Logo Box */}
+        <Box>
+          <img
+            src={companyLogo} // Use the imported image variable
+            alt="Company Logo"
+            style={{ maxWidth: "300px", maxHeight: "100px" }} // Adjust size as needed
+          />
+          <h3 style={{ textAlign: "right", marginBottom: "0" }}>
+            (07) 3339 7997
+          </h3>
+          <p style={{ textAlign: "right", marginTop: "0" }}>
+            Level 5, 131 Wickham Terrace<br></br> Brisbane Queensland Australia
+            4000 <br></br>E | accounts@uc8.com.au <br></br>W |
+            BusinessMadeBetter.com.au
+          </p>
+        </Box>
+      </Box>
       <Box textAlign={"right"}>
         <Button
           onClick={handleAddNew}
@@ -246,12 +315,61 @@ const ClientTable = () => {
         <Table>
           <TableHead>
             <TableRow>
-              <TableCell>ID</TableCell>
-              <TableCell>Full Name</TableCell>
-              <TableCell>Email</TableCell>
-              <TableCell>City</TableCell>
-              <TableCell>State</TableCell>
-              <TableCell sx={{ textAlign: "center" }}>Actions</TableCell>
+              <TableCell
+                sx={{
+                  color: "primary.main",
+                  fontWeight: "700",
+                  fontSize: "18px",
+                }}
+              >
+                ID
+              </TableCell>
+              <TableCell
+                sx={{
+                  color: "primary.main",
+                  fontWeight: "700",
+                  fontSize: "18px",
+                }}
+              >
+                Full Name
+              </TableCell>
+              <TableCell
+                sx={{
+                  color: "primary.main",
+                  fontWeight: "700",
+                  fontSize: "18px",
+                }}
+              >
+                Email
+              </TableCell>
+              <TableCell
+                sx={{
+                  color: "primary.main",
+                  fontWeight: "700",
+                  fontSize: "18px",
+                }}
+              >
+                City
+              </TableCell>
+              <TableCell
+                sx={{
+                  color: "primary.main",
+                  fontWeight: "700",
+                  fontSize: "18px",
+                }}
+              >
+                State
+              </TableCell>
+              <TableCell
+                sx={{
+                  color: "primary.main",
+                  fontWeight: "700",
+                  textAlign: "center",
+                  fontSize: "18px",
+                }}
+              >
+                Actions
+              </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
