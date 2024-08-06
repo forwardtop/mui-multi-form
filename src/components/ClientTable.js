@@ -264,7 +264,7 @@ const ClientTable = () => {
     );
   }
   return (
-    <div>
+    <div style={{height:'100vh'}}>
       <Box
         sx={{
           display: "flex",
