@@ -17,6 +17,7 @@ import { useParams, useNavigate } from "react-router-dom"; // Import useParams a
 const MultiSectionForm = () => {
   const { id } = useParams(); // Extract id from URL
   const navigate = useNavigate(); // Initialize useNavigate hook
+  const [pageLoading, setPageLoading] = useState(true);
   const [formData, setFormData] = useState({
     clientAccount: "",
     approvedCredit: "",
@@ -64,6 +65,7 @@ const MultiSectionForm = () => {
           console.log(response.data);
           setFormData(response.data);
           setIsEditing(true);
+          setPageLoading(false);
         } catch (error) {
           console.error("Error fetching client data:", error);
         }
@@ -106,7 +108,30 @@ const MultiSectionForm = () => {
       setLoading(false);
     }
   };
-
+  if (pageLoading) {
+    return (
+      <Container maxWidth="md" sx={{ marginTop: "2rem" }}>
+        <Typography
+          variant="h4"
+          gutterBottom
+          align="center"
+          color="secondary.main"
+        >
+          Client Information Form (CIF)
+        </Typography>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "80vh", // Full viewport height for centering
+          }}
+        >
+          <CircularProgress size={80} thickness={4} />
+        </Box>
+      </Container>
+    );
+  }
   return (
     <Container maxWidth="md" sx={{ marginTop: "2rem" }}>
       <Typography

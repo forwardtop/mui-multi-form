@@ -12,8 +12,8 @@ const theme = createTheme({
     secondary: {
       main: "#000000", // Black color for secondary
     },
-    other: {
-      main: "#fff",
+    warning: {
+      main: "rgb(244, 67, 54)",
     },
   },
   typography: {

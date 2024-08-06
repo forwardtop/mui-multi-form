@@ -10,14 +10,16 @@ import {
   Paper,
   Button,
   Box,
+  Skeleton,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
-
+import BorderColorIcon from "@mui/icons-material/BorderColor";
+import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 const ClientTable = () => {
   const [clients, setClients] = useState([]);
   const [message, setMessage] = useState(""); // New state to hold the message
   const navigate = useNavigate(); // Initialize useNavigate hook
-
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     fetchClients();
   }, []);
@@ -30,10 +32,12 @@ const ClientTable = () => {
       console.log("API Response:", response.data);
 
       if (Array.isArray(response.data)) {
-        setClients(response.data); // Adjust based on actual response structure
+        setClients(response.data);
+        setLoading(false);
       } else {
         console.error("Expected an array but received:", response.data);
-        setClients([]); // Fallback to empty array if data is not as expected
+        setClients([]);
+        setLoading(false);
       }
 
       // Set message if available
@@ -42,7 +46,8 @@ const ClientTable = () => {
       }
     } catch (error) {
       console.error("Error fetching clients:", error);
-      setClients([]); // Fallback to empty array in case of an error
+      setClients([]);
+      setLoading(false);
     }
   };
 
@@ -69,7 +74,160 @@ const ClientTable = () => {
   const handleAddNew = () => {
     navigate("/client_form/new");
   };
-
+  if (loading) {
+    // Show loading indicator if data is being loaded
+    return (
+      <div>
+        <h1>Client Form Manager</h1>
+        <Box sx={{ p: 2 }}>
+          <Box textAlign={"right"}>
+            <Button
+              onClick={handleAddNew}
+              variant="contained"
+              color="primary"
+              style={{ marginBottom: "16px" }}
+            >
+              New Form
+            </Button>
+          </Box>
+          <TableContainer component={Paper}>
+            <Table>
+              <TableHead>
+                <TableRow>
+                  <TableCell>ID</TableCell>
+                  <TableCell>Full Name</TableCell>
+                  <TableCell>Email</TableCell>
+                  <TableCell>City</TableCell>
+                  <TableCell>State</TableCell>
+                  <TableCell sx={{ textAlign: "center" }}>Actions</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                <TableRow>
+                  <TableCell>
+                    <Skeleton variant="text" width="100%" height={40} />
+                  </TableCell>
+                  <TableCell>
+                    <Skeleton variant="text" width="100%" height={40} />
+                  </TableCell>
+                  <TableCell>
+                    <Skeleton variant="text" width="100%" height={40} />
+                  </TableCell>
+                  <TableCell>
+                    <Skeleton variant="text" width="100%" height={40} />
+                  </TableCell>
+                  <TableCell>
+                    <Skeleton variant="text" width="100%" height={40} />
+                  </TableCell>
+                  <TableCell sx={{ textAlign: "center" }}>
+                    <Button
+                      color="primary"
+                      style={{ marginRight: "8px" }} // Added some spacing for better UI
+                    >
+                      <BorderColorIcon />
+                    </Button>
+                    <Button color="warning">
+                      <DeleteForeverIcon />
+                    </Button>
+                  </TableCell>
+                </TableRow>
+              </TableBody>
+              <TableBody>
+                <TableRow>
+                  <TableCell>
+                    <Skeleton variant="text" width="100%" height={40} />
+                  </TableCell>
+                  <TableCell>
+                    <Skeleton variant="text" width="100%" height={40} />
+                  </TableCell>
+                  <TableCell>
+                    <Skeleton variant="text" width="100%" height={40} />
+                  </TableCell>
+                  <TableCell>
+                    <Skeleton variant="text" width="100%" height={40} />
+                  </TableCell>
+                  <TableCell>
+                    <Skeleton variant="text" width="100%" height={40} />
+                  </TableCell>
+                  <TableCell sx={{ textAlign: "center" }}>
+                    <Button
+                      color="primary"
+                      style={{ marginRight: "8px" }} // Added some spacing for better UI
+                    >
+                      <BorderColorIcon />
+                    </Button>
+                    <Button color="warning">
+                      <DeleteForeverIcon />
+                    </Button>
+                  </TableCell>
+                </TableRow>
+              </TableBody>
+              <TableBody>
+                <TableRow>
+                  <TableCell>
+                    <Skeleton variant="text" width="100%" height={40} />
+                  </TableCell>
+                  <TableCell>
+                    <Skeleton variant="text" width="100%" height={40} />
+                  </TableCell>
+                  <TableCell>
+                    <Skeleton variant="text" width="100%" height={40} />
+                  </TableCell>
+                  <TableCell>
+                    <Skeleton variant="text" width="100%" height={40} />
+                  </TableCell>
+                  <TableCell>
+                    <Skeleton variant="text" width="100%" height={40} />
+                  </TableCell>
+                  <TableCell sx={{ textAlign: "center" }}>
+                    <Button
+                      color="primary"
+                      style={{ marginRight: "8px" }} // Added some spacing for better UI
+                    >
+                      <BorderColorIcon />
+                    </Button>
+                    <Button color="warning">
+                      <DeleteForeverIcon />
+                    </Button>
+                  </TableCell>
+                </TableRow>
+              </TableBody>
+              <TableBody>
+                <TableRow>
+                  <TableCell>
+                    <Skeleton variant="text" width="100%" height={40} />
+                  </TableCell>
+                  <TableCell>
+                    <Skeleton variant="text" width="100%" height={40} />
+                  </TableCell>
+                  <TableCell>
+                    <Skeleton variant="text" width="100%" height={40} />
+                  </TableCell>
+                  <TableCell>
+                    <Skeleton variant="text" width="100%" height={40} />
+                  </TableCell>
+                  <TableCell>
+                    <Skeleton variant="text" width="100%" height={40} />
+                  </TableCell>
+                  <TableCell sx={{ textAlign: "center" }}>
+                    <Button
+                      color="primary"
+                      style={{ marginRight: "8px" }} // Added some spacing for better UI
+                    >
+                      <BorderColorIcon />
+                    </Button>
+                    <Button color="warning">
+                      <DeleteForeverIcon />
+                    </Button>
+                  </TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+          </TableContainer>
+        </Box>
+      </div>
+    );
+  }
   return (
     <div>
       <h1>Client Form Manager</h1>
@@ -93,7 +251,7 @@ const ClientTable = () => {
               <TableCell>Email</TableCell>
               <TableCell>City</TableCell>
               <TableCell>State</TableCell>
-              <TableCell>Actions</TableCell>
+              <TableCell sx={{ textAlign: "center" }}>Actions</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -105,21 +263,19 @@ const ClientTable = () => {
                   <TableCell>{client.email}</TableCell>
                   <TableCell>{client.city}</TableCell>
                   <TableCell>{client.state}</TableCell>
-                  <TableCell>
+                  <TableCell sx={{ textAlign: "center" }}>
                     <Button
                       onClick={() => handleEdit(client)}
-                      variant="contained"
                       color="primary"
                       style={{ marginRight: "8px" }} // Added some spacing for better UI
                     >
-                      Edit
+                      <BorderColorIcon />
                     </Button>
                     <Button
                       onClick={() => handleDelete(client.id)}
-                      variant="contained"
-                      color="secondary"
+                      color="warning"
                     >
-                      Delete
+                      <DeleteForeverIcon />
                     </Button>
                   </TableCell>
                 </TableRow>
