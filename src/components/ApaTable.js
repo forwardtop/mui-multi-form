@@ -17,7 +17,7 @@ import BorderColorIcon from "@mui/icons-material/BorderColor";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 
-const ClientTable = () => {
+const ApaTable = () => {
   const [clients, setClients] = useState([]);
   const [message, setMessage] = useState(""); // New state to hold the message
   const navigate = useNavigate(); // Initialize useNavigate hook
@@ -91,28 +91,9 @@ const ClientTable = () => {
           {/* Content Box */}
           <Box>
             <h1 style={{ marginTop: "0" }}>
-              Client Information Form (CIF)
-              <br /> Client Document List (CDL)
+              Automatic Payment Authority (APA)
             </h1>
-            <span>
-              Business Made Better, ABN 51 666 810 215 (“<strong>BMB</strong>”)
-            </span>
-          </Box>
-          {/* Logo Box */}
-          <Box>
-            <img
-              src="https://businessmadebetter.com.au/wp-content/themes/consalt-child/react-app/images/logo.png"
-              alt="Company Logo"
-              style={{ maxWidth: "300px", maxHeight: "100px" }} // Adjust size as needed
-            />
-            <h3 style={{ textAlign: "right", marginBottom: "0" }}>
-              (07) 3339 7997
-            </h3>
-            <p style={{ textAlign: "right", marginTop: "0" }}>
-              Level 5, 131 Wickham Terrace<br></br> Brisbane Queensland
-              Australia 4000 <br></br>E | accounts@uc8.com.au <br></br>W |
-              BusinessMadeBetter.com.au
-            </p>
+            <span>UC8 Australia Pty Ltd ABN 51 666 810 215 (“UC8”)</span>
           </Box>
         </Box>
         <Box sx={{ p: 2 }}>
@@ -269,36 +250,19 @@ const ClientTable = () => {
       <Box
         sx={{
           display: "flex",
-          alignItems: "flex-start",
-          justifyContent: "space-between",
           marginTop: "100px",
         }}
       >
-        {/* Content Box */}
-        <Box>
-          <h1 style={{ marginTop: "0" }}>
-            Client Information Form (CIF)
-            <br /> Client Document List (CDL)
-          </h1>
-          <span>
-            Business Made Better, ABN 51 666 810 215 (“<strong>BMB</strong>”)
-          </span>
-        </Box>
-        {/* Logo Box */}
-        <Box>
+        <Box sx={{ marginRight: "2rem" }}>
           <img
-            src="https://businessmadebetter.com.au/wp-content/themes/consalt-child/react-app/images/logo.png"
+            src="https://businessmadebetter.com.au/wp-content/uploads/2024/08/UC8-Logo-Square.png"
             alt="Company Logo"
             style={{ maxWidth: "300px", maxHeight: "100px" }}
           />
-          <h3 style={{ textAlign: "right", marginBottom: "0" }}>
-            (07) 3339 7997
-          </h3>
-          <p style={{ textAlign: "right", marginTop: "0" }}>
-            Level 5, 131 Wickham Terrace<br></br> Brisbane Queensland Australia
-            4000 <br></br>E | accounts@uc8.com.au <br></br>W |
-            BusinessMadeBetter.com.au
-          </p>
+        </Box>
+        <Box>
+          <h1 style={{ marginTop: "0" }}>Automatic Payment Authority (APA)</h1>
+          <span>UC8 Australia Pty Ltd ABN 51 666 810 215 (“UC8”) </span>
         </Box>
       </Box>
       <Box textAlign={"right"}>
@@ -418,4 +382,4 @@ const ClientTable = () => {
   );
 };
 
-export default ClientTable;
+export default ApaTable;
