@@ -132,7 +132,7 @@ const MultiSectionForm = () => {
           {/* Logo Box */}
           <Box>
             <img
-              src={`${process.env.PUBLIC_URL}/images/logo.png`} // Use the imported image variable
+              src="https://businessmadebetter.com.au/wp-content/themes/consalt-child/react-app/images/logo.png"
               alt="Company Logo"
               style={{ maxWidth: "300px", maxHeight: "100px" }} // Adjust size as needed
             />
@@ -182,7 +182,7 @@ const MultiSectionForm = () => {
         {/* Logo Box */}
         <Box>
           <img
-            src="/images/logo.png" // Use the imported image variable
+            src="https://businessmadebetter.com.au/wp-content/themes/consalt-child/react-app/images/logo.png"
             alt="Company Logo"
             style={{ maxWidth: "300px", maxHeight: "100px" }} // Adjust size as needed
           />
