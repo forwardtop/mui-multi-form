@@ -25,12 +25,12 @@ const ClientTable = () => {
   useEffect(() => {
     fetchClients();
   }, []);
-
+  const apiUrl = process.env.REACT_APP_API_URL
   const fetchClients = async () => {
-    console.log(process.env.REACT_APP_API_URL)
+    console.log(apiUrl)
     try {
       const response = await axios.get(
-        `${process.env.REACT_APP_API_URL}/api/cif`
+        `${apiUrl}/api/cif`
       );
       console.log("API Response:", response.data);
 
@@ -66,7 +66,7 @@ const ClientTable = () => {
       if (!confirmation) return; // Cancel delete operation if not confirmed
 
       await axios.delete(
-        `${process.env.REACT_APP_API_URL}/api/cif/${id}`
+        `${apiUrl}/api/cif/${id}`
       );
       fetchClients(); // Refresh the list after deletion
     } catch (error) {
