@@ -60,7 +60,7 @@ const MultiSectionForm = () => {
       const fetchData = async () => {
         try {
           const response = await axios.get(
-            `https://businessmadebetter.com.au/wp-json/myplugin/v1/clients_form/${id}`
+            `${process.env.REACT_APP_API_URL}/api/cif/${id}`
           );
           console.log(response.data);
           setFormData(response.data);
@@ -91,19 +91,19 @@ const MultiSectionForm = () => {
       if (isEditing) {
         // Update existing client data
         await axios.put(
-          `https://businessmadebetter.com.au/wp-json/myplugin/v1/clients_form/${id}`,
+          `${process.env.REACT_APP_API_URL}/api/cif/${id}`,
           formData
         );
         console.log("Client updated successfully");
       } else {
         // Create new client data
         await axios.post(
-          "https://businessmadebetter.com.au/wp-json/myplugin/v1/clients_form",
+          `${process.env.REACT_APP_API_URL}/api/cif`,
           formData
         );
         console.log("Client created successfully");
       }
-      navigate("/"); // Redirect after save
+      navigate("/cif"); // Redirect after save
     } catch (error) {
       console.error("Error submitting form:", error);
     } finally {
@@ -134,7 +134,7 @@ const MultiSectionForm = () => {
           {/* Logo Box */}
           <Box>
             <img
-              src="https://businessmadebetter.com.au/wp-content/themes/consalt-child/react-app/images/logo.png"
+              src="/images/logo.png"
               alt="Company Logo"
               style={{ maxWidth: "300px", maxHeight: "100px" }} // Adjust size as needed
             />
@@ -184,7 +184,7 @@ const MultiSectionForm = () => {
         {/* Logo Box */}
         <Box>
           <img
-            src="https://businessmadebetter.com.au/wp-content/themes/consalt-child/react-app/images/logo.png"
+            src="/images/logo.png"
             alt="Company Logo"
             style={{ maxWidth: "300px", maxHeight: "100px" }} // Adjust size as needed
           />

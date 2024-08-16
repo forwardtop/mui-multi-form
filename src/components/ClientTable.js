@@ -27,9 +27,10 @@ const ClientTable = () => {
   }, []);
 
   const fetchClients = async () => {
+    console.log(process.env.REACT_APP_API_URL)
     try {
       const response = await axios.get(
-        "https://businessmadebetter.com.au/wp-json/myplugin/v1/clients_form"
+        `${process.env.REACT_APP_API_URL}/api/cif`
       );
       console.log("API Response:", response.data);
 
@@ -54,7 +55,7 @@ const ClientTable = () => {
   };
 
   const handleEdit = (client) => {
-    navigate(`/client_form/edit/${client.id}`); // Navigate to edit form with the correct path
+    navigate(`/cif/edit/${client.id}`); // Navigate to edit form with the correct path
   };
 
   const handleDelete = async (id) => {
@@ -65,7 +66,7 @@ const ClientTable = () => {
       if (!confirmation) return; // Cancel delete operation if not confirmed
 
       await axios.delete(
-        `https://businessmadebetter.com.au/wp-json/myplugin/v1/clients_form/${id}`
+        `${process.env.REACT_APP_API_URL}/api/cif`
       );
       fetchClients(); // Refresh the list after deletion
     } catch (error) {
@@ -101,7 +102,7 @@ const ClientTable = () => {
           {/* Logo Box */}
           <Box>
             <img
-              src="https://businessmadebetter.com.au/wp-content/themes/consalt-child/react-app/images/logo.png"
+              src="/images/logo.png"
               alt="Company Logo"
               style={{ maxWidth: "300px", maxHeight: "100px" }} // Adjust size as needed
             />
@@ -287,7 +288,7 @@ const ClientTable = () => {
         {/* Logo Box */}
         <Box>
           <img
-            src="https://businessmadebetter.com.au/wp-content/themes/consalt-child/react-app/images/logo.png"
+            src="/images/logo.png"
             alt="Company Logo"
             style={{ maxWidth: "300px", maxHeight: "100px" }}
           />
@@ -383,7 +384,7 @@ const ClientTable = () => {
                   <TableCell>{client.state}</TableCell>
                   <TableCell sx={{ textAlign: "center" }}>
                     <Button
-                      onClick={() => navigate(`/client_form/view/${client.id}`)} // Redirect to the view page
+                      onClick={() => navigate(`/cif/view/${client.id}`)} // Redirect to the view page
                       color="success"
                     >
                       <RemoveRedEyeIcon />

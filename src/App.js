@@ -8,7 +8,6 @@ import "./App.css";
 import "./index.css";
 import FormLists from "./components/FormLists";
 import ApaTable from "./components/ApaTable";
-
 const App = () => (
   <Router>
     <Container>
@@ -18,10 +17,10 @@ const App = () => (
         <Route path="/apa" element={<ApaTable />} />
         <Route path="/client_form/new" element={<MultiSectionForm />} />
         <Route
-          path="/client_form/view/:id"
+          path="/cif/view/:id"
           element={<MultiSectionFormView />}
         />
-        <Route path="/client_form/edit/:id" element={<MultiSectionForm />} />
+        <Route path="/cif/edit/:id" element={<MultiSectionForm />} />
       </Routes>
     </Container>
   </Router>

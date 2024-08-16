@@ -347,7 +347,7 @@ const ApaTable = () => {
                   <TableCell>{client.state}</TableCell>
                   <TableCell sx={{ textAlign: "center" }}>
                     <Button
-                      onClick={() => navigate(`/client_form/view/${client.id}`)} // Redirect to the view page
+                      onClick={() => navigate(`/cif/${client.id}`)} // Redirect to the view page
                       color="success"
                     >
                       <RemoveRedEyeIcon />
