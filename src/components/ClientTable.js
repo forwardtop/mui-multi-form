@@ -66,7 +66,7 @@ const ClientTable = () => {
       if (!confirmation) return; // Cancel delete operation if not confirmed
 
       await axios.delete(
-        `${process.env.REACT_APP_API_URL}/api/cif`
+        `${process.env.REACT_APP_API_URL}/api/cif/${id}`
       );
       fetchClients(); // Refresh the list after deletion
     } catch (error) {
