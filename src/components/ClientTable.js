@@ -26,10 +26,9 @@ const ClientTable = () => {
     fetchClients();
   }, []);
   const fetchClients = async () => {
-    console.log(process.env.REACT_APP_API_URL)
     try {
       const response = await axios.get(
-        `${process.env.REACT_APP_API_URL}/api/cif`
+        `${process.env.REACT_APP_API_URL}/cif/read.php`
       );
       console.log("API Response:", response.data);
 
@@ -59,19 +58,24 @@ const ClientTable = () => {
 
   const handleDelete = async (id) => {
     try {
-      const confirmation = window.confirm(
-        "Are you sure you want to delete this client?"
-      );
-      if (!confirmation) return; // Cancel delete operation if not confirmed
+        const confirmation = window.confirm(
+            "Are you sure you want to delete this client?"
+        );
+        if (!confirmation) return; // Cancel delete operation if not confirmed
 
-      await axios.delete(
-        `${process.env.REACT_APP_API_URL}/api/cif/${id}`
-      );
-      fetchClients(); // Refresh the list after deletion
+        // Sending DELETE request with the id as a query parameter
+        await axios.delete(`${process.env.REACT_APP_API_URL}/cif/delete.php`, {
+            params: {
+                id: id
+            }
+        });
+
+        fetchClients(); // Refresh the list after deletion
     } catch (error) {
-      console.error("Error deleting client:", error);
+        console.error("Error deleting client:", error);
     }
-  };
+};
+
 
   const handleAddNew = () => {
     navigate("/client_form/new");

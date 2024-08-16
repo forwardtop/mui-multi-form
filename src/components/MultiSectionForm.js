@@ -48,9 +48,17 @@ const MultiSectionForm = () => {
     accountNumber: "",
     branch: "",
     accountName: "",
-    idCheck: false,
-    copyBills: false,
+    idCheck: "",
+    copyBills: "",
   });
+
+//   const handleCheckboxChange = (e) => {
+//     const { name, checked } = e.target;
+//     setFormData(prevState => ({
+//         ...prevState,
+//         [name]: checked ? 1 : 0 // Convert boolean to 1 or 0
+//     }));
+// };
   const [loading, setLoading] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
 
@@ -60,10 +68,10 @@ const MultiSectionForm = () => {
       const fetchData = async () => {
         try {
           const response = await axios.get(
-            `${process.env.REACT_APP_API_URL}/api/cif/${id}`
+            `${process.env.REACT_APP_API_URL}/cif/read.php?id=${id}`
           );
-          console.log(response.data);
-          setFormData(response.data);
+          console.log(response.data[0]);
+          setFormData(response.data[0]);
           setIsEditing(true);
           setPageLoading(false);
         } catch (error) {
@@ -91,17 +99,17 @@ const MultiSectionForm = () => {
       if (isEditing) {
         // Update existing client data
         await axios.put(
-          `${process.env.REACT_APP_API_URL}/api/cif/${id}`,
+          `${process.env.REACT_APP_API_URL}/cif/update.php?id=${id}`,
           formData
         );
-        console.log("Client updated successfully");
+        console.log("Form updated successfully");
       } else {
         // Create new client data
         await axios.post(
-          `${process.env.REACT_APP_API_URL}/api/cif`,
+          `${process.env.REACT_APP_API_URL}/cif/create.php`,
           formData
         );
-        console.log("Client created successfully");
+        console.log("Form created successfully");
       }
       navigate("/cif"); // Redirect after save
     } catch (error) {
@@ -730,29 +738,30 @@ const MultiSectionForm = () => {
             </Box>
           </Box>
           <FormGroup sx={{ paddingLeft: "2rem" }}>
-            <FormControlLabel
-              control={
-                <Checkbox
-                  color="primary"
-                  name="idCheck"
-                  checked={formData.idCheck}
-                  onChange={handleChange}
-                />
-              }
-              label="To satisfy 100 point of ID, take copy of DL (Front & Back)"
-            />
-            <FormControlLabel
-              control={
-                <Checkbox
-                  color="primary"
-                  name="copyBills"
-                  checked={formData.copyBills}
-                  onChange={handleChange}
-                />
-              }
-              label="Copy of bills"
-            />
-          </FormGroup>
+  <FormControlLabel
+    control={
+      <Checkbox
+        color="primary"
+        name="idCheck"
+        checked={Boolean(Number(formData.idCheck))}
+        onChange={handleChange}
+      />
+    }
+    label="To satisfy 100 point of ID, take copy of DL (Front & Back)"
+  />
+  <FormControlLabel
+    control={
+      <Checkbox
+        color="primary"
+        name="copyBills"
+        checked={Boolean(Number(formData.copyBills))}
+        onChange={handleChange}
+      />
+    }
+    label="Copy of bills"
+  />
+</FormGroup>
+
         </Box>
 
         {/* Section 6: Direct Debit */}

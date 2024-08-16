@@ -29,7 +29,7 @@ const ApaTable = () => {
   const fetchClients = async () => {
     try {
       const response = await axios.get(
-        "https://businessmadebetter.com.au/wp-json/myplugin/v1/clients_form"
+        ""
       );
       console.log("API Response:", response.data);
 
@@ -65,7 +65,7 @@ const ApaTable = () => {
       if (!confirmation) return; // Cancel delete operation if not confirmed
 
       await axios.delete(
-        `https://businessmadebetter.com.au/wp-json/myplugin/v1/clients_form/${id}`
+        ""
       );
       fetchClients(); // Refresh the list after deletion
     } catch (error) {

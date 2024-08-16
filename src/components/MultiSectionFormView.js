@@ -46,8 +46,8 @@ const MultiSectionForm = () => {
     accountNumber: "",
     branch: "",
     accountName: "",
-    idCheck: false,
-    copyBills: false,
+    idCheck: "",
+    copyBills: "",
   });
 
   useEffect(() => {
@@ -56,11 +56,11 @@ const MultiSectionForm = () => {
       const fetchData = async () => {
         try {
           const response = await axios.get(
-            `${process.env.REACT_APP_API_URL}/api/cif/${id}`
+            `${process.env.REACT_APP_API_URL}/cif/read.php?id=${id}`
           );
+          console.log(response.data[0]);
+          setFormData(response.data[0]);
           setPageLoading(false);
-          console.log(response.data);
-          setFormData(response.data);
         } catch (error) {
           console.error("Error fetching client data:", error);
         }
@@ -672,18 +672,18 @@ const MultiSectionForm = () => {
                 <Checkbox
                   color="primary"
                   name="idCheck"
-                  checked={formData.idCheck}
-                />
+                  checked={Boolean(Number(formData.idCheck))}
+                  />
               }
-              label="To satisfy 100 point of ID, take copy of DL (Front & Back)"
+              label="To satisfy 100 points of ID, take a copy of DL (Front & Back)"
             />
             <FormControlLabel
               control={
                 <Checkbox
                   color="primary"
                   name="copyBills"
-                  checked={formData.copyBills}
-                />
+                  checked={Boolean(Number(formData.copyBills))}
+                  />
               }
               label="Copy of bills"
             />
