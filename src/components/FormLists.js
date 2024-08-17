@@ -59,10 +59,10 @@ const forms = [
     path: "/obs",
   },
   {
-    title: "Alarm Monitoring & Security (AMS)",
+    title: "Credit Account Application (CAA)",
     description:
       "This is a Business application (see Eligibility for Services).",
-    path: "/ams",
+    path: "/caa",
   },
 ];
 

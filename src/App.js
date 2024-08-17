@@ -9,6 +9,8 @@ import "./index.css";
 import FormLists from "./components/FormLists";
 import ApaTable from "./components/ApaTable";
 import PasswordProtected from "./components/PasswordProtected";
+import NewForm from "./components/CreditAccountApplication/NewForm";
+import CaaFormList from "./components/CreditAccountApplication/CaaFormList";
 const App = () => (
   <Router>
     <Container>
@@ -23,6 +25,8 @@ const App = () => (
           element={<MultiSectionFormView />}
         />
         <Route path="/cif/edit/:id" element={<MultiSectionForm />} />
+        <Route path="/caa" element={<CaaFormList />} />
+        <Route path="/caa/new" element={<NewForm />} />
       </Routes>
     </Container>
   </Router>
