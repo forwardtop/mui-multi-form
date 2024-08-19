@@ -169,8 +169,8 @@ const MultiSectionForm = () => {
                 variant="h6"
                 gutterBottom
                 sx={{
-                  backgroundColor: "#000",
-                  color: "#fff",
+                  backgroundColor: "black",
+                  color: "white",
                   padding: "0.5rem",
                   marginRight: "0.5rem",
                 }}
@@ -257,31 +257,73 @@ const MultiSectionForm = () => {
                   paddingBottom: "0.5rem",
                 }}
               >
-                <Grid item xs={12} sm={12}>
+                <Grid
+                  item
+                  xs={12}
+                  sm={4}
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: {
+                      xs: "flex-start",
+                      sm: "flex-end",
+                    },
+                  }}
+                >
+                  <Typography>Client Account:</Typography>
+                </Grid>
+                <Grid item xs={12} sm={8}>
                   <TextField
                     fullWidth
                     name="clientAccount"
-                    label="Client Account"
                     size="small"
                     variant="outlined"
                     value={formData.clientAccount}
                   />
                 </Grid>
-                <Grid item xs={12} sm={12}>
+                <Grid
+                  item
+                  xs={12}
+                  sm={4}
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: {
+                      xs: "flex-start",
+                      sm: "flex-end",
+                    },
+                  }}
+                >
+                  <Typography>Approved Credit:</Typography>
+                </Grid>
+                <Grid item xs={12} sm={8}>
                   <TextField
                     fullWidth
                     name="approvedCredit"
                     size="small"
-                    label="Approved Credit"
                     variant="outlined"
                     value={formData.approvedCredit}
                   />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid
+                  item
+                  xs={12}
+                  sm={4}
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: {
+                      xs: "flex-start",
+                      sm: "flex-end",
+                    },
+                  }}
+                >
+                  <Typography>Approved By:</Typography>
+                </Grid>
+                <Grid item xs={12} sm={8}>
                   <TextField
                     fullWidth
                     name="approvedBy"
-                    label="Approved By"
                     size="small"
                     variant="outlined"
                     value={formData.approvedBy}
@@ -330,42 +372,77 @@ const MultiSectionForm = () => {
               </Typography>
             </Box>
           </Box>
-          <Grid container spacing={1.5} sx={{ paddingLeft: "2rem" }}>
-            <Grid item xs={12}>
+          <Grid container spacing={1.5} sx={{ paddingLeft: "3.5rem" }}>
+            <Grid
+              item
+              xs={12}
+              sm={2}
+              style={{ display: "flex", alignItems: "center" }}
+            >
+              <Typography>Full Legal Name:</Typography>
+            </Grid>
+            <Grid item xs={12} sm={10}>
               <TextField
                 fullWidth
                 name="fullName"
                 size="small"
-                label="Full Legal Name"
                 variant="outlined"
                 value={formData.fullName}
               />
             </Grid>
-            <Grid item xs={12}>
+            <Grid
+              item
+              xs={12}
+              sm={2}
+              style={{ display: "flex", alignItems: "center" }}
+            >
+              <Typography>Trading As:</Typography>
+            </Grid>
+            <Grid item xs={12} sm={10}>
               <TextField
                 fullWidth
                 name="tradingAs"
                 size="small"
-                label="Trading As"
                 variant="outlined"
                 value={formData.tradingAs}
               />
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid
+              item
+              xs={12}
+              sm={2}
+              style={{ display: "flex", alignItems: "center" }}
+            >
+              <Typography>ABN:</Typography>
+            </Grid>
+            <Grid item xs={12} sm={4}>
               <TextField
                 fullWidth
                 name="abn"
-                label="ABN"
                 size="small"
                 variant="outlined"
                 value={formData.abn}
               />
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid
+              item
+              xs={12}
+              sm={2}
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: {
+                  xs: "flex-start",
+                  sm: "flex-end",
+                },
+              }}
+            >
+              <Typography>ACN:</Typography>
+            </Grid>
+            <Grid item xs={12} sm={4}>
               <TextField
                 fullWidth
                 name="acn"
-                label="ACN"
                 size="small"
                 variant="outlined"
                 value={formData.acn}
@@ -412,73 +489,137 @@ const MultiSectionForm = () => {
               </Typography>
             </Box>
           </Box>
-          <Grid container spacing={1.5} sx={{ paddingLeft: "2rem" }}>
-            <Grid item xs={12}>
+          <Grid container spacing={1.5} sx={{ paddingLeft: "3.5rem" }}>
+            <Grid
+              item
+              xs={12}
+              sm={2}
+              style={{ display: "flex", alignItems: "center" }}
+            >
+              <Typography>Address Line 1:</Typography>
+            </Grid>
+            <Grid item xs={12} sm={10}>
               <TextField
                 fullWidth
                 name="addressLine1"
                 size="small"
-                label="Address Line 1"
                 variant="outlined"
                 value={formData.addressLine1}
               />
             </Grid>
-            <Grid item xs={12}>
+            <Grid
+              item
+              xs={12}
+              sm={2}
+              style={{ display: "flex", alignItems: "center" }}
+            >
+              <Typography>Address Line 2:</Typography>
+            </Grid>
+            <Grid item xs={12} sm={10}>
               <TextField
                 fullWidth
                 name="addressLine2"
                 size="small"
-                label="Address Line 2"
                 variant="outlined"
                 value={formData.addressLine2}
               />
             </Grid>
-            <Grid item xs={12}>
+            <Grid
+              item
+              xs={12}
+              sm={2}
+              style={{ display: "flex", alignItems: "center" }}
+            >
+              <Typography>Address Line 3:</Typography>
+            </Grid>
+            <Grid item xs={12} sm={10}>
               <TextField
                 fullWidth
                 name="addressLine3"
                 size="small"
-                label="Address Line 3"
                 variant="outlined"
                 value={formData.addressLine3}
               />
             </Grid>
-            <Grid item xs={12} sm={8}>
+            <Grid
+              item
+              xs={12}
+              sm={2}
+              style={{ display: "flex", alignItems: "center" }}
+            >
+              <Typography>Suburb:</Typography>
+            </Grid>
+            <Grid item xs={12} sm={5}>
               <TextField
                 fullWidth
                 name="suburb"
                 size="small"
-                label="Suburb"
                 variant="outlined"
                 value={formData.suburb}
               />
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              sm={1}
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: {
+                  xs: "flex-start",
+                  sm: "flex-end",
+                },
+              }}
+            >
+              <Typography>Postcode:</Typography>
             </Grid>
             <Grid item xs={12} sm={4}>
               <TextField
                 fullWidth
                 name="postcode"
                 size="small"
-                label="Postcode"
                 variant="outlined"
                 value={formData.postcode}
               />
             </Grid>
-            <Grid item xs={12} sm={8}>
+
+            <Grid
+              item
+              xs={12}
+              sm={2}
+              style={{ display: "flex", alignItems: "center" }}
+            >
+              <Typography>City:</Typography>
+            </Grid>
+            <Grid item xs={12} sm={6}>
               <TextField
                 fullWidth
                 name="city"
                 size="small"
-                label="City"
                 variant="outlined"
                 value={formData.city}
               />
             </Grid>
-            <Grid item xs={12} sm={4}>
+            <Grid
+              item
+              xs={12}
+              sm={1}
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: {
+                  xs: "flex-start",
+                  sm: "flex-end",
+                },
+              }}
+            >
+              <Typography>State:</Typography>
+            </Grid>
+            <Grid item xs={12} sm={3}>
               <TextField
                 fullWidth
-                name="state"
+                name="postcode"
                 size="small"
-                label="State"
                 variant="outlined"
                 value={formData.state}
               />
@@ -524,103 +665,203 @@ const MultiSectionForm = () => {
               </Typography>
             </Box>
           </Box>
-          <Grid container spacing={1.5} sx={{ paddingLeft: "2rem" }}>
-            <Grid item xs={12} sm={2}>
+          <Grid container spacing={1.5} sx={{ paddingLeft: "3.5rem" }}>
+            <Grid
+              item
+              xs={12}
+              sm={0.5}
+              sx={{
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
+              <Typography>Title:</Typography>
+            </Grid>
+            <Grid item xs={12} sm={1.5}>
               <TextField
                 fullWidth
                 name="title"
                 size="small"
-                label="Title"
                 variant="outlined"
                 value={formData.title}
               />
             </Grid>
-            <Grid item xs={12} sm={5}>
+            <Grid
+              item
+              xs={12}
+              sm={1.1}
+              sx={{
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
+              <Typography>First Name:</Typography>
+            </Grid>
+            <Grid item xs={12} sm={4.9}>
               <TextField
                 fullWidth
                 name="firstName"
                 size="small"
-                label="First Name"
                 variant="outlined"
                 value={formData.firstName}
               />
             </Grid>
-            <Grid item xs={12} sm={5}>
+            <Grid
+              item
+              xs={12}
+              sm={1}
+              sx={{
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
+              <Typography>Position:</Typography>
+            </Grid>
+            <Grid item xs={12} sm={3}>
               <TextField
                 fullWidth
                 name="position"
                 size="small"
-                label="Position"
                 variant="outlined"
                 value={formData.position}
               />
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid
+              item
+              xs={12}
+              sm={1.5}
+              sx={{ display: "flex", alignItems: "center" }}
+            >
+              <Typography>Middle Name/s:</Typography>
+            </Grid>
+            <Grid item xs={12} sm={4.5}>
               <TextField
                 fullWidth
                 name="middleNames"
                 size="small"
-                label="Middle Name/s"
                 variant="outlined"
                 value={formData.middleNames}
               />
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid
+              item
+              xs={12}
+              sm={1.5}
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: {
+                  xs: "flex-start",
+                  sm: "flex-end",
+                },
+              }}
+            >
+              <Typography>Surname:</Typography>
+            </Grid>
+            <Grid item xs={12} sm={4.5}>
               <TextField
                 fullWidth
                 name="surname"
                 size="small"
-                label="Surname"
                 variant="outlined"
                 value={formData.surname}
               />
             </Grid>
-            <Grid item xs={12} sm={4}>
+            <Grid
+              item
+              xs={12}
+              sm={1.5}
+              style={{ display: "flex", alignItems: "center" }}
+            >
+              <Typography>Tel:</Typography>
+            </Grid>
+            <Grid item xs={12} sm={3}>
               <TextField
                 fullWidth
                 name="tel"
                 size="small"
-                label="Tel"
                 variant="outlined"
                 value={formData.tel}
               />
             </Grid>
-            <Grid item xs={12} sm={4}>
+            <Grid
+              item
+              xs={12}
+              sm={1}
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: {
+                  xs: "flex-start",
+                  sm: "flex-end",
+                },
+              }}
+            >
+              <Typography>Fax:</Typography>
+            </Grid>
+            <Grid item xs={12} sm={2.5}>
               <TextField
                 fullWidth
                 name="fax"
                 size="small"
-                label="Fax"
                 variant="outlined"
                 value={formData.fax}
               />
             </Grid>
-            <Grid item xs={12} sm={4}>
+            <Grid
+              item
+              xs={12}
+              sm={1}
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: {
+                  xs: "flex-start",
+                  sm: "flex-end",
+                },
+              }}
+            >
+              <Typography>Mobile:</Typography>
+            </Grid>
+            <Grid item xs={12} sm={3}>
               <TextField
                 fullWidth
                 name="mobile"
                 size="small"
-                label="Mobile"
                 variant="outlined"
                 value={formData.mobile}
               />
             </Grid>
-            <Grid item xs={12}>
+            <Grid
+              item
+              xs={12}
+              sm={1.5}
+              style={{ display: "flex", alignItems: "center" }}
+            >
+              <Typography>Email Address:</Typography>
+            </Grid>
+            <Grid item xs={12} sm={10.5}>
               <TextField
                 fullWidth
                 name="email"
                 size="small"
-                label="Email Address"
                 variant="outlined"
                 value={formData.email}
               />
             </Grid>
-            <Grid item xs={12}>
+            <Grid
+              item
+              xs={12}
+              sm={1.5}
+              style={{ display: "flex", alignItems: "center" }}
+            >
+              <Typography>Web URL:</Typography>
+            </Grid>
+            <Grid item xs={12} sm={10.5}>
               <TextField
                 fullWidth
                 name="webUrl"
                 size="small"
-                label="Web URL"
                 variant="outlined"
                 value={formData.webUrl}
               />
@@ -666,16 +907,16 @@ const MultiSectionForm = () => {
               </Typography>
             </Box>
           </Box>
-          <FormGroup sx={{ paddingLeft: "2rem" }}>
+          <FormGroup sx={{ paddingLeft: "3.5rem" }}>
             <FormControlLabel
               control={
                 <Checkbox
                   color="primary"
                   name="idCheck"
                   checked={Boolean(Number(formData.idCheck))}
-                  />
+                />
               }
-              label="To satisfy 100 points of ID, take a copy of DL (Front & Back)"
+              label="To satisfy 100 point of ID, take copy of DL (Front & Back)"
             />
             <FormControlLabel
               control={
@@ -683,7 +924,7 @@ const MultiSectionForm = () => {
                   color="primary"
                   name="copyBills"
                   checked={Boolean(Number(formData.copyBills))}
-                  />
+                />
               }
               label="Copy of bills"
             />
@@ -728,61 +969,124 @@ const MultiSectionForm = () => {
               </Typography>
             </Box>
           </Box>
-          <Grid container spacing={1.5} sx={{ paddingLeft: "2rem" }}>
+          <Grid container spacing={1.5} sx={{ paddingLeft: "3.5rem" }}>
+            <Grid
+              item
+              xs={12}
+              sm={2}
+              style={{ display: "flex", alignItems: "center" }}
+            >
+              <Typography>BSB:</Typography>
+            </Grid>
             <Grid item xs={12} sm={4}>
               <TextField
                 fullWidth
                 name="bsb"
                 size="small"
-                label="BSB"
                 variant="outlined"
                 value={formData.bsb}
               />
             </Grid>
-            <Grid item xs={12} sm={8}>
-              <TextField
-                fullWidth
-                name="bank"
-                size="small"
-                label="Bank / Institution"
-                variant="outlined"
-                value={formData.bank}
-              />
+            <Grid
+              item
+              xs={12}
+              sm={2}
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: {
+                  xs: "flex-start",
+                  sm: "flex-end",
+                },
+              }}
+            >
+              <Typography>Bank / Institution:</Typography>
             </Grid>
             <Grid item xs={12} sm={4}>
               <TextField
                 fullWidth
+                name="bank"
+                size="small"
+                variant="outlined"
+                value={formData.bank}
+              />
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              sm={2}
+              sx={{
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
+              <Typography>Account Number:</Typography>
+            </Grid>
+            <Grid item xs={12} sm={3}>
+              <TextField
+                fullWidth
                 name="accountNumber"
                 size="small"
-                label="Account Number"
                 variant="outlined"
                 value={formData.accountNumber}
               />
             </Grid>
-            <Grid item xs={12} sm={8}>
+            <Grid
+              item
+              xs={12}
+              sm={1}
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: {
+                  xs: "flex-start",
+                  sm: "flex-end",
+                },
+              }}
+            >
+              <Typography>Branch:</Typography>
+            </Grid>
+            <Grid item xs={12} sm={6}>
               <TextField
                 fullWidth
-                name="branch"
+                name="bank"
                 size="small"
-                label="Branch"
                 variant="outlined"
-                value={formData.branch}
+                value={formData.bank}
               />
             </Grid>
-            <Grid item xs={12}>
+            <Grid
+              item
+              xs={12}
+              sm={2}
+              sx={{
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
+              <Typography>Account Name:</Typography>
+            </Grid>
+            <Grid item xs={12} sm={10}>
               <TextField
                 fullWidth
                 name="accountName"
                 size="small"
-                label="Account Name"
                 variant="outlined"
                 value={formData.accountName}
               />
             </Grid>
-            <p style={{ marginTop: "60px", fontSize: "12px" }}>
-              QA_UC8_QF_ADMIN_CIF & CAA_V3.1
-            </p>
           </Grid>
+        </Box>
+
+        {/* Submit Button */}
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            marginTop: "2rem",
+            marginBottom: "5rem",
+          }}
+        >
         </Box>
       </form>
     </Container>

@@ -113,53 +113,16 @@ const NewForm = () => {
   };
   if (pageLoading) {
     return (
-      <Container maxWidth="lg" sx={{ marginTop: "2rem" }}>
-        <Box
-          sx={{
-            display: "flex",
-            alignItems: "flex-start",
-            justifyContent: "space-between",
-            marginTop: "100px",
-          }}
-        >
-          {/* Content Box */}
-          <Box>
-            <h1 style={{ marginTop: "0" }}>
-              Client Information Form (CIF)
-              <br /> Client Document List (CDL)
-            </h1>
-            <p>
-              Business Made Better, ABN 51 666 810 215 (“<strong>BMB</strong>”)
-            </p>
-          </Box>
-          {/* Logo Box */}
-          <Box>
-            <img
-              src="/images/logo.png"
-              alt="Company Logo"
-              style={{ maxWidth: "300px", maxHeight: "100px" }} // Adjust size as needed
-            />
-            <h3 style={{ textAlign: "right", marginBottom: "0" }}>
-              (07) 3339 7997
-            </h3>
-            <p style={{ textAlign: "right", marginTop: "0" }}>
-              Level 5, 131 Wickham Terrace<br></br> Brisbane Queensland
-              Australia 4000 <br></br>E | accounts@uc8.com.au <br></br>W |
-              BusinessMadeBetter.com.au
-            </p>
-          </Box>
-        </Box>
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            height: "80vh", // Full viewport height for centering
-          }}
-        >
-          <CircularProgress size={80} thickness={4} />
-        </Box>
-      </Container>
+      <Box
+        sx={{
+          height: "100vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <CircularProgress size={120} thickness={4} />
+      </Box>
     );
   }
   return (
@@ -173,29 +136,30 @@ const NewForm = () => {
         }}
       >
         {/* Content Box */}
-        <Box>
-          <h1 style={{ marginTop: "0" }}>
-            Client Information Form (CIF)
-            <br /> Client Document List (CDL)
-          </h1>
-          <span>
-            Business Made Better, ABN 51 666 810 215 (“<strong>BMB</strong>”)
-          </span>
+        <Box sx={{ display: "flex" }}>
+          <Box>
+            <img
+              src="/images/UC8 Logo - Square.png"
+              alt="Company Logo"
+              style={{ maxWidth: "300px", maxHeight: "100px", display: "" }}
+            />
+          </Box>
+          <Box sx={{ marginLeft: "20px" }}>
+            <h1 style={{ marginTop: "0" }}>
+              Client Information Form (CIF)
+              <br /> Credit Account Application (CAA)
+            </h1>
+            <span>UC8 Australia Pty Ltd ABN 51 666 810 215 (“UC8”)</span>
+          </Box>
         </Box>
         {/* Logo Box */}
         <Box>
-          <img
-            src="/images/logo.png"
-            alt="Company Logo"
-            style={{ maxWidth: "300px", maxHeight: "100px" }} // Adjust size as needed
-          />
           <h3 style={{ textAlign: "right", marginBottom: "0" }}>
-            (07) 3339 7997
+            1300 804 880
           </h3>
           <p style={{ textAlign: "right", marginTop: "0" }}>
-            Level 5, 131 Wickham Terrace<br></br> Brisbane Queensland Australia
-            4000 <br></br>E | accounts@uc8.com.au <br></br>W |
-            BusinessMadeBetter.com.au
+            Level 5, 131 Wickham Terrace<br></br>Brisbane | Queensland |
+            Australia | 4000<br></br>info@uc8.au<br></br>uc8.au
           </p>
         </Box>
       </Box>
@@ -297,33 +261,75 @@ const NewForm = () => {
                   paddingBottom: "0.5rem",
                 }}
               >
-                <Grid item xs={12} sm={12}>
+                <Grid
+                  item
+                  xs={12}
+                  sm={4}
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: {
+                      xs: "flex-start",
+                      sm: "flex-end",
+                    },
+                  }}
+                >
+                  <Typography>Client Account:</Typography>
+                </Grid>
+                <Grid item xs={12} sm={8}>
                   <TextField
                     fullWidth
                     name="clientAccount"
-                    label="Client Account"
                     size="small"
                     variant="outlined"
                     value={formData.clientAccount}
                     onChange={handleChange}
                   />
                 </Grid>
-                <Grid item xs={12} sm={12}>
+                <Grid
+                  item
+                  xs={12}
+                  sm={4}
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: {
+                      xs: "flex-start",
+                      sm: "flex-end",
+                    },
+                  }}
+                >
+                  <Typography>Approved Credit:</Typography>
+                </Grid>
+                <Grid item xs={12} sm={8}>
                   <TextField
                     fullWidth
                     name="approvedCredit"
                     size="small"
-                    label="Approved Credit"
                     variant="outlined"
                     value={formData.approvedCredit}
                     onChange={handleChange}
                   />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid
+                  item
+                  xs={12}
+                  sm={4}
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: {
+                      xs: "flex-start",
+                      sm: "flex-end",
+                    },
+                  }}
+                >
+                  <Typography>Approved By:</Typography>
+                </Grid>
+                <Grid item xs={12} sm={8}>
                   <TextField
                     fullWidth
                     name="approvedBy"
-                    label="Approved By"
                     size="small"
                     variant="outlined"
                     value={formData.approvedBy}
@@ -373,45 +379,80 @@ const NewForm = () => {
               </Typography>
             </Box>
           </Box>
-          <Grid container spacing={1.5} sx={{ paddingLeft: "2rem" }}>
-            <Grid item xs={12}>
+          <Grid container spacing={1.5} sx={{ paddingLeft: "3.5rem" }}>
+            <Grid
+              item
+              xs={12}
+              sm={2}
+              style={{ display: "flex", alignItems: "center" }}
+            >
+              <Typography>Full Legal Name:</Typography>
+            </Grid>
+            <Grid item xs={12} sm={10}>
               <TextField
                 fullWidth
                 name="fullName"
                 size="small"
-                label="Full Legal Name"
                 variant="outlined"
                 value={formData.fullName}
                 onChange={handleChange}
               />
             </Grid>
-            <Grid item xs={12}>
+            <Grid
+              item
+              xs={12}
+              sm={2}
+              style={{ display: "flex", alignItems: "center" }}
+            >
+              <Typography>Trading As:</Typography>
+            </Grid>
+            <Grid item xs={12} sm={10}>
               <TextField
                 fullWidth
                 name="tradingAs"
                 size="small"
-                label="Trading As"
                 variant="outlined"
                 value={formData.tradingAs}
                 onChange={handleChange}
               />
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid
+              item
+              xs={12}
+              sm={2}
+              style={{ display: "flex", alignItems: "center" }}
+            >
+              <Typography>ABN:</Typography>
+            </Grid>
+            <Grid item xs={12} sm={4}>
               <TextField
                 fullWidth
                 name="abn"
-                label="ABN"
                 size="small"
                 variant="outlined"
                 value={formData.abn}
                 onChange={handleChange}
               />
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid
+              item
+              xs={12}
+              sm={2}
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: {
+                  xs: "flex-start",
+                  sm: "flex-end",
+                },
+              }}
+            >
+              <Typography>ACN:</Typography>
+            </Grid>
+            <Grid item xs={12} sm={4}>
               <TextField
                 fullWidth
                 name="acn"
-                label="ACN"
                 size="small"
                 variant="outlined"
                 value={formData.acn}
@@ -459,79 +500,143 @@ const NewForm = () => {
               </Typography>
             </Box>
           </Box>
-          <Grid container spacing={1.5} sx={{ paddingLeft: "2rem" }}>
-            <Grid item xs={12}>
+          <Grid container spacing={1.5} sx={{ paddingLeft: "3.5rem" }}>
+            <Grid
+              item
+              xs={12}
+              sm={2}
+              style={{ display: "flex", alignItems: "center" }}
+            >
+              <Typography>Address Line 1:</Typography>
+            </Grid>
+            <Grid item xs={12} sm={10}>
               <TextField
                 fullWidth
                 name="addressLine1"
                 size="small"
-                label="Address Line 1"
                 variant="outlined"
                 value={formData.addressLine1}
                 onChange={handleChange}
               />
             </Grid>
-            <Grid item xs={12}>
+            <Grid
+              item
+              xs={12}
+              sm={2}
+              style={{ display: "flex", alignItems: "center" }}
+            >
+              <Typography>Address Line 2:</Typography>
+            </Grid>
+            <Grid item xs={12} sm={10}>
               <TextField
                 fullWidth
                 name="addressLine2"
                 size="small"
-                label="Address Line 2"
                 variant="outlined"
                 value={formData.addressLine2}
                 onChange={handleChange}
               />
             </Grid>
-            <Grid item xs={12}>
+            <Grid
+              item
+              xs={12}
+              sm={2}
+              style={{ display: "flex", alignItems: "center" }}
+            >
+              <Typography>Address Line 3:</Typography>
+            </Grid>
+            <Grid item xs={12} sm={10}>
               <TextField
                 fullWidth
                 name="addressLine3"
                 size="small"
-                label="Address Line 3"
                 variant="outlined"
                 value={formData.addressLine3}
                 onChange={handleChange}
               />
             </Grid>
-            <Grid item xs={12} sm={8}>
+            <Grid
+              item
+              xs={12}
+              sm={2}
+              style={{ display: "flex", alignItems: "center" }}
+            >
+              <Typography>Suburb:</Typography>
+            </Grid>
+            <Grid item xs={12} sm={5}>
               <TextField
                 fullWidth
                 name="suburb"
                 size="small"
-                label="Suburb"
                 variant="outlined"
                 value={formData.suburb}
                 onChange={handleChange}
               />
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              sm={1}
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: {
+                  xs: "flex-start",
+                  sm: "flex-end",
+                },
+              }}
+            >
+              <Typography>Postcode:</Typography>
             </Grid>
             <Grid item xs={12} sm={4}>
               <TextField
                 fullWidth
                 name="postcode"
                 size="small"
-                label="Postcode"
                 variant="outlined"
                 value={formData.postcode}
                 onChange={handleChange}
               />
             </Grid>
-            <Grid item xs={12} sm={8}>
+
+            <Grid
+              item
+              xs={12}
+              sm={2}
+              style={{ display: "flex", alignItems: "center" }}
+            >
+              <Typography>City:</Typography>
+            </Grid>
+            <Grid item xs={12} sm={6}>
               <TextField
                 fullWidth
                 name="city"
                 size="small"
-                label="City"
                 variant="outlined"
                 value={formData.city}
                 onChange={handleChange}
               />
             </Grid>
-            <Grid item xs={12} sm={4}>
+            <Grid
+              item
+              xs={12}
+              sm={1}
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: {
+                  xs: "flex-start",
+                  sm: "flex-end",
+                },
+              }}
+            >
+              <Typography>State:</Typography>
+            </Grid>
+            <Grid item xs={12} sm={3}>
               <TextField
                 fullWidth
-                name="state"
+                name="postcode"
                 size="small"
-                label="State"
                 variant="outlined"
                 value={formData.state}
                 onChange={handleChange}
@@ -578,112 +683,212 @@ const NewForm = () => {
               </Typography>
             </Box>
           </Box>
-          <Grid container spacing={1.5} sx={{ paddingLeft: "2rem" }}>
-            <Grid item xs={12} sm={2}>
+          <Grid container spacing={1.5} sx={{ paddingLeft: "3.5rem" }}>
+            <Grid
+              item
+              xs={12}
+              sm={0.5}
+              sx={{
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
+              <Typography>Title:</Typography>
+            </Grid>
+            <Grid item xs={12} sm={1.5}>
               <TextField
                 fullWidth
                 name="title"
                 size="small"
-                label="Title"
                 variant="outlined"
                 value={formData.title}
                 onChange={handleChange}
               />
             </Grid>
-            <Grid item xs={12} sm={5}>
+            <Grid
+              item
+              xs={12}
+              sm={1.1}
+              sx={{
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
+              <Typography>First Name:</Typography>
+            </Grid>
+            <Grid item xs={12} sm={4.9}>
               <TextField
                 fullWidth
                 name="firstName"
                 size="small"
-                label="First Name"
                 variant="outlined"
                 value={formData.firstName}
                 onChange={handleChange}
               />
             </Grid>
-            <Grid item xs={12} sm={5}>
+            <Grid
+              item
+              xs={12}
+              sm={1}
+              sx={{
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
+              <Typography>Position:</Typography>
+            </Grid>
+            <Grid item xs={12} sm={3}>
               <TextField
                 fullWidth
                 name="position"
                 size="small"
-                label="Position"
                 variant="outlined"
                 value={formData.position}
                 onChange={handleChange}
               />
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid
+              item
+              xs={12}
+              sm={1.5}
+              sx={{ display: "flex", alignItems: "center" }}
+            >
+              <Typography>Middle Name/s:</Typography>
+            </Grid>
+            <Grid item xs={12} sm={4.5}>
               <TextField
                 fullWidth
-                name="middleNames"
+                name="middleName"
                 size="small"
-                label="Middle Name/s"
                 variant="outlined"
-                value={formData.middleNames}
+                value={formData.middleName}
                 onChange={handleChange}
               />
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid
+              item
+              xs={12}
+              sm={1.5}
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: {
+                  xs: "flex-start",
+                  sm: "flex-end",
+                },
+              }}
+            >
+              <Typography>Surname:</Typography>
+            </Grid>
+            <Grid item xs={12} sm={4.5}>
               <TextField
                 fullWidth
                 name="surname"
                 size="small"
-                label="Surname"
                 variant="outlined"
                 value={formData.surname}
                 onChange={handleChange}
               />
             </Grid>
-            <Grid item xs={12} sm={4}>
+            <Grid
+              item
+              xs={12}
+              sm={1.5}
+              style={{ display: "flex", alignItems: "center" }}
+            >
+              <Typography>Tel:</Typography>
+            </Grid>
+            <Grid item xs={12} sm={3}>
               <TextField
                 fullWidth
                 name="tel"
                 size="small"
-                label="Tel"
                 variant="outlined"
                 value={formData.tel}
                 onChange={handleChange}
               />
             </Grid>
-            <Grid item xs={12} sm={4}>
+            <Grid
+              item
+              xs={12}
+              sm={1}
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: {
+                  xs: "flex-start",
+                  sm: "flex-end",
+                },
+              }}
+            >
+              <Typography>Fax:</Typography>
+            </Grid>
+            <Grid item xs={12} sm={2.5}>
               <TextField
                 fullWidth
                 name="fax"
                 size="small"
-                label="Fax"
                 variant="outlined"
                 value={formData.fax}
                 onChange={handleChange}
               />
             </Grid>
-            <Grid item xs={12} sm={4}>
+            <Grid
+              item
+              xs={12}
+              sm={1}
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: {
+                  xs: "flex-start",
+                  sm: "flex-end",
+                },
+              }}
+            >
+              <Typography>Mobile:</Typography>
+            </Grid>
+            <Grid item xs={12} sm={3}>
               <TextField
                 fullWidth
                 name="mobile"
                 size="small"
-                label="Mobile"
                 variant="outlined"
                 value={formData.mobile}
                 onChange={handleChange}
               />
             </Grid>
-            <Grid item xs={12}>
+            <Grid
+              item
+              xs={12}
+              sm={1.5}
+              style={{ display: "flex", alignItems: "center" }}
+            >
+              <Typography>Email Address:</Typography>
+            </Grid>
+            <Grid item xs={12} sm={10.5}>
               <TextField
                 fullWidth
                 name="email"
                 size="small"
-                label="Email Address"
                 variant="outlined"
                 value={formData.email}
                 onChange={handleChange}
               />
             </Grid>
-            <Grid item xs={12}>
+            <Grid
+              item
+              xs={12}
+              sm={1.5}
+              style={{ display: "flex", alignItems: "center" }}
+            >
+              <Typography>Web URL:</Typography>
+            </Grid>
+            <Grid item xs={12} sm={10.5}>
               <TextField
                 fullWidth
                 name="webUrl"
                 size="small"
-                label="Web URL"
                 variant="outlined"
                 value={formData.webUrl}
                 onChange={handleChange}
@@ -730,31 +935,30 @@ const NewForm = () => {
               </Typography>
             </Box>
           </Box>
-          <FormGroup sx={{ paddingLeft: "2rem" }}>
-  <FormControlLabel
-    control={
-      <Checkbox
-        color="primary"
-        name="idCheck"
-        checked={Boolean(Number(formData.idCheck))}
-        onChange={handleChange}
-      />
-    }
-    label="To satisfy 100 point of ID, take copy of DL (Front & Back)"
-  />
-  <FormControlLabel
-    control={
-      <Checkbox
-        color="primary"
-        name="copyBills"
-        checked={Boolean(Number(formData.copyBills))}
-        onChange={handleChange}
-      />
-    }
-    label="Copy of bills"
-  />
-</FormGroup>
-
+          <FormGroup sx={{ paddingLeft: "3.5rem" }}>
+            <FormControlLabel
+              control={
+                <Checkbox
+                  color="primary"
+                  name="idCheck"
+                  checked={Boolean(Number(formData.idCheck))}
+                  onChange={handleChange}
+                />
+              }
+              label="To satisfy 100 point of ID, take copy of DL (Front & Back)"
+            />
+            <FormControlLabel
+              control={
+                <Checkbox
+                  color="primary"
+                  name="copyBills"
+                  checked={Boolean(Number(formData.copyBills))}
+                  onChange={handleChange}
+                />
+              }
+              label="Copy of bills"
+            />
+          </FormGroup>
         </Box>
 
         {/* Section 6: Direct Debit */}
@@ -795,57 +999,112 @@ const NewForm = () => {
               </Typography>
             </Box>
           </Box>
-          <Grid container spacing={1.5} sx={{ paddingLeft: "2rem" }}>
+          <Grid container spacing={1.5} sx={{ paddingLeft: "3.5rem" }}>
+            <Grid
+              item
+              xs={12}
+              sm={2}
+              style={{ display: "flex", alignItems: "center" }}
+            >
+              <Typography>BSB:</Typography>
+            </Grid>
             <Grid item xs={12} sm={4}>
               <TextField
                 fullWidth
                 name="bsb"
                 size="small"
-                label="BSB"
                 variant="outlined"
                 value={formData.bsb}
                 onChange={handleChange}
               />
             </Grid>
-            <Grid item xs={12} sm={8}>
+            <Grid
+              item
+              xs={12}
+              sm={2}
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: {
+                  xs: "flex-start",
+                  sm: "flex-end",
+                },
+              }}
+            >
+              <Typography>Bank / Institution:</Typography>
+            </Grid>
+            <Grid item xs={12} sm={4}>
               <TextField
                 fullWidth
                 name="bank"
                 size="small"
-                label="Bank / Institution"
                 variant="outlined"
                 value={formData.bank}
                 onChange={handleChange}
               />
             </Grid>
-            <Grid item xs={12} sm={4}>
+            <Grid
+              item
+              xs={12}
+              sm={2}
+              sx={{
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
+              <Typography>Account Number:</Typography>
+            </Grid>
+            <Grid item xs={12} sm={3}>
               <TextField
                 fullWidth
                 name="accountNumber"
                 size="small"
-                label="Account Number"
                 variant="outlined"
                 value={formData.accountNumber}
                 onChange={handleChange}
               />
             </Grid>
-            <Grid item xs={12} sm={8}>
+            <Grid
+              item
+              xs={12}
+              sm={1}
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: {
+                  xs: "flex-start",
+                  sm: "flex-end",
+                },
+              }}
+            >
+              <Typography>Branch:</Typography>
+            </Grid>
+            <Grid item xs={12} sm={6}>
               <TextField
                 fullWidth
-                name="branch"
+                name="bank"
                 size="small"
-                label="Branch"
                 variant="outlined"
-                value={formData.branch}
+                value={formData.bank}
                 onChange={handleChange}
               />
             </Grid>
-            <Grid item xs={12}>
+            <Grid
+              item
+              xs={12}
+              sm={2}
+              sx={{
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
+              <Typography>Account Name:</Typography>
+            </Grid>
+            <Grid item xs={12} sm={10}>
               <TextField
                 fullWidth
                 name="accountName"
                 size="small"
-                label="Account Name"
                 variant="outlined"
                 value={formData.accountName}
                 onChange={handleChange}
@@ -887,4 +1146,4 @@ const NewForm = () => {
   );
 };
 
-export default NewForm;;
+export default NewForm;

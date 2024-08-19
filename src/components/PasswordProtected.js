@@ -25,7 +25,7 @@ const PasswordProtected = () => {
     <Box
       component="form"
       onSubmit={handlePasswordSubmit}
-      sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mt: 48 }}
+      sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mt: 36 }}
     >
     <LockIcon fontSize="large" sx={{ mb: 2 }} />
       <Typography variant="h6" gutterBottom sx={{ mb:3  }}>
