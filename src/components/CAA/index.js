@@ -64,7 +64,7 @@ const CAA = () => {
                 color="secondary.main"
                 sx={{ marginLeft: "0.5rem" }}
               >
-                For direct debit from a bank account
+                For direct debit from a bank accounts
               </Typography>
             </Box>
           </Box>
