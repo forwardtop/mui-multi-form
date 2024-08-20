@@ -1,37 +1,11 @@
-import React, { useContext } from "react";
-import {
-  Container,
-  TextField,
-  Typography,
-  Grid,
-  Box,
-} from "@mui/material";
-import { AuthContext } from "../../config/AuthContext";
-
-import CIFHeader from "./cifHeader";
-import OfficeUse from "./officeUse";
-import ClientDetails from "./clientDetails";
-import BusinessMarketSector from "./businessMarketSector";
-import SiteAddress from "./siteAddress";
-import CompanyContactDetails from "./companyContactDetails";
-import ServiceDetails from "./serviceDetails";
-
-const CAA = () => {
+import React, { useContext } from 'react';
+import { Box, Grid, Typography, TextField } from '@mui/material';
+import { AuthContext } from '../../config/AuthContext';
+const SiteAddress = ( ) => {
   const { formData, handleChange } = useContext(AuthContext);
 
   return (
-    <Container maxWidth="lg" sx={{ marginTop: "2rem" }}>
-      <CIFHeader />
-
-      <form>
-        <OfficeUse />
-        <ClientDetails />
-        <BusinessMarketSector />
-        <SiteAddress />
-        <CompanyContactDetails />
-        <ServiceDetails />
-       
-        <Box
+    <Box
           sx={{
             marginBottom: "2rem",
             paddingY: "0.5rem",
@@ -55,7 +29,7 @@ const CAA = () => {
                   padding: "0.5rem",
                 }}
               >
-                7
+                4
               </Typography>
             </Box>
             <Box>
@@ -64,7 +38,7 @@ const CAA = () => {
                 color="secondary.main"
                 sx={{ marginLeft: "0.5rem" }}
               >
-                For direct debit from a bank account
+                Site Address
               </Typography>
             </Box>
           </Box>
@@ -75,15 +49,15 @@ const CAA = () => {
               sm={2}
               style={{ display: "flex", alignItems: "center" }}
             >
-              <Typography>BSB:</Typography>
+              <Typography>Address Line 1:</Typography>
             </Grid>
-            <Grid item xs={12} sm={4}>
+            <Grid item xs={12} sm={10}>
               <TextField
                 fullWidth
-                name="bsb"
+                name="addressLine1"
                 size="small"
                 variant="outlined"
-                value={formData.bsb}
+                value={formData.addressLine1}
                 onChange={handleChange}
               />
             </Grid>
@@ -91,24 +65,17 @@ const CAA = () => {
               item
               xs={12}
               sm={2}
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: {
-                  xs: "flex-start",
-                  sm: "flex-end",
-                },
-              }}
+              style={{ display: "flex", alignItems: "center" }}
             >
-              <Typography>Bank / Institution:</Typography>
+              <Typography>Address Line 2:</Typography>
             </Grid>
-            <Grid item xs={12} sm={4}>
+            <Grid item xs={12} sm={10}>
               <TextField
                 fullWidth
-                name="bank"
+                name="addressLine2"
                 size="small"
                 variant="outlined"
-                value={formData.bank}
+                value={formData.addressLine2}
                 onChange={handleChange}
               />
             </Grid>
@@ -116,20 +83,35 @@ const CAA = () => {
               item
               xs={12}
               sm={2}
-              sx={{
-                display: "flex",
-                alignItems: "center",
-              }}
+              style={{ display: "flex", alignItems: "center" }}
             >
-              <Typography>Account Number:</Typography>
+              <Typography>Address Line 3:</Typography>
             </Grid>
-            <Grid item xs={12} sm={3}>
+            <Grid item xs={12} sm={10}>
               <TextField
                 fullWidth
-                name="accountNumber"
+                name="addressLine3"
                 size="small"
                 variant="outlined"
-                value={formData.accountNumber}
+                value={formData.addressLine3}
+                onChange={handleChange}
+              />
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              sm={2}
+              style={{ display: "flex", alignItems: "center" }}
+            >
+              <Typography>Suburb:</Typography>
+            </Grid>
+            <Grid item xs={12} sm={5}>
+              <TextField
+                fullWidth
+                name="suburb"
+                size="small"
+                variant="outlined"
+                value={formData.suburb}
                 onChange={handleChange}
               />
             </Grid>
@@ -146,54 +128,65 @@ const CAA = () => {
                 },
               }}
             >
-              <Typography>Branch:</Typography>
+              <Typography>Postcode:</Typography>
+            </Grid>
+            <Grid item xs={12} sm={4}>
+              <TextField
+                fullWidth
+                name="postcode"
+                size="small"
+                variant="outlined"
+                value={formData.postcode}
+                onChange={handleChange}
+              />
+            </Grid>
+
+            <Grid
+              item
+              xs={12}
+              sm={2}
+              style={{ display: "flex", alignItems: "center" }}
+            >
+              <Typography>City:</Typography>
             </Grid>
             <Grid item xs={12} sm={6}>
               <TextField
                 fullWidth
-                name="bank"
+                name="city"
                 size="small"
                 variant="outlined"
-                value={formData.bank}
+                value={formData.city}
                 onChange={handleChange}
               />
             </Grid>
             <Grid
               item
               xs={12}
-              sm={2}
+              sm={1}
               sx={{
                 display: "flex",
                 alignItems: "center",
+                justifyContent: {
+                  xs: "flex-start",
+                  sm: "flex-end",
+                },
               }}
             >
-              <Typography>Account Name:</Typography>
+              <Typography>State:</Typography>
             </Grid>
-            <Grid item xs={12} sm={10}>
+            <Grid item xs={12} sm={3}>
               <TextField
                 fullWidth
-                name="accountName"
+                name="postcode"
                 size="small"
                 variant="outlined"
-                value={formData.accountName}
+                value={formData.state}
                 onChange={handleChange}
               />
             </Grid>
           </Grid>
         </Box>
-
-        {/* Submit Button */}
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            marginTop: "2rem",
-            marginBottom: "5rem",
-          }}
-        ></Box>
-      </form>
-    </Container>
   );
 };
 
-export default CAA;
+export default SiteAddress;

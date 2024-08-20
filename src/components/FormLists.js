@@ -10,13 +10,18 @@ import {
 import { useNavigate } from "react-router-dom";
 const listsData = [
   {
-    title: "Client Collection Form (CCF)",
-    form: "CCF",
+    title: "Credit Account Application (CAA)",
+    form: "CAA",
     checked: false,
   },
   {
     title: "Client Information Form (CIF)",
     form: "CIF",
+    checked: false,
+  },
+  {
+    title: "Client Collection Form (CCF)",
+    form: "CCF",
     checked: false,
   },
   {
@@ -49,11 +54,6 @@ const listsData = [
     form: "OBS",
     checked: false,
   },
-  {
-    title: "Credit Account Application (CAA)",
-    form: "CAA",
-    checked: false,
-  },
 ];
 
 const FormCards = () => {
@@ -65,20 +65,32 @@ const FormCards = () => {
         i === index ? { ...list, checked: !list.checked } : list
       );
 
-      const checkedForms = updatedLists.filter(list => list.checked).map(list => list.form);
+      const checkedForms = updatedLists
+        .filter((list) => list.checked)
+        .map((list) => list.form);
       console.log("Selected Forms:", checkedForms);
 
       return updatedLists;
     });
   };
   const handleCreate = () => {
-    const selectedForms = lists.filter(list => list.checked).map(list => list.form);
-    navigate('/creatingForms', { state: { selectedForms } });
+    const selectedForms = lists
+      .filter((list) => list.checked)
+      .map((list) => list.form);
+    navigate("/creatingForms", { state: { selectedForms } });
   };
   return (
-    <Container maxWidth="sm" sx={{ height: "100vh", display:'flex', flexDirection:'column', justifyContent:'center' }}>
-    <Typography variant="h4"></Typography>
-      <Grid container spacing={2} sx={{ }}>
+    <Container
+      maxWidth="sm"
+      sx={{
+        height: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+      }}
+    >
+      <Typography variant="h4"></Typography>
+      <Grid container spacing={2} sx={{}}>
         {lists.map((list, index) => (
           <Grid
             item
@@ -111,7 +123,11 @@ const FormCards = () => {
           </Grid>
         ))}
       </Grid>
-      <Grid item xs={12} sx={{display:'flex', justifyContent:'center', marginTop:'3rem'}}>
+      <Grid
+        item
+        xs={12}
+        sx={{ display: "flex", justifyContent: "center", marginTop: "3rem" }}
+      >
         <Button variant="contained" color="info" onClick={handleCreate}>
           Create A Form
         </Button>
