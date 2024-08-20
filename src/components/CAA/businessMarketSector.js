@@ -134,8 +134,8 @@ const BusinessMarketSector = ( ) => {
                     <Typography>Manufacturing:</Typography>
                     <Checkbox
                       color="primary"
-                      name="retail"
-                      checked={Boolean(Number(formData.retail))}
+                      name="manufacturing"
+                      checked={Boolean(Number(formData.manufacturing))}
                       onChange={handleChange}
                       sx={{ marginLeft: 1 }}
                     />
@@ -182,8 +182,8 @@ const BusinessMarketSector = ( ) => {
                     <Typography>Transport:</Typography>
                     <Checkbox
                       color="primary"
-                      name="healthCare"
-                      checked={Boolean(Number(formData.healthCare))}
+                      name="transport"
+                      checked={Boolean(Number(formData.transport))}
                       onChange={handleChange}
                       sx={{ marginLeft: 1 }}
                     />
