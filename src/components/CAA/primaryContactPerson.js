@@ -1,10 +1,5 @@
 import React, { useContext } from "react";
-import {
-  Box,
-  Grid,
-  Typography,
-  TextField,
-} from "@mui/material";
+import { Box, Grid, Typography, TextField } from "@mui/material";
 import { AuthContext } from "../../config/AuthContext";
 const PrimaryContactPerson = () => {
   const { formData, handleChange } = useContext(AuthContext);
@@ -43,8 +38,10 @@ const PrimaryContactPerson = () => {
             color="secondary.main"
             sx={{ marginLeft: "0.5rem" }}
           >
-            Primary Contact Person / Owner /Director <span style={{fontSize:'14px', fontStyle:'italic'}}> (The person who will sign this application)
-</span>
+            Primary Contact Person / Owner /Director{" "}
+            <span style={{ fontSize: "14px", fontStyle: "italic" }}>
+              (The person who will sign this application)
+            </span>
           </Typography>
         </Box>
       </Box>
@@ -70,9 +67,7 @@ const PrimaryContactPerson = () => {
             onChange={handleChange}
           />
         </Grid>
-        <Grid item xs={12} sm={7.5}>
-        
-        </Grid>
+        <Grid item xs={12} sm={7.5}></Grid>
         <Grid
           item
           xs={12}
@@ -94,9 +89,7 @@ const PrimaryContactPerson = () => {
             onChange={handleChange}
           />
         </Grid>
-        <Grid item xs={12} sm={4.5}>
-        
-        </Grid>
+        <Grid item xs={12} sm={4.5}></Grid>
         <Grid
           item
           xs={12}
@@ -118,10 +111,8 @@ const PrimaryContactPerson = () => {
             onChange={handleChange}
           />
         </Grid>
-        <Grid item xs={12} sm={4.5}>
-        
-        </Grid>
-        
+        <Grid item xs={12} sm={4.5}></Grid>
+
         <Grid
           item
           xs={12}
@@ -129,7 +120,6 @@ const PrimaryContactPerson = () => {
           sx={{
             display: "flex",
             alignItems: "center",
-            
           }}
         >
           <Typography>Surname:</Typography>
@@ -144,9 +134,8 @@ const PrimaryContactPerson = () => {
             onChange={handleChange}
           />
         </Grid>
-        
-        <Grid item xs={12} sm={4.5}>
-        </Grid>
+
+        <Grid item xs={12} sm={4.5}></Grid>
         <Grid
           item
           xs={12}
@@ -183,7 +172,7 @@ const PrimaryContactPerson = () => {
             onChange={handleChange}
           />
         </Grid>
-        
+
         <Grid
           item
           xs={12}

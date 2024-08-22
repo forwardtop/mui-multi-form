@@ -43,7 +43,8 @@ export const AuthProvider = ({ children }) => {
     copyBills: "",
     birthDate:"1989-10-09",
     expiryDate:new Date().toISOString().split('T')[0],
-    signDate:new Date().toISOString().split('T')[0]
+    signDate:new Date().toISOString().split('T')[0],
+    declarationDate:new Date().toISOString().split('T')[0],
   });
 
   const handleChange = (eventOrDate, name) => {

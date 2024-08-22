@@ -11,6 +11,8 @@ import AccountTerms from "./accountTerms";
 import BillingDetails from "./billingDetails";
 import PrimaryContactPerson from "./primaryContactPerson";
 import ProofOfIdentity from "./proofOfIdentity";
+import PersonalDirectorGuarantee from "./personalDirectorGuarantee";
+import DeclarationGuarantor from "./declarationGuarantor";
 
 const CAA = () => {
 
@@ -27,6 +29,8 @@ const CAA = () => {
       <BillingDetails />
       <PrimaryContactPerson />
       <ProofOfIdentity />
+      <PersonalDirectorGuarantee />
+      <DeclarationGuarantor />
     </Container>
   );
 };

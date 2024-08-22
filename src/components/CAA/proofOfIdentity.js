@@ -430,9 +430,12 @@ const ProofOfIdentity = () => {
                 >
                   <Typography>Date:</Typography>
                 </Grid>
-                <Grid item xs={12} sm={10}>
-                  <LocalizationProvider dateAdapter={AdapterDayjs} >
-                    <DemoContainer components={["DatePicker"]} sx={{paddingTop:'0px'}}>
+                <Grid item xs={12} sm={4}>
+                  <LocalizationProvider dateAdapter={AdapterDayjs}>
+                    <DemoContainer
+                      components={["DatePicker"]}
+                      sx={{ paddingTop: "0px" }}
+                    >
                       <DatePicker
                         format="DD/MM/YYYY"
                         onChange={handleChange}
@@ -446,6 +449,9 @@ const ProofOfIdentity = () => {
                     </DemoContainer>
                   </LocalizationProvider>
                 </Grid>
+                <Grid item xs={12} sm={6} sx={{display:'flex', alignItems:'center'}}>
+                   <span>DD / MM / YYY</span> 
+                  </Grid>
                 <Grid
                   item
                   xs={12}
@@ -459,7 +465,12 @@ const ProofOfIdentity = () => {
                   <Typography>Signature:</Typography>
                 </Grid>
                 <Grid item xs={12} sm={10}>
-                  <Grid item xs={12} sm={10} sx={{ border: "1px solid #0000003b" }}>
+                  <Grid
+                    item
+                    xs={12}
+                    sm={10}
+                    sx={{ border: "1px solid #0000003b" }}
+                  >
                     <ReactSignatureCanvas
                       ref={sigPad}
                       penColor="black"
@@ -471,7 +482,7 @@ const ProofOfIdentity = () => {
                     />
                   </Grid>
                 </Grid>
-                <Grid item xs={12} sm={10} sx={{ textAlign:'center' }}>
+                <Grid item xs={12} sm={10} sx={{ textAlign: "center" }}>
                   <Button
                     variant="contained"
                     color="secondary"
