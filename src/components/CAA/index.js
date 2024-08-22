@@ -10,6 +10,7 @@ import ServiceDetails from "./serviceDetails";
 import AccountTerms from "./accountTerms";
 import BillingDetails from "./billingDetails";
 import PrimaryContactPerson from "./primaryContactPerson";
+import ProofOfIdentity from "./proofOfIdentity";
 
 const CAA = () => {
 
@@ -25,6 +26,7 @@ const CAA = () => {
       <AccountTerms />
       <BillingDetails />
       <PrimaryContactPerson />
+      <ProofOfIdentity />
     </Container>
   );
 };

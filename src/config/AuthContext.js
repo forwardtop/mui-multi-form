@@ -41,14 +41,24 @@ export const AuthProvider = ({ children }) => {
     accountName: "",
     idCheck: "",
     copyBills: "",
+    birthDate:"1989-10-09",
+    expiryDate:new Date().toISOString().split('T')[0],
+    signDate:new Date().toISOString().split('T')[0]
   });
 
-  const handleChange = (event) => {
-    const { name, value, type, checked } = event.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: type === "checkbox" ? checked : value,
-    }));
+  const handleChange = (eventOrDate, name) => {
+    if (name) {
+      setFormData((prevData) => ({
+        ...prevData,
+        [name]: eventOrDate, 
+      }));
+    } else {
+      const { name, value, type, checked } = eventOrDate.target;
+      setFormData((prevData) => ({
+        ...prevData,
+        [name]: type === "checkbox" ? checked : value,
+      }));
+    }
   };
 
   const contextValue = {
