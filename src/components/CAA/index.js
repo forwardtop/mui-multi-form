@@ -1,6 +1,5 @@
 import React from "react";
 import { Container } from "@mui/material";
-import CIFHeader from "./CifHeader";
 import OfficeUse from "./OfficeUse";
 import ClientDetails from "./ClientDetails";
 import BusinessMarketSector from "./BusinessMarketSector";
@@ -13,6 +12,7 @@ import PrimaryContactPerson from "./PrimaryContactPerson";
 import ProofOfIdentity from "./ProofOfIdentity";
 import PersonalDirectorGuarantee from "./PersonalDirectorGuarantee";
 import DeclarationGuarantor from "./DeclarationGuarantor";
+import CIFHeader from "./CifHeader";
 
 const CAA = () => {
   return (
