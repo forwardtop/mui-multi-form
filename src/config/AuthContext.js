@@ -47,20 +47,21 @@ export const AuthProvider = ({ children }) => {
     declarationDate:new Date().toISOString().split('T')[0],
   });
 
-  const handleChange = (eventOrDate, name) => {
-    if (name) {
-      setFormData((prevData) => ({
-        ...prevData,
-        [name]: eventOrDate, 
-      }));
-    } else {
+  const handleChange = (eventOrDate, name = null) => {
+    if (eventOrDate && eventOrDate.target) {
       const { name, value, type, checked } = eventOrDate.target;
       setFormData((prevData) => ({
         ...prevData,
         [name]: type === "checkbox" ? checked : value,
       }));
+    } else {
+      setFormData((prevData) => ({
+        ...prevData,
+        [name]: eventOrDate, // For DatePicker, set the value using the name passed in
+      }));
     }
   };
+  
 
   const contextValue = {
     isAuthenticated: false, 

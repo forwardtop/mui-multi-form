@@ -139,7 +139,7 @@ const ClientDetails = ( ) => {
           <Grid
             item
             xs={12}
-            sm={2}
+            sm={3}
             sx={{ display: "flex", justifyContent: "flex-end" }}
           >
             <FormGroup
@@ -202,11 +202,12 @@ const ClientDetails = ( ) => {
             </FormGroup>
           </Grid>
         </Grid>
+        <Grid item sm={3}></Grid>
         <Grid item xs={12} sx={{ display: "flex" }}>
           <Grid
             item
             xs={12}
-            sm={2}
+            sm={3}
             sx={{
               display: "flex",
               flexDirection: "row",
@@ -220,7 +221,7 @@ const ClientDetails = ( ) => {
                 alignItems: "center",
               }}
             >
-              <Typography>Company</Typography>
+              <Typography>Company:</Typography>
               <Checkbox
                 color="primary"
                 name="company"
