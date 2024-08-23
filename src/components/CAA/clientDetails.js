@@ -270,7 +270,7 @@ const ClientDetails = ( ) => {
           >
             <Typography>Other:</Typography>
           </Grid>
-          <Grid item xs={12} sm={4}>
+          <Grid item xs={12} sm={3}>
             <TextField
               fullWidth
               name="other"
