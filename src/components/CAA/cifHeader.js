@@ -9,7 +9,6 @@ const CIFHeader = () => {
         display: "flex",
         alignItems: "flex-start",
         justifyContent: "space-between",
-        marginTop: "100px",
       }}
     >
       {/* Content Box */}

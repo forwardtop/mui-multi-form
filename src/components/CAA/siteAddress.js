@@ -177,7 +177,7 @@ const SiteAddress = ( ) => {
             <Grid item xs={12} sm={3}>
               <TextField
                 fullWidth
-                name="postcode"
+                name="state"
                 size="small"
                 variant="outlined"
                 value={formData.state}

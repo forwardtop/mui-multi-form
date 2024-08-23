@@ -8,3 +8,23 @@ body {
 code {
   font-family: 'DM Sans',sans-serif;
 }
+#pdfContent {
+  width: 100%;  /* Use the full width of the container */
+  min-height: 297mm;
+  padding: 20mm; /* Adjust as needed */
+  background: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  overflow: hidden; /* To prevent content from spilling out */
+}
+
+@media print {
+  #pdfContent {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    box-shadow: none;
+  }
+}
+.page-break {
+  page-break-before: always;
+}
