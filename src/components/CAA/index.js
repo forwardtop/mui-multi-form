@@ -1,18 +1,18 @@
 import React from "react";
 import { Container } from "@mui/material";
-import OfficeUse from "./OfficeUse";
-import ClientDetails from "./ClientDetails";
-import BusinessMarketSector from "./BusinessMarketSector";
-import SiteAddress from "./SiteAddress";
-import CompanyContactDetails from "./CompanyContactDetails";
-import ServiceDetails from "./ServiceDetails";
-import AccountTerms from "./AccountTerms";
-import BillingDetails from "./BillingDetails";
-import PrimaryContactPerson from "./PrimaryContactPerson";
-import ProofOfIdentity from "./ProofOfIdentity";
-import PersonalDirectorGuarantee from "./PersonalDirectorGuarantee";
-import DeclarationGuarantor from "./DeclarationGuarantor";
-import CIFHeader from "./CifHeader";
+import OfficeUse from "./officeUse";
+import ClientDetails from "./clientDetails";
+import BusinessMarketSector from "./businessMarketSector";
+import SiteAddress from "./siteAddress";
+import CompanyContactDetails from "./companyContactDetails";
+import ServiceDetails from "./serviceDetails";
+import AccountTerms from "./accountTerms";
+import BillingDetails from "./billingDetails";
+import PrimaryContactPerson from "./primaryContactPerson";
+import ProofOfIdentity from "./proofOfIdentity";
+import PersonalDirectorGuarantee from "./personalDirectorGuarantee";
+import DeclarationGuarantor from "./declarationGuarantor";
+import CIFHeader from "./cifHeader";
 
 const CAA = () => {
   return (
