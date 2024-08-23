@@ -11,7 +11,6 @@ code {
 #pdfContent {
   width: 100%;  /* Use the full width of the container */
   min-height: 297mm;
-  padding: 20mm; /* Adjust as needed */
 }
 .pdf-container {
   background: white;

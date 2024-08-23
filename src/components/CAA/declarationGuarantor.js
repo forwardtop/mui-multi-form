@@ -90,7 +90,7 @@ const DeclarationGuarantor = () => {
             alignItems: "center",
           }}
         >
-          <img src="/images/direct.svg" alt="direct" width={180} />
+          <img src="/images/direct.png" alt="direct" width={180} />
         </Grid>
         <Grid item xs={12} sm={9}>
           <Grid container spacing={1} sx={{ paddingLeft: "3.5rem" }}>

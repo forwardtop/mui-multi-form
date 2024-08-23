@@ -74,7 +74,7 @@ const AccountTerms = () => {
                     color="primary"
                     name="monthlyReoccurringCostDays"
                     checked={Boolean(
-                      Number(formData.monthlyReoccurringCostDays)
+                      Number(formData.monthlyReoccurringCost14Days)
                     )}
                     onChange={handleChange}
                   />
@@ -119,9 +119,9 @@ const AccountTerms = () => {
                 control={
                   <Checkbox
                     color="primary"
-                    name="monthlyReoccurringCostCOD"
+                    name="equipmentPurchasesCOD"
                     checked={Boolean(
-                      Number(formData.monthlyReoccurringCostCOD)
+                      Number(formData.equipmentPurchasesCOD)
                     )}
                     onChange={handleChange}
                   />
@@ -132,9 +132,9 @@ const AccountTerms = () => {
                 control={
                   <Checkbox
                     color="primary"
-                    name="monthlyReoccurringCost7Days"
+                    name="equipmentPurchases7Days"
                     checked={Boolean(
-                      Number(formData.monthlyReoccurringCost7Days)
+                      Number(formData.equipmentPurchases7Days)
                     )}
                     onChange={handleChange}
                   />

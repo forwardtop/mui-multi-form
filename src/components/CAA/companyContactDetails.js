@@ -117,8 +117,8 @@ const ServiceDetails = () => {
             <Typography>End Point(EP):</Typography>
             <Checkbox
               color="primary"
-              name="trader"
-              checked={Boolean(Number(formData.trader))}
+              name="faxEndPoint"
+              checked={Boolean(Number(formData.faxEndPoint))}
               onChange={handleChange}
               sx={{ marginLeft: 1 }}
             />
@@ -191,8 +191,8 @@ const ServiceDetails = () => {
             <Typography>End Point(EP):</Typography>
             <Checkbox
               color="primary"
-              name="trader"
-              checked={Boolean(Number(formData.trader))}
+              name="telEndPoint"
+              checked={Boolean(Number(formData.telEndPoint))}
               onChange={handleChange}
               sx={{ marginLeft: 1 }}
             />

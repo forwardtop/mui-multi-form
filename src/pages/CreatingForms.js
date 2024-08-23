@@ -30,7 +30,14 @@ const CreatingForms = () => {
   const location = useLocation();
   const { selectedForms } = location.state || { selectedForms: [] };
   const [loading, setLoading] = useState(false);
-
+  const [sending, setSending] = useState(false);
+  const sendingEmail = () => {
+    setSending(true); // Start sending email
+    // Simulate sending email
+    setTimeout(() => {
+      setSending(false); // Stop sending email after 5 seconds
+    }, 2000);
+  }
   const generatePDF = () => {
     setLoading(true); // Start loading
 
@@ -102,7 +109,7 @@ const CreatingForms = () => {
         <Typography variant="h6">No forms selected.</Typography>
       )}
     </Container>
-    <div style={{ display: "flex", justifyContent: "center" }}>
+    <div style={{ display: "flex", justifyContent: "center", marginBottom:"3rem" }}>
         <Button
           variant="outlined"
           color="primary"
@@ -116,6 +123,21 @@ const CreatingForms = () => {
             </>
           ) : (
             "Download PDF"
+          )}
+        </Button>
+        <Button
+          variant="outlined"
+          color="primary"
+          onClick={sendingEmail}
+          sx={{ marginTop: "2rem", marginLeft: "2rem" }}
+        >
+          {sending ? (
+            <>
+              Sending PDF...
+              <CircularProgress size={18} sx={{marginLeft:'5px'}} />
+            </>
+          ) : (
+            "Send PDF"
           )}
         </Button>
       </div>
