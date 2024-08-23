@@ -38,7 +38,7 @@ const BusinessMarketSector = ( ) => {
                 color="secondary.main"
                 sx={{ marginLeft: "0.5rem" }}
               >
-                Business Market Sector
+                Business Market Sector 
               </Typography>
             </Box>
           </Box>
