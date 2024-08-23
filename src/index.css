@@ -25,6 +25,3 @@ code {
     box-shadow: none;
   }
 }
-.page-break {
-  page-break-before: always;
-}

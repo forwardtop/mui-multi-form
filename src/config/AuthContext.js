@@ -85,6 +85,7 @@ export const AuthProvider = ({ children }) => {
     otherSpecifyText:"",
 
     birthDate:"1989-10-09",
+    dateEstablished:new Date().toISOString().split('T')[0],
     expiryDate:new Date().toISOString().split('T')[0],
     signDate:new Date().toISOString().split('T')[0],
     declarationDate:new Date().toISOString().split('T')[0],
@@ -98,9 +99,12 @@ export const AuthProvider = ({ children }) => {
         [name]: type === "checkbox" ? checked : value,
       }));
     } else {
+      const { name, value } = eventOrDate.target;
+      const newValue = value === 'yes' ? true : false;
       setFormData((prevData) => ({
         ...prevData,
         [name]: eventOrDate, // For DatePicker, set the value using the name passed in
+        target: { name, value: newValue } 
       }));
     }
   };
