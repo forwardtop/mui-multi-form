@@ -16,6 +16,22 @@ const theme = createTheme({
       main: "rgb(244, 67, 54)",
     },
   },
+  components: {
+    MuiContainer: {
+      styleOverrides: {
+        root: {
+          margin: '0 auto',
+          padding: '10mm',
+          boxSizing: 'border-box',
+        },
+      },
+    },
+  },
+  // Alternatively, define a custom key
+  customDimensions: {
+    a4Width: '210mm',
+    a4Height: '297mm',
+  },
 });
 
 // Create a root element

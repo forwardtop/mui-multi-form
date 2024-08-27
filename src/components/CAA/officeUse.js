@@ -5,7 +5,7 @@ const OfficeUse = ( ) => {
   const { formData, handleChange } = useContext(AuthContext);
 
   return (
-    <Box sx={{ marginY: "3rem" }}>
+    <Box>
       <Grid container spacing={1.5}>
         <Grid item xs={12} sm={6} sx={{ paddingTop: "0px!important" }}>
           <Typography

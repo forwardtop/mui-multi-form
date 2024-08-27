@@ -9,16 +9,15 @@ const CIFHeader = () => {
         display: "flex",
         alignItems: "flex-start",
         justifyContent: "space-between",
-        marginTop:"5rem"
       }}
     >
       {/* Content Box */}
-      <Box sx={{ display: "flex" }}>
+      <Box sx={{ display: "flex", marginTop:"-40px" }}>
         <Box>
           <img
             src="/images/UC8 Logo - Square.png"
             alt="Company Logo"
-            style={{ maxWidth: "300px", maxHeight: "100px", display: "" }}
+            style={{ maxWidth: "300px", maxHeight: "100px"}}
           />
         </Box>
         <Box sx={{ marginLeft: "20px" }}>

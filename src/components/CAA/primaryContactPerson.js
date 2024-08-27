@@ -7,7 +7,6 @@ const PrimaryContactPerson = () => {
   return (
     <Box
       sx={{
-        marginBottom: "2rem",
         paddingY: "0.5rem",
         borderTop: "2px solid #000",
       }}

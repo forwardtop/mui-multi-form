@@ -18,9 +18,8 @@ const ClientDetails = () => {
   return (
     <Box
       sx={{
-        marginBottom: "2rem",
-        paddingY: "0.5rem",
         borderTop: "2px solid #000",
+        marginTop: "5px"
       }}
     >
       <Box sx={{ display: "flex" }}>

@@ -90,24 +90,6 @@ export const AuthProvider = ({ children }) => {
     signDate:new Date().toISOString().split('T')[0],
     declarationDate:new Date().toISOString().split('T')[0],
   });
-
-  // const handleChange = (eventOrDate, name = null) => {
-  //   if (eventOrDate && eventOrDate.target) {
-  //     const { name, value, type, checked } = eventOrDate.target;
-  //     setFormData((prevData) => ({
-  //       ...prevData,
-  //       [name]: type === "checkbox" ? checked : value,
-  //     }));
-  //   } else {
-  //     const { name, value } = eventOrDate.target;
-  //     const newValue = value === 'yes' ? true : false;
-  //     setFormData((prevData) => ({
-  //       ...prevData,
-  //       [name]: eventOrDate, // For DatePicker, set the value using the name passed in
-  //       target: { name, value: newValue } 
-  //     }));
-  //   }
-  // };
   
   const handleChange = (eventOrDate, name = null) => {
     if (eventOrDate && eventOrDate.target) {
