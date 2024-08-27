@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from "react";
+import React, { useContext, useState } from "react";
 import {
   Box,
   Grid,
@@ -6,7 +6,6 @@ import {
   TextField,
   Checkbox,
   FormGroup,
-  Button,
 } from "@mui/material";
 import { AuthContext } from "../../config/AuthContext";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
@@ -14,16 +13,17 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
 import dayjs from "dayjs";
-import ReactSignatureCanvas from "react-signature-canvas";
+import SignatureModal from "../signatureModal";
 
 const ProofOfIdentity = () => {
   const { formData, handleChange } = useContext(AuthContext);
-  const sigPad = useRef(null); // Reference to the signature canvas
+  const [signature, setSignature] = useState(null);
+  const [isModalOpen, setModalOpen] = useState(false);
+  const handleOpenModal = () => setModalOpen(true);
+  const handleCloseModal = () => setModalOpen(false);
 
-  const clearSignature = () => {
-    if (sigPad.current) {
-      sigPad.current.clear(); // Clear the signature
-    }
+  const saveSignature = (data) => {
+    setSignature(data);
   };
 
   return (
@@ -449,9 +449,14 @@ const ProofOfIdentity = () => {
                     </DemoContainer>
                   </LocalizationProvider>
                 </Grid>
-                <Grid item xs={12} sm={6} sx={{display:'flex', alignItems:'center'}}>
-                   <span>DD / MM / YYY</span> 
-                  </Grid>
+                <Grid
+                  item
+                  xs={12}
+                  sm={6}
+                  sx={{ display: "flex", alignItems: "center" }}
+                >
+                  <span>DD / MM / YYY</span>
+                </Grid>
                 <Grid
                   item
                   xs={12}
@@ -459,7 +464,7 @@ const ProofOfIdentity = () => {
                   sx={{
                     display: "flex",
                     alignItems: "center",
-                    justifyContent: "flex-end",
+                    justifyContent:'flex-end'
                   }}
                 >
                   <Typography>Signature:</Typography>
@@ -468,34 +473,40 @@ const ProofOfIdentity = () => {
                   <Grid
                     item
                     xs={12}
-                    sm={10}
-                    sx={{ border: "1px solid #0000003b" }}
+                    sx={{
+                      width: "100%",
+                      height: "auto",
+                      cursor: "pointer",
+                      justifyContent: "center",
+                      display: "flex",
+                      alignItems: "center",
+                      border: "solid 1px #0000003b",
+                    }}
+                    onClick={handleOpenModal}
                   >
-                    <ReactSignatureCanvas
-                      ref={sigPad}
-                      penColor="black"
-                      canvasProps={{
-                        width: 500,
-                        height: 80,
-                        className: "sigCanvas",
-                      }}
-                    />
+                    {signature ? (
+                      <img
+                        src={signature}
+                        alt="Signature"
+                        style={{
+                          height: "auto",
+                        }}
+                      />
+                    ) : (
+                      <Typography>Click to Sign</Typography>
+                    )}
                   </Grid>
-                </Grid>
-                <Grid item xs={12} sm={10} sx={{ textAlign: "center" }}>
-                  <Button
-                    variant="contained"
-                    color="secondary"
-                    onClick={clearSignature}
-                  >
-                    Clear Signature
-                  </Button>
                 </Grid>
               </Grid>
             </Grid>
           </Grid>
         </Grid>
       </Grid>
+      <SignatureModal
+        open={isModalOpen}
+        handleClose={handleCloseModal}
+        saveSignature={saveSignature}
+      />
     </Box>
   );
 };

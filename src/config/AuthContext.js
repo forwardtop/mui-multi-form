@@ -91,25 +91,42 @@ export const AuthProvider = ({ children }) => {
     declarationDate:new Date().toISOString().split('T')[0],
   });
 
+  // const handleChange = (eventOrDate, name = null) => {
+  //   if (eventOrDate && eventOrDate.target) {
+  //     const { name, value, type, checked } = eventOrDate.target;
+  //     setFormData((prevData) => ({
+  //       ...prevData,
+  //       [name]: type === "checkbox" ? checked : value,
+  //     }));
+  //   } else {
+  //     const { name, value } = eventOrDate.target;
+  //     const newValue = value === 'yes' ? true : false;
+  //     setFormData((prevData) => ({
+  //       ...prevData,
+  //       [name]: eventOrDate, // For DatePicker, set the value using the name passed in
+  //       target: { name, value: newValue } 
+  //     }));
+  //   }
+  // };
+  
   const handleChange = (eventOrDate, name = null) => {
     if (eventOrDate && eventOrDate.target) {
+      // Handles input fields like text, checkbox, etc.
       const { name, value, type, checked } = eventOrDate.target;
       setFormData((prevData) => ({
         ...prevData,
         [name]: type === "checkbox" ? checked : value,
       }));
     } else {
-      const { name, value } = eventOrDate.target;
-      const newValue = value === 'yes' ? true : false;
+      // Handles DatePicker or other cases where eventOrDate is not an event object
+      const dateName = name; // Use the name passed as an argument
       setFormData((prevData) => ({
         ...prevData,
-        [name]: eventOrDate, // For DatePicker, set the value using the name passed in
-        target: { name, value: newValue } 
+        [dateName]: eventOrDate,
       }));
     }
   };
   
-
   const contextValue = {
     isAuthenticated: false, 
     authToken: "", 
