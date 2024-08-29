@@ -1,12 +1,12 @@
 import React from 'react';
 import { Typography, Box } from '@mui/material';
 
-const CIF = () => {
+const AAF = () => {
   return (
     <Box>
-      <Typography variant="h5">CIF Form</Typography>
+      <Typography variant="h5">AAF Form</Typography>
     </Box>
   );
 };
 
-export default CIF;
+export default AAF;

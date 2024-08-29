@@ -10,49 +10,49 @@ import {
 import { useNavigate } from "react-router-dom";
 const listsData = [
   {
-    title: "Credit Account Application (CAA)",
-    form: "CAA",
-    checked: false,
-  },
-  {
-    title: "Client Information Form (CIF)",
-    form: "CIF",
-    checked: false,
-  },
-  {
-    title: "Client Collection Form (CCF)",
+    title: "Form 1 | Client Collection Form (CCF)  ",
     form: "CCF",
-    checked: false,
+    checked: true,
   },
   {
-    title: "Voice Application Form (VAF)",
+    title: "Form 2 | Client Account Application Form (CAA)",
+    form: "CAA",
+    checked: true,
+  },
+  {
+    title: "Form 3 | Voice Application Form (VAF)",
     form: "VAF",
-    checked: false,
+    checked: true,
   },
   {
-    title: "Automatic Payment Authority (APA)",
-    form: "APA",
-    checked: false,
-  },
-  {
-    title: "Porting Application Form (PAF)",
+    title: "Form 4 | Porting Application Form (PAF)",
     form: "PAF",
-    checked: false,
+    checked: true,
   },
   {
-    title: "Internet Application Form (IAF)",
+    title: "Form 5 | Internet Application Form (IAF)",
     form: "IAF",
-    checked: false,
+    checked: true,
   },
   {
-    title: "Terms & Conditions of Trade (TCT)",
-    form: "TCT",
-    checked: false,
-  },
-  {
-    title: "Offsite Backup & Storage (OBS)",
+    title: "Form 6 | Offsite Backup Form (OBS)",
     form: "OBS",
-    checked: false,
+    checked: true,
+  },
+  {
+    title: "Form 7 | Alarm Application Form (AAF)",
+    form: "AAF",
+    checked: true,
+  },
+  {
+    title: "Form 8 | Automatic Payment Authority (APA)",
+    form: "APA",
+    checked: true,
+  },
+  {
+    title: "Form 9 | Terms and Conditions (TCT)",
+    form: "TCT",
+    checked: true,
   },
 ];
 
@@ -81,12 +81,10 @@ const FormCards = () => {
   };
   return (
     <Container
-      maxWidth="sm"
       sx={{
         height: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
+        width: "700px",
+        margin:'auto'
       }}
     >
       <Typography variant="h4"></Typography>

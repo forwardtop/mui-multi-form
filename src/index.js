@@ -27,11 +27,6 @@ const theme = createTheme({
       },
     },
   },
-  // Alternatively, define a custom key
-  customDimensions: {
-    a4Width: '210mm',
-    a4Height: '297mm',
-  },
 });
 
 // Create a root element

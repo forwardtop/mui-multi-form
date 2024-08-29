@@ -1,12 +1,15 @@
-import React from 'react';
-import { Typography, Box } from '@mui/material';
+import React from "react";
+import { Container } from "@mui/material";
+import OfficeUse from "./officeUse";
+import VAFHeader from "./vafHeader";
 
-const VAF = () => {
+const CAA = () => {
   return (
-    <Box>
-      <Typography variant="h5">VAF Form</Typography>
-    </Box>
+    <Container maxWidth="lg" sx={{ marginTop: "2rem" }}>
+        <VAFHeader />
+        <OfficeUse />
+    </Container>
   );
 };
 
-export default VAF;
+export default CAA;

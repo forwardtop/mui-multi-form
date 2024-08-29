@@ -7,19 +7,20 @@ import html2canvas from "html2canvas";
 // Import your form components here
 import CCF from '../components/CCF/index.js';
 import CAA from '../components/CAA/index.js';
-import IAF from '../components/IAF/index.js';
-import CIF from '../components/CIF/index.js';
-import TCT from '../components/TCT/index.js';
-import OBS from '../components/OBS/index.js';
-import APA from '../components/APA/index.js';
 import VAF from '../components/VAF/index.js';
 import PAF from '../components/PAF/index.js';
+import IAF from '../components/IAF/index.js';
+import OBS from '../components/OBS/index.js';
+import APA from '../components/APA/index.js';
+import AAF from '../components/AAF/index.js';
+import TCT from '../components/TCT/index.js';
+
 
 const formComponents = {
   CCF: CCF,
   CAA: CAA,
   IAF: IAF,
-  CIF: CIF,
+  AAF: AAF,
   TCT: TCT,
   OBS: OBS,
   APA: APA,
