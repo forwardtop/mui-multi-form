@@ -5,6 +5,7 @@ import VAFHeader from "./vafHeader";
 import CustomerDetails from "./customerDetails";
 import SiteAddress from "./siteAddress";
 import PrimaryContactPerson from "./primaryContactPerson";
+import ContactDetails from "./contactDetails";
 
 const CAA = () => {
   return (
@@ -14,6 +15,7 @@ const CAA = () => {
         <CustomerDetails />
         <SiteAddress />
         <PrimaryContactPerson />
+        <ContactDetails />
     </Container>
   );
 };
