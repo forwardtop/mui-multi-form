@@ -89,7 +89,7 @@ export const VAFSectionTitles = {
   mobileNumber: {
     number: "7",
     title: "Mobile Numbers",
-    description: "",
+    description: "Please list your mobile telephone numbers below that you want to transfer to UC8.",
   },
   serviceDetails: {
     number: "8",

@@ -82,6 +82,7 @@ export const AuthProvider = ({ children }) => {
     rentRecept: true,
     card18: true,
     otherSpecify: true,
+    requestAFS: false,
     otherSpecifyText:"",
 
     birthDate:"1989-10-09",

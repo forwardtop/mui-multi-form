@@ -25,3 +25,61 @@ code {
     box-shadow: none;
   }
 }
+.brace-right {
+  display: block;
+  min-height: 35px;
+  width: 0;
+  padding-left: 20px;
+  position: relative;
+  margin: 15px 0 15px 15px;
+  background-image: radial-gradient(
+      circle at 20px 0,
+      rgba(0, 0, 0, 0) 15px, /* Transparent */
+      #000 15.5px, /* Black */
+      #000 19px,   /* Black */
+      rgba(0, 0, 0, 0) 19.5px /* Transparent */
+    ),
+    radial-gradient(
+      circle at 20px 35px,
+      rgba(0, 0, 0, 0) 15px, /* Transparent */
+      #000 15.5px, /* Black */
+      #000 19px,   /* Black */
+      rgba(0, 0, 0, 0) 19.5px /* Transparent */
+    );
+  background-size: 20px 35px;
+  background-position: right center;
+  background-repeat: no-repeat;
+}
+
+.brace-right:before {
+  content: '';
+  width: 70%;
+  height: 50%;
+  border-right: 4px solid #000; /* Black */
+  border-top: 1px solid #000;   /* Black */
+  border-top-right-radius: 30px;
+  position: absolute;
+  top: -15px;
+  left: 0;
+  box-sizing: border-box;
+  margin-left: -9px;
+}
+
+.brace-right:after {
+  content: '';
+  width: 70%;
+  height: 50%;
+  border-right: 4px solid #000; /* Black */
+  border-bottom: 1px solid #000; /* Black */
+  border-bottom-right-radius: 30px;
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+  box-sizing: border-box;
+  margin-left: -9px;
+}
+.vertical-text {
+  writing-mode: vertical-lr; /* Makes the text vertical from left to right */
+  transform: rotate(180deg); /* Rotates the text 180 degrees */
+  margin-left:50px;
+}

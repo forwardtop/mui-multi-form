@@ -320,37 +320,51 @@ const ClientDetails = () => {
             display: "flex",
             alignItems: "flex-start",
             marginTop: "10px",
-            justifyContent:'flex-end'
+            justifyContent: "flex-end",
           }}
         >
           <Typography>Registered GST:</Typography>
         </Grid>
-        <Grid item xs={12} sm={1.4} sx={{ display: "flex", justifyContent: "flex-end" }}>
-        <FormGroup sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
-          <Typography>Yes:</Typography>
-          <Checkbox
-            color="primary"
-            name="registeredGST"
-            value="yes"
-            checked={formData.registeredGST === true}
-            onChange={handleChange}
-            sx={{ marginLeft: 1 }}
-          />
-        </FormGroup>
-      </Grid>
-      <Grid item xs={12} sm={1.4} sx={{ display: "flex", justifyContent: "flex-end" }}>
-        <FormGroup sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
-          <Typography>No:</Typography>
-          <Checkbox
-            color="primary"
-            name="registeredGST"
-            value="no"
-            checked={formData.registeredGST === false}
-            onChange={handleChange}
-            sx={{ marginLeft: 1 }}
-          />
-        </FormGroup>
-      </Grid>
+        <Grid
+          item
+          xs={12}
+          sm={1.4}
+          sx={{ display: "flex", justifyContent: "flex-end" }}
+        >
+          <FormGroup
+            sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}
+          >
+            <Typography>Yes:</Typography>
+            <Checkbox
+              color="primary"
+              name="registeredGST"
+              value="yes"
+              checked={formData.registeredGST === true}
+              onChange={handleChange}
+              sx={{ marginLeft: 1 }}
+            />
+          </FormGroup>
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          sm={1.4}
+          sx={{ display: "flex", justifyContent: "flex-end" }}
+        >
+          <FormGroup
+            sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}
+          >
+            <Typography>No:</Typography>
+            <Checkbox
+              color="primary"
+              name="registeredGST"
+              value="no"
+              checked={formData.registeredGST === false}
+              onChange={handleChange}
+              sx={{ marginLeft: 1 }}
+            />
+          </FormGroup>
+        </Grid>
       </Grid>
     </Box>
   );
