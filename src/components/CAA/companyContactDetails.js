@@ -8,6 +8,8 @@ import {
   Checkbox,
 } from "@mui/material";
 import { AuthContext } from "../../config/AuthContext";
+import { sectionTitle } from "../../utils/sectionTitleUtils";
+import { CIFSectionTitles } from "../../constants/sectionTitles";
 const ServiceDetails = () => {
   const { formData, handleChange } = useContext(AuthContext);
 
@@ -19,36 +21,11 @@ const ServiceDetails = () => {
         borderTop: "2px solid #000",
       }}
     >
-      <Box sx={{ display: "flex" }}>
-        <Box>
-          <Typography
-            variant="h6"
-            gutterBottom
-            color="secondary.main"
-            sx={{
-              backgroundColor: "black",
-              color: "white",
-              width: "1.8rem",
-              height: "1.8rem",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              padding: "0.5rem",
-            }}
-          >
-            5
-          </Typography>
-        </Box>
-        <Box>
-          <Typography
-            variant="h6"
-            color="secondary.main"
-            sx={{ marginLeft: "0.5rem" }}
-          >
-            Company Contact Details
-          </Typography>
-        </Box>
-      </Box>
+      {sectionTitle(
+        CIFSectionTitles.companyContactDetails.number,
+        CIFSectionTitles.companyContactDetails.title,
+        CIFSectionTitles.companyContactDetails.description
+      )}
       <Grid container spacing={1.5} sx={{ paddingLeft: "3.5rem" }}>
         <Grid
           item

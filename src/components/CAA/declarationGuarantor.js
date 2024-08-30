@@ -7,6 +7,8 @@ import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
 import dayjs from "dayjs";
 import SignatureModal from "../signatureModal";
+import { sectionTitle } from "../../utils/sectionTitleUtils";
+import { CIFSectionTitles } from "../../constants/sectionTitles";
 
 const DeclarationGuarantor = () => {
   const { formData, handleChange } = useContext(AuthContext);
@@ -28,57 +30,11 @@ const DeclarationGuarantor = () => {
         borderTop: "2px solid #000",
       }}
     >
-      <Box sx={{ display: "flex" }}>
-        <Box>
-          <Typography
-            variant="h6"
-            gutterBottom
-            color="secondary.main"
-            sx={{
-              backgroundColor: "black",
-              color: "white",
-              width: "1.8rem",
-              height: "1.8rem",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              padding: "0.5rem",
-            }}
-          >
-            12
-          </Typography>
-        </Box>
-        <Box>
-          <Typography
-            variant="h6"
-            color="secondary.main"
-            sx={{ marginLeft: "0.5rem" }}
-          >
-            Declaration / Guarantor
-          </Typography>
-        </Box>
-      </Box>
-      <Box sx={{ paddingLeft: "3.5rem" }}>
-        <Typography
-          variant="paragraph"
-          color="secondary.main"
-          sx={{ fontSize: "14px" }}
-        >
-          I certify that the above information is true and correct and that I
-          accept the supply of credit by the Seller (if applicable). I have read
-          and understand the TERMS AND CONDITIONS OF TRADE (overleaf or
-          attached) of UC8 Australia Pty Ltd which form part of, and are
-          intended to be read in conjunction with this Application and Client
-          Information Form and agree to be bound by these conditions. I
-          authorise the use of my personal information as detailed in the
-          Privacy Act clause therein. I agree that if I am a
-          director/shareholder (owning at least 15% of the shares) of the Client
-          I shall be personally liable for the performance of the Client’s
-          obligations under this contract. I am an authorised person of the
-          company or entity and I am authorised to enter into this agreement.
-        </Typography>
-      </Box>
-
+     {sectionTitle(
+        CIFSectionTitles.declaration.number,
+        CIFSectionTitles.declaration.title,
+        CIFSectionTitles.declaration.description
+      )}
       <Grid container sx={{ paddingLeft: "3.5rem", marginTop: "2rem" }}>
         <Grid
           item

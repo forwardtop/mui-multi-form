@@ -3,7 +3,7 @@ import { Box, Typography } from "@mui/material";
 
 export const sectionTitle = (number, title, description) => (
   <>
-    <Box sx={{ display: "flex" }}>
+    <Box sx={{ display: "flex" , alignItems:"center"}}>
       <Box>
         <Typography
           variant="h6"
@@ -18,6 +18,7 @@ export const sectionTitle = (number, title, description) => (
             alignItems: "center",
             justifyContent: "center",
             padding: "0.5rem",
+            margin:"0"
           }}
         >
           {number}

@@ -1,5 +1,7 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
+import { sectionTitle } from "../../utils/sectionTitleUtils";
+import { CIFSectionTitles } from "../../constants/sectionTitles";
 
 const PersonalDirectorGuarantee = () => {
   return (
@@ -10,46 +12,18 @@ const PersonalDirectorGuarantee = () => {
         borderTop: "2px solid #000",
       }}
     >
-      <Box sx={{ display: "flex" }}>
-        <Box>
-          <Typography
-            variant="h6"
-            gutterBottom
-            color="secondary.main"
-            sx={{
-              backgroundColor: "black",
-              color: "white",
-              width: "1.8rem",
-              height: "1.8rem",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              padding: "0.5rem",
-            }}
-          >
-            11
-          </Typography>
-        </Box>
-        <Box>
-          <Typography
-            variant="h6"
-            color="secondary.main"
-            sx={{ marginLeft: "0.5rem" }}
-          >
-            Personal / Director Guarantee and Indemnity
-          </Typography>
-        </Box>
-      </Box>
-      <Box>
+    {sectionTitle(
+        CIFSectionTitles.personalGuarantee.number,
+        CIFSectionTitles.personalGuarantee.title,
+      )}
         <Typography
           variant="paragraph"
           color="secondary.main"
-          sx={{ marginLeft: "2.6rem", fontWeight: "bold", fontSize: "14px" }}
+          sx={{ marginLeft: "3.5rem", fontWeight: "bold", fontSize: "14px" }}
         >
           I/WE (also referred to as the “Guarantor/s”) UNCONDITIONALLY AND
           IRREVOCABLY
         </Typography>
-      </Box>
       <Box sx={{ paddingLeft: "3.5rem" }}>
         <Typography
           variant="paragraph"

@@ -27,7 +27,8 @@ export const CIFSectionTitles = {
   accountTerms: {
     number: "7",
     title: "Account Terms",
-    description: "",
+    description:
+      "Monthly Reoccurring Cost (MRC), UC8 will issue an electronic invoice which will be sent to your nominated email address. <br></br>Invoice are issued on the 1st day of each month but may vary from time to time.",
   },
   billingDetails: {
     number: "8",
@@ -48,11 +49,13 @@ export const CIFSectionTitles = {
   personalGuarantee: {
     number: "11",
     title: "Personal / Director Guarantee and Indemnity",
-    description: "",
+    description:
+      "I/WE (also referred to as the “Guarantor/s”) UNCONDITIONALLY AND IRREVOCABLY",
   },
   declaration: {
     number: "12",
     title: "Declaration / Guarantor",
-    description: "",
+    description:
+      "I certify that the above information is true and correct and that I accept the supply of credit by the Seller (if applicable). I have read and understand the TERMS AND CONDITIONS OF TRADE (overleaf or attached) of UC8 Australia Pty Ltd which form part of, and are intended to be read in conjunction with this Application and Client Information Form and agree to be bound by these conditions. I authorise the use of my personal information as detailed in the Privacy Act clause therein. I agree that if I am a director/shareholder (owning at least 15% of the shares) of the Client I shall be personally liable for the performance of the Client’s obligations under this contract. I am an authorised person of the company or entity and I am authorised to enter into this agreement.",
   },
 };

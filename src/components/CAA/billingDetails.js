@@ -6,6 +6,8 @@ import {
   TextField,
 } from "@mui/material";
 import { AuthContext } from "../../config/AuthContext";
+import { sectionTitle } from "../../utils/sectionTitleUtils";
+import { CIFSectionTitles } from "../../constants/sectionTitles";
 const BillingDetails = () => {
   const { formData, handleChange } = useContext(AuthContext);
 
@@ -17,36 +19,14 @@ const BillingDetails = () => {
         borderTop: "2px solid #000",
       }}
     >
-      <Box sx={{ display: "flex" }}>
-        <Box>
-          <Typography
-            variant="h6"
-            gutterBottom
-            color="secondary.main"
-            sx={{
-              backgroundColor: "black",
-              color: "white",
-              width: "1.8rem",
-              height: "1.8rem",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              padding: "0.5rem",
-            }}
-          >
-            8
-          </Typography>
-        </Box>
-        <Box>
-          <Typography
-            variant="h6"
-            color="secondary.main"
-            sx={{ marginLeft: "0.5rem" }}
-          >
-            Billing Details / Accounts Person <span style={{fontSize:'14px', fontStyle:'italic'}}> (The best person to contact regarding accounts and payments)</span>
-          </Typography>
-        </Box>
-      </Box>
+    <div style={{display:'flex', alignItems:'center'}}>
+    {sectionTitle(
+        CIFSectionTitles.billingDetails.number,
+        CIFSectionTitles.billingDetails.title,
+      )}
+      <Typography variant="h6" color="secondary.main" style={{fontSize:'14px', fontStyle:'italic', marginLeft:'-40px'}}>(The best person to contact regarding accounts and payments)</Typography>
+    </div>
+    
       <Grid container spacing={1} sx={{ paddingLeft: "3.5rem" }}>
         <Grid
           item

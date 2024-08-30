@@ -9,6 +9,8 @@ import {
   FormControlLabel,
 } from "@mui/material";
 import { AuthContext } from "../../config/AuthContext";
+import { sectionTitle } from "../../utils/sectionTitleUtils";
+import { CIFSectionTitles } from "../../constants/sectionTitles";
 const AccountTerms = () => {
   const { formData, handleChange } = useContext(AuthContext);
 
@@ -20,43 +22,13 @@ const AccountTerms = () => {
         borderTop: "2px solid #000",
       }}
     >
-      <Box sx={{ display: "flex" }}>
-        <Box>
-          <Typography
-            variant="h6"
-            gutterBottom
-            color="secondary.main"
-            sx={{
-              backgroundColor: "black",
-              color: "white",
-              width: "1.8rem",
-              height: "1.8rem",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              padding: "0.5rem",
-            }}
-          >
-            7
-          </Typography>
-        </Box>
-        <Box>
-          <Typography
-            variant="h6"
-            color="secondary.main"
-            sx={{ marginLeft: "0.5rem" }}
-          >
-            Account Terms
-          </Typography>
-        </Box>
-      </Box>
+      {sectionTitle(
+        CIFSectionTitles.accountTerms.number,
+        CIFSectionTitles.accountTerms.title,
+        CIFSectionTitles.accountTerms.description
+      )}
+
       <Box sx={{ marginLeft: "3.5rem" }}>
-        <Typography variant="p" sx={{ fontSize: "14px" }}>
-          Monthly Reoccurring Cost (MRC), UC8 will issue an electronic invoice
-          which will be sent to your nominated email address.
-          <br></br>Invoice are issued on the 1st day of each month but may vary
-          from time to time.
-        </Typography>
         <Grid container>
           <Grid
             item
@@ -111,7 +83,11 @@ const AccountTerms = () => {
             item
             xs={12}
             md={6}
-            sx={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+            }}
           >
             <Typography variant="p">Equipment Purchases:</Typography>
             <FormGroup sx={{ display: "flex", flexDirection: "row" }}>
@@ -120,9 +96,7 @@ const AccountTerms = () => {
                   <Checkbox
                     color="primary"
                     name="equipmentPurchasesCOD"
-                    checked={Boolean(
-                      Number(formData.equipmentPurchasesCOD)
-                    )}
+                    checked={Boolean(Number(formData.equipmentPurchasesCOD))}
                     onChange={handleChange}
                   />
                 }
@@ -133,9 +107,7 @@ const AccountTerms = () => {
                   <Checkbox
                     color="primary"
                     name="equipmentPurchases7Days"
-                    checked={Boolean(
-                      Number(formData.equipmentPurchases7Days)
-                    )}
+                    checked={Boolean(Number(formData.equipmentPurchases7Days))}
                     onChange={handleChange}
                   />
                 }
@@ -150,9 +122,7 @@ const AccountTerms = () => {
                   <Checkbox
                     color="primary"
                     name="equipmentPurchases14Days"
-                    checked={Boolean(
-                      Number(formData.equipmentPurchases14Days)
-                    )}
+                    checked={Boolean(Number(formData.equipmentPurchases14Days))}
                     onChange={handleChange}
                   />
                 }
@@ -166,9 +136,7 @@ const AccountTerms = () => {
                 <Checkbox
                   color="primary"
                   name="equipmentPurchasesOther"
-                  checked={Boolean(
-                    Number(formData.equipmentPurchasesOther)
-                  )}
+                  checked={Boolean(Number(formData.equipmentPurchasesOther))}
                   onChange={handleChange}
                 />
               }
@@ -188,7 +156,11 @@ const AccountTerms = () => {
             item
             xs={12}
             md={6}
-            sx={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+            }}
           >
             <Typography variant="p">Consumables:</Typography>
             <FormGroup sx={{ display: "flex", flexDirection: "row" }}>
@@ -197,9 +169,7 @@ const AccountTerms = () => {
                   <Checkbox
                     color="primary"
                     name="consumablesCOD"
-                    checked={Boolean(
-                      Number(formData.consumablesCOD)
-                    )}
+                    checked={Boolean(Number(formData.consumablesCOD))}
                     onChange={handleChange}
                   />
                 }
@@ -210,9 +180,7 @@ const AccountTerms = () => {
                   <Checkbox
                     color="primary"
                     name="consumables7Days"
-                    checked={Boolean(
-                      Number(formData.consumables7Days)
-                    )}
+                    checked={Boolean(Number(formData.consumables7Days))}
                     onChange={handleChange}
                   />
                 }
@@ -227,9 +195,7 @@ const AccountTerms = () => {
                   <Checkbox
                     color="primary"
                     name="consumables14Days"
-                    checked={Boolean(
-                      Number(formData.consumables14Days)
-                    )}
+                    checked={Boolean(Number(formData.consumables14Days))}
                     onChange={handleChange}
                   />
                 }
@@ -243,9 +209,7 @@ const AccountTerms = () => {
                 <Checkbox
                   color="primary"
                   name="consumablesOther"
-                  checked={Boolean(
-                    Number(formData.consumablesOther)
-                  )}
+                  checked={Boolean(Number(formData.consumablesOther))}
                   onChange={handleChange}
                 />
               }

@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { Box, Grid, Typography, FormGroup, Checkbox } from "@mui/material";
 import { AuthContext } from "../../config/AuthContext";
+import { sectionTitle } from "../../utils/sectionTitleUtils";
+import { CIFSectionTitles } from "../../constants/sectionTitles";
 const CompanyContactDetails = () => {
   const { formData, handleChange } = useContext(AuthContext);
 
@@ -12,36 +14,11 @@ const CompanyContactDetails = () => {
         borderTop: "2px solid #000",
       }}
     >
-      <Box sx={{ display: "flex" }}>
-        <Box>
-          <Typography
-            variant="h6"
-            gutterBottom
-            color="secondary.main"
-            sx={{
-              backgroundColor: "black",
-              color: "white",
-              width: "1.8rem",
-              height: "1.8rem",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              padding: "0.5rem",
-            }}
-          >
-            6
-          </Typography>
-        </Box>
-        <Box>
-          <Typography
-            variant="h6"
-            color="secondary.main"
-            sx={{ marginLeft: "0.5rem" }}
-          >
-            Service Details
-          </Typography>
-        </Box>
-      </Box>
+    {sectionTitle(
+        CIFSectionTitles.serviceDetails.number,
+        CIFSectionTitles.serviceDetails.title,
+        CIFSectionTitles.serviceDetails.description
+      )}
       <Grid item xs={12} sx={{ display: "flex", justifyContent:'space-between' }}>
         <Grid
           item

@@ -12,6 +12,8 @@ import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import dayjs from "dayjs";
+import { CIFSectionTitles } from "../../constants/sectionTitles";
+import { sectionTitle } from "../../utils/sectionTitleUtils";
 const ClientDetails = () => {
   const { formData, handleChange } = useContext(AuthContext);
 
@@ -22,36 +24,11 @@ const ClientDetails = () => {
         borderTop: "2px solid #000",
       }}
     >
-      <Box sx={{ display: "flex" }}>
-        <Box>
-          <Typography
-            variant="h6"
-            gutterBottom
-            color="secondary.main"
-            sx={{
-              backgroundColor: "black",
-              color: "white",
-              width: "1.8rem",
-              height: "1.8rem",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              padding: "0.5rem",
-            }}
-          >
-            2
-          </Typography>
-        </Box>
-        <Box>
-          <Typography
-            variant="h6"
-            color="secondary.main"
-            sx={{ marginLeft: "0.5rem" }}
-          >
-            Client Details
-          </Typography>
-        </Box>
-      </Box>
+      {sectionTitle(
+        CIFSectionTitles.clientDetails.number,
+        CIFSectionTitles.clientDetails.title,
+        CIFSectionTitles.clientDetails.description
+      )}
       <Grid container spacing={1.5} sx={{ paddingLeft: "3.5rem" }}>
         <Grid
           item
