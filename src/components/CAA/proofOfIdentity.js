@@ -14,6 +14,7 @@ import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
 import dayjs from "dayjs";
 import SignatureModal from "../signatureModal";
+import { CIFSectionTitles } from "../../constants/sectionTitles";
 import { sectionTitle } from "../../utils/sectionTitleUtils";
 
 const ProofOfIdentity = () => {
@@ -36,9 +37,9 @@ const ProofOfIdentity = () => {
       }}
     >
       {sectionTitle(
-        10,
-        "Proof of Identity",
-        "To satisfy 100 points of identification, please attach a copy of your drivers license (front and back) or Passport. If you do not have either of these, please provide another form of photo ID and a copy of your most recent bill from the list below."
+        CIFSectionTitles.proofOfIdentity.number,
+        CIFSectionTitles.proofOfIdentity.title,
+        CIFSectionTitles.proofOfIdentity.description
       )}
       <Grid
         container
