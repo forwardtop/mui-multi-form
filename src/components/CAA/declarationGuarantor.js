@@ -151,10 +151,10 @@ const DeclarationGuarantor = () => {
             <Grid item xs={12} sm={9.5}>
               <TextField
                 fullWidth
-                name="firstName"
+                name="middleName"
                 size="small"
                 variant="outlined"
-                value={formData.firstName}
+                value={formData.middleName}
                 onChange={handleChange}
               />
             </Grid>

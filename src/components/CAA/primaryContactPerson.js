@@ -107,7 +107,7 @@ const PrimaryContactPerson = () => {
             name="firstName"
             size="small"
             variant="outlined"
-            value={formData.firstName}
+            value={formData.middleName}
             onChange={handleChange}
           />
         </Grid>

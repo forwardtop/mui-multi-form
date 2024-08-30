@@ -138,40 +138,15 @@ const OfficeUse = ( ) => {
                     },
                   }}
                 >
-                  <Typography>Approved Credit:</Typography>
+                  <Typography>Provisioning Ticket:</Typography>
                 </Grid>
                 <Grid item xs={12} sm={8}>
                   <TextField
                     fullWidth
-                    name="approvedCredit"
+                    name="provisioningTicket"
                     size="small"
                     variant="outlined"
-                    value={formData.approvedCredit}
-                    onChange={handleChange}
-                  />
-                </Grid>
-                <Grid
-                  item
-                  xs={12}
-                  sm={4}
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: {
-                      xs: "flex-start",
-                      sm: "flex-end",
-                    },
-                  }}
-                >
-                  <Typography>Approved By:</Typography>
-                </Grid>
-                <Grid item xs={12} sm={8}>
-                  <TextField
-                    fullWidth
-                    name="approvedBy"
-                    size="small"
-                    variant="outlined"
-                    value={formData.approvedBy}
+                    value={formData.provisioningTicket}
                     onChange={handleChange}
                   />
                 </Grid>

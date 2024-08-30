@@ -14,6 +14,7 @@ import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
 import dayjs from "dayjs";
 import SignatureModal from "../signatureModal";
+import { sectionTitle } from "../../utils/sectionTitleUtils";
 
 const ProofOfIdentity = () => {
   const { formData, handleChange } = useContext(AuthContext);
@@ -34,48 +35,11 @@ const ProofOfIdentity = () => {
         borderTop: "2px solid #000",
       }}
     >
-      <Box sx={{ display: "flex" }}>
-        <Box>
-          <Typography
-            variant="h6"
-            gutterBottom
-            color="secondary.main"
-            sx={{
-              backgroundColor: "black",
-              color: "white",
-              width: "1.8rem",
-              height: "1.8rem",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              padding: "0.5rem",
-            }}
-          >
-            10
-          </Typography>
-        </Box>
-        <Box>
-          <Typography
-            variant="h6"
-            color="secondary.main"
-            sx={{ marginLeft: "0.5rem" }}
-          >
-            Proof of Identity
-          </Typography>
-        </Box>
-      </Box>
-      <Box sx={{ paddingLeft: "3.5rem" }}>
-        <Typography
-          variant="paragraph"
-          color="secondary.main"
-          sx={{ fontSize: "14px" }}
-        >
-          To satisfy 100 points of identification, please attach a copy of your
-          drivers license (front and back) or Passport. If you do not have
-          either of these, please provide another form of photo ID and a copy of
-          your most recent bill from the list below.
-        </Typography>
-      </Box>
+      {sectionTitle(
+        10,
+        "Proof of Identity",
+        "To satisfy 100 points of identification, please attach a copy of your drivers license (front and back) or Passport. If you do not have either of these, please provide another form of photo ID and a copy of your most recent bill from the list below."
+      )}
       <Grid
         container
         spacing={1}
@@ -107,10 +71,10 @@ const ProofOfIdentity = () => {
         >
           <TextField
             fullWidth
-            name="title"
+            name="driverLicenseNumber"
             size="small"
             variant="outlined"
-            value={formData.title}
+            value={formData.driverLicenseNumber}
             onChange={handleChange}
           />
         </Grid>
@@ -171,10 +135,10 @@ const ProofOfIdentity = () => {
         >
           <TextField
             fullWidth
-            name="title"
+            name="stateTerritory"
             size="small"
             variant="outlined"
-            value={formData.title}
+            value={formData.stateTerritory}
             onChange={handleChange}
           />
         </Grid>
@@ -464,7 +428,7 @@ const ProofOfIdentity = () => {
                   sx={{
                     display: "flex",
                     alignItems: "center",
-                    justifyContent:'flex-end'
+                    justifyContent: "flex-end",
                   }}
                 >
                   <Typography>Signature:</Typography>
