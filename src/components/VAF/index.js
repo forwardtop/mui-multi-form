@@ -8,6 +8,7 @@ import PrimaryContactPerson from "./primaryContactPerson";
 import ContactDetails from "./contactDetails";
 import AutomaticFailover from "./automaticFailover";
 import MobileNumbers from "./mobileNumbers";
+import ServiceDetails from "./searchDetails";
 
 const CAA = () => {
   return (
@@ -20,6 +21,7 @@ const CAA = () => {
         <ContactDetails />
         <AutomaticFailover />
         <MobileNumbers />
+        <ServiceDetails />
     </Container>
   );
 };
