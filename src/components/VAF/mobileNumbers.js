@@ -1,12 +1,10 @@
 // src/components/PrimaryContactPerson.js
-import React, { useContext } from "react";
+import React from "react";
 import { Box, Grid, TextField, Typography } from "@mui/material";
-import { AuthContext } from "../../config/AuthContext";
 import { sectionTitle } from "../../utils/sectionTitleUtils";
 import { VAFSectionTitles } from "../../constants/sectionTitles";
 
 const MobileNumbers = () => {
-  const { formData, handleChange } = useContext(AuthContext);
   const formRows = Array.from({ length: 12 });
   return (
     <Box
@@ -64,7 +62,7 @@ const MobileNumbers = () => {
           
         </Grid>
         <Grid container  sx={{ display: "flex" }}>
-          <Grid item xs={10}>
+          <Grid item xs={12}>
             {formRows.map((_, index) => (
               <Grid
                 container
@@ -125,15 +123,9 @@ const MobileNumbers = () => {
               </Grid>
             ))}
           </Grid>
-          <Grid item xs={1}>
-            <Grid item xs={1.5} sx={{display:"flex", alignItems:"center"}}>
-              <div className="brace-right" style={{ height: "600px" }}></div>
-              <div className="vertical-text"><b>Including call charges*</b></div>
-            </Grid>
-          </Grid>
         </Grid>
 
-        <Box sx={{ marginTop: "2rem" }}>
+        <Box sx={{ marginTop: "2rem", marginLeft:"3.5rem" }}>
           <Typography variant="body2">
             * Calls within Australia. Call charges apply for special service
             numbers and international calls.
