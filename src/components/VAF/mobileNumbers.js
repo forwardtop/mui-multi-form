@@ -21,19 +21,19 @@ const MobileNumbers = () => {
       )}
       <Box sx={{ padding: "2rem" }}>
         <Grid container spacing={1}>
-        <Grid item xs={10} sx={{display:'flex'}}>
+        <Grid item xs={12} sx={{display:'flex'}}>
         <Grid item xs={0.5}>
             <Typography
               variant="subtitle1"
               sx={{ textAlign: "center" }}
             ></Typography>
           </Grid>
-          <Grid item xs={2}>
+          <Grid item xs={2.5}>
             <Typography variant="subtitle1" sx={{ textAlign: "center" }}>
               Service<br></br> Number(s)
             </Typography>
           </Grid>
-          <Grid item xs={2}>
+          <Grid item xs={2.5}>
             <Typography variant="subtitle1" sx={{ textAlign: "center" }}>
               Service <br></br>Description
             </Typography>
@@ -48,12 +48,12 @@ const MobileNumbers = () => {
               MRO
             </Typography>
           </Grid>
-          <Grid item xs={1.5}>
+          <Grid item xs={1}>
             <Typography variant="subtitle1" sx={{ textAlign: "center" }}>
               Plan<br></br> Code
             </Typography>
           </Grid>
-          <Grid item xs={2}>
+          <Grid item xs={1.5}>
             <Typography variant="subtitle1" sx={{ textAlign: "center" }}>
               Monthly <br></br>Subscription
             </Typography>
@@ -79,12 +79,12 @@ const MobileNumbers = () => {
                 </Grid>
                 <Grid
                   item
-                  xs={2}
+                  xs={2.5}
                   sx={{ display: "flex", alignItems: "center" }}
                 >
                   <TextField fullWidth size="small" variant="outlined" />
                 </Grid>
-                <Grid item xs={2}>
+                <Grid item xs={2.5}>
                   <TextField fullWidth size="small" variant="outlined" />
                 </Grid>
                 <Grid item xs={2}>
@@ -107,7 +107,7 @@ const MobileNumbers = () => {
                     }}
                   />
                 </Grid>
-                <Grid item xs={2}>
+                <Grid item xs={1}>
                   <TextField fullWidth size="small" variant="outlined" />
                 </Grid>
                 <Grid item xs={1.5}>
