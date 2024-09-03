@@ -206,6 +206,11 @@ export const AuthProvider = ({ children }) => {
     //APA form 3. For Direct debt from a bank account.
     bankInstitution:"",
     
+    //PAF form 1
+    provisioningTicket:"",
+
+
+    
     qtyOfDIDService: true,
     birthDate: "1989-10-09",
     dateEstablished: new Date().toISOString().split("T")[0],

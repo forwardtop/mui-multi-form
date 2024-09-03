@@ -138,9 +138,9 @@ export const VAFSectionTitles = {
   },
 };
 export const APASectionTitles = {
-  cardType: {
+  customerDetails: {
     number: "2",
-    title: "",
+    title: "Customer Details",
     description: "",
   },
   directDebitFromBankAccount: {
@@ -157,6 +157,58 @@ export const APASectionTitles = {
   termsAndConditions: {
     number: "5",
     title: "Terms and Conditions.",
+    description: "",
+  },
+};
+export const PAFSectionTitles = {
+  customerDetails: {
+    number: "2",
+    title: "Customer Details",
+    description: "",
+  },
+  siteAddress: {
+    number: "3",
+    title: "Site Address",
+    description: "",
+  },
+  contactPerson: {
+    number: "4",
+    title: "Contact Person",
+    description: "",
+  },
+  contactDetails: {
+    number: "5",
+    title: "Contact Details",
+    description: "",
+  },
+  portingFee: {
+    number: "6",
+    title: "Porting Fee",
+    description: "You may port your current active telephone number/s from your current carriage service provider to UC8. A one off porting will apply. This fee will be charged to your UC8 account upon the successful transfer.",
+  },
+  portingNumbers: {
+    number: "7",
+    title: "Porting Numbers",
+    description: "List your telephone number/s and corresponding service providers account numbers that you would like to port to UC8.",
+  },
+  listCurrentCarrier: {
+    number: "8",
+    title: "List Current Carrier or Carriage Service Provider",
+    description: "",
+  },
+  proofLocationIdentity: {
+    number: "9",
+    title: "Proof of Location & Identity",
+    description: "",
+  },
+  portingTermsConditions: {
+    number: "10",
+    title: "Porting Terms & Conditions",
+    description: "",
+  },
+  numberPorting: {
+    number: "11",
+    title: "Declaration - Number Porting",
     description: "",
   },
 };
