@@ -138,9 +138,9 @@ export const VAFSectionTitles = {
   },
 };
 export const APASectionTitles = {
-  customerDetails: {
+  cardType: {
     number: "2",
-    title: "Customer Details",
+    title: "",
     description: "",
   },
   directDebitFromBankAccount: {

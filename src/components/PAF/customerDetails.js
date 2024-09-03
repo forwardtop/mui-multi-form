@@ -4,7 +4,7 @@ import { Box, Grid } from "@mui/material";
 import { AuthContext } from "../../config/AuthContext";
 import { renderInput } from "../../utils/renderInput";
 import { sectionTitle } from "../../utils/sectionTitleUtils";
-import { APASectionTitles } from "../../constants/sectionTitles";
+import { PAFSectionTitles } from "../../constants/sectionTitles";
 
 const CustomerDetails = () => {
   const { formData, handleChange } = useContext(AuthContext);
@@ -18,9 +18,9 @@ const CustomerDetails = () => {
       }}
     >
       {sectionTitle(
-        APASectionTitles.customerDetails.number,
-        APASectionTitles.customerDetails.title,
-        APASectionTitles.customerDetails.description
+        PAFSectionTitles.customerDetails.number,
+        PAFSectionTitles.customerDetails.title,
+        PAFSectionTitles.customerDetails.description
       )}
       <Box
         sx={{ paddingLeft: "3.5rem", paddingY: "0.8rem", lineHeight: "3rem" }}

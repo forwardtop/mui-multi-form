@@ -209,8 +209,17 @@ export const AuthProvider = ({ children }) => {
     //PAF form 1
     provisioningTicket:"",
 
+    //PAF form 2
+    simplePortQty:"1",
+    simplePortUnitCost:"9",
+    simplePortPortingFee:"",
+    complexPortQty:"1",
+    complexPortUnitCost:"99",
+    complexPortPortingFee:"0",
+    numberRangeQty:"0",
+    numberRangeUnitCost:"199",
+    numberRangePortingFee:"0",
 
-    
     qtyOfDIDService: true,
     birthDate: "1989-10-09",
     dateEstablished: new Date().toISOString().split("T")[0],

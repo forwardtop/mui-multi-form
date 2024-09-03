@@ -29,22 +29,22 @@ const TermsAndConditions = () => {
           color="secondary.main"
           sx={{ fontSize: "14px", display: "flex" }}
         >
-          <p>
+          <span>
             <b>1.</b>
-          </p>
-          <p style={{ marginLeft: "1rem" }}>
+          </span>
+          <span style={{ marginLeft: "1rem" }}>
             This application is subject to acceptance by UC8.
-          </p>
+          </span>
         </Typography>
         <Typography
-          variant="paragraph"
+          variant="body1"
           color="secondary.main"
           sx={{ fontSize: "14px", display: "flex" }}
         >
-          <p>
+          <span>
             <b>2.</b>
-          </p>
-          <p style={{ marginLeft: "1rem" }}>
+          </span>
+          <span style={{ marginLeft: "1rem" }}>
             <b>SERVICES PROVIDED UNDER THIS AGREEMENT</b>
             <br />
             UC8 will supply the following billable services under this
@@ -60,19 +60,19 @@ const TermsAndConditions = () => {
             (e) On-net Calls (UC8 to UC8)
             <br />
             (f) Other services if listed
-          </p>
+          </span>
         </Typography>
         <Typography
           variant="body1"
           color="secondary.main"
           sx={{ fontSize: "14px", display: "flex" }}
         >
-          <p style={{ marginTop: "0px", marginBottom: "0px" }}>
+          <span style={{ marginTop: "0px", marginBottom: "0px" }}>
             <b>3.</b>
-          </p>
+          </span>
           <br></br>
           <br></br>
-          <p
+          <span
             style={{
               marginLeft: "1rem",
               marginTop: "0px",
@@ -114,15 +114,15 @@ const TermsAndConditions = () => {
               UC8 will not be held liable for PSTN line faults at any time
               during the service period.
             </span>
-          </p>
+          </span>
         </Typography>
         <Typography
           variant="body1"
           color="secondary.main"
           style={{ fontSize: "14px", display: "flex" }}
         >
-          4.
-          <p
+          <b>4.</b>
+          <span
             style={{
               marginLeft: "1rem",
               marginTop: "0px",
@@ -137,7 +137,7 @@ const TermsAndConditions = () => {
               UC8 has the right to suspend or terminate any service if an
               account becomes or remains overdue.
             </span>
-          </p>
+          </span>
         </Typography>
 
         <Typography
@@ -145,8 +145,8 @@ const TermsAndConditions = () => {
           color="secondary.main"
           style={{ fontSize: "14px", display: "flex" }}
         >
-          5.
-          <p
+          <b>5.</b>
+          <span
             style={{
               marginLeft: "1rem",
               marginTop: "0px",
@@ -160,14 +160,14 @@ const TermsAndConditions = () => {
               charged an early termination fee if you transfer to another
               provider before expiration of the Term.
             </span>
-          </p>
+          </span>
         </Typography>
         <Typography
           variant="body1"
           color="secondary.main"
           style={{ fontSize: "14px", display: "flex" }}
         >
-          <span style={{ display: "inline-block", minWidth: "1rem" }}>6.</span>
+          <span style={{ display: "inline-block", minWidth: "1rem" }}><b>6.</b></span>
           <span
             style={{
               display: "inline-block",
