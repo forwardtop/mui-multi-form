@@ -2,8 +2,6 @@
 import React, { useContext } from "react";
 import {
   Box,
-  Checkbox,
-  FormGroup,
   Grid,
   TextField,
   Typography,
@@ -15,6 +13,7 @@ import { checkBoxUtils } from "../../utils/checkBoxUtils";
 
 const VoipProvisioningDetails = () => {
   const { formData, handleChange } = useContext(AuthContext);
+  console.log("formData:", formData["uc8Cloud"]);
 
   return (
     <Box
@@ -82,64 +81,22 @@ const VoipProvisioningDetails = () => {
           </Grid>
         </Grid>
         <Grid container spacing={1} sx={{ marginLeft: "3.5rem" }}>
-          {checkBoxUtils({
-            sm: 2,
-            label: "UC8 Cloud:",
-            name: "uc8Cloud",
+          {checkBoxUtils(2, "UC8 Cloud:", "uc8Cloud", formData, handleChange)}
+          {checkBoxUtils(2, "Softphone:", "softPhone", formData, handleChange)}
+          {checkBoxUtils(2, "IP PBX:", "ippbx", formData, handleChange)}
+          {checkBoxUtils(
+            4,
+            "On Premise Hardware:",
+            "premiseHardware",
             formData,
-            handleChange,
-          })}
-          {checkBoxUtils({
-            sm: 2,
-            label: "Softphone:",
-            name: "softPhone",
-            formData,
-            handleChange,
-          })}
-          {checkBoxUtils({
-            sm: 2,
-            label: "IP PBX:",
-            name: "ippbx",
-            formData,
-            handleChange,
-          })}
-          {checkBoxUtils({
-            sm: 4,
-            label: "On Premise Hardware:",
-            name: "premiseHardware",
-            formData,
-            handleChange,
-          })}
+            handleChange
+          )}
         </Grid>
         <Grid container spacing={1} sx={{ marginLeft: "3.5rem" }}>
-          {checkBoxUtils({
-            sm: 2,
-            label: "IP Cordless:",
-            name: "ipCordless",
-            formData,
-            handleChange,
-          })}
-          {checkBoxUtils({
-            sm: 2,
-            label: "IP Handset::",
-            name: "ipHandset",
-            formData,
-            handleChange,
-          })}
-          {checkBoxUtils({
-            sm: 2,
-            label: "ATA:",
-            name: "ata",
-            formData,
-            handleChange,
-          })}
-          {checkBoxUtils({
-            sm: 2,
-            label: "Other:",
-            name: "VoipOther",
-            formData,
-            handleChange,
-          })}
+          {checkBoxUtils(2, "IP Cordless:", "ipCordless", formData, handleChange)}
+          {checkBoxUtils(2, "IP Handset:", "ipHandset", formData, handleChange)}
+          {checkBoxUtils(2, "ATA:", "ata", formData, handleChange)}
+          {checkBoxUtils(2, "Other:", "VoipOther", formData, handleChange)}
           <Grid item xs={12} sm={2}>
             <TextField
               fullWidth

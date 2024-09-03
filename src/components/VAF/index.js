@@ -10,6 +10,8 @@ import AutomaticFailover from "./automaticFailover";
 import MobileNumbers from "./mobileNumbers";
 import ServiceDetails from "./serviceDetails";
 import VoipProvisioningDetails from "./voipProvisioningDetails";
+import DirectInDialNumberRange from "./directInDialNumberRange";
+import PlanAndServiceDetails from "./planAndServiceDetails";
 
 const CAA = () => {
   return (
@@ -24,6 +26,8 @@ const CAA = () => {
         <MobileNumbers />
         <ServiceDetails />
         <VoipProvisioningDetails />
+        <DirectInDialNumberRange />
+        <PlanAndServiceDetails />
     </Container>
   );
 };

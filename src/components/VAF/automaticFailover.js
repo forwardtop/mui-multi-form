@@ -38,7 +38,7 @@ const AutomaticFailover = () => {
               </span>
             </Typography>
           </Grid>
-          <Grid item xs={12} sm={4} sx={{ display: "flex"}}>
+          <Grid item xs={12} sm={4} sx={{ display: "flex" }}>
             <Grid
               item
               xs={12}
@@ -59,8 +59,10 @@ const AutomaticFailover = () => {
                   value="yes"
                   checked={formData.requestAFS === true}
                   onChange={() =>
-        handleChange({ target: { name: "requestAFS", value: true } })
-      }
+                    handleChange({
+                      target: { name: "requestAFS", value: true },
+                    })
+                  }
                   sx={{ marginLeft: 1 }}
                 />
               </FormGroup>
@@ -81,12 +83,14 @@ const AutomaticFailover = () => {
                 <Typography>No:</Typography>
                 <Checkbox
                   color="primary"
-                  name="registeredGST"
+                  name="requestAFS"
                   value="no"
                   checked={formData.requestAFS === false}
                   onChange={() =>
-        handleChange({ target: { name: "requestAFS", value: false } })
-      }
+                    handleChange({
+                      target: { name: "requestAFS", value: false },
+                    })
+                  }
                   sx={{ marginLeft: 1 }}
                 />
               </FormGroup>

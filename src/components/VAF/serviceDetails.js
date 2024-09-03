@@ -22,34 +22,10 @@ const ServiceDetails = () => {
         VAFSectionTitles.serviceDetails.description
       )}
       <Grid container spacing={2} sx={{marginLeft:"3.5rem"}}>
-        {checkBoxUtils({
-          sm: 2.5,
-          label: "Transfer / Churn:",
-          name: "transferChurn",
-          formData,
-          handleChange,
-        })}
-        {checkBoxUtils({
-          sm: 2.5,
-          label: "New Owner(s):",
-          name: "newOwners",
-          formData,
-          handleChange,
-        })}
-        {checkBoxUtils({
-          sm: 2.5,
-          label: "Relocate Service(s):",
-          name: "relocateServices",
-          formData,
-          handleChange,
-        })}
-        {checkBoxUtils({
-          sm: 2.5,
-          label: "New Service(s):",
-          name: "newServices",
-          formData,
-          handleChange,
-        })}
+      {checkBoxUtils(3, "Transfer / Churn:", "transferChurn", formData, handleChange)}
+      {checkBoxUtils(2, "New Owner(s):", "newOwners", formData, handleChange)}
+      {checkBoxUtils(3, "Relocate Service(s):", "relocateServices", formData, handleChange)}
+      {checkBoxUtils(3, "New Service(s):", "newServices", formData, handleChange)}
       </Grid>
     </Box>
   );

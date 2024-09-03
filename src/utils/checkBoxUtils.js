@@ -1,15 +1,14 @@
 import { Grid, FormGroup, Typography, Checkbox } from "@mui/material";
-
-export const checkBoxUtils = ({
+export const checkBoxUtils = (
   sm,
   label,
-  name,
+  checkBoxName,
   formData,
-  handleChange,
-}) => (
+  handleChange
+) => (
   <Grid
     item
-    sm={sm}
+    sm={sm} 
     sx={{ display: "flex", justifyContent: "flex-end" }}
   >
     <FormGroup
@@ -22,9 +21,11 @@ export const checkBoxUtils = ({
       <Typography>{label}</Typography>
       <Checkbox
         color="primary"
-        name={name}
-        checked={Boolean(Number(formData[name]))}
-        onChange={handleChange}
+        name={checkBoxName}
+        checked={!!formData[checkBoxName]}
+        onChange={() =>
+          handleChange({ target: { name: checkBoxName, value: !formData[checkBoxName] } })
+        }
         sx={{ marginLeft: 1 }}
       />
     </FormGroup>

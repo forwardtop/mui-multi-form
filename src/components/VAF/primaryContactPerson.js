@@ -2,7 +2,7 @@
 import React, { useContext } from "react";
 import { Box } from "@mui/material";
 import { AuthContext } from "../../config/AuthContext";
-import { renderInput } from "../../utils/formInputUtils";
+import { renderInput } from "../../utils/renderInput";
 import { sectionTitle } from "../../utils/sectionTitleUtils";
 import { VAFSectionTitles } from "../../constants/sectionTitles";
 
