@@ -3,7 +3,7 @@ import TextField from "@mui/material/TextField";
 import { Box} from "@mui/material";
 import { AuthContext } from "../config/AuthContext";
 
-function CustomTextFieldAsCheckbox({ index, name }) {
+function CustomTextFieldAsCheckbox({ name }) {
   const { formData, handleChange } = useContext(AuthContext);
   const checked = Boolean(formData[name]);
   const handleClick = () => {
@@ -40,7 +40,6 @@ function CustomTextFieldAsCheckbox({ index, name }) {
           </Box>
         ) : null,
       }}
-      
     />
   );
 }

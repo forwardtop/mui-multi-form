@@ -35,24 +35,24 @@ const CreatingForms = () => {
   const [sending, setSending] = useState(false);
 
   const sendingEmail = () => {
-    setSending(true); // Start sending email
+    setSending(true); 
     setTimeout(() => {
-      setSending(false); // Stop sending email after 5 seconds
+      setSending(false); 
     }, 2000);
   }
 
   const generatePDF = () => {
-    setLoading(true); // Start loading
+    setLoading(true); 
 
     const input = document.getElementById("pdfContent");
     if (!input) {
       console.error("Element not found: #pdfContent");
-      setLoading(false); // Stop loading if element not found
+      setLoading(false); 
       return;
     }
 
     html2canvas(input, {
-      scale: 2, // Higher scale for better resolution
+      scale: 2, 
       scrollX: -window.scrollX, 
       scrollY: -window.scrollY,
       windowWidth: document.documentElement.offsetWidth,
@@ -67,13 +67,13 @@ const CreatingForms = () => {
         });
 
         pdf.addImage(imgData, "PNG", 0, 0, pdf.internal.pageSize.getWidth(), pdf.internal.pageSize.getHeight());
-        pdf.save("caa_document.pdf"); // Download the PDF
+        pdf.save("caa_document.pdf"); 
 
-        setLoading(false); // Stop loading after download
+        setLoading(false); 
       })
       .catch((error) => {
         console.error("Failed to generate PDF:", error);
-        setLoading(false); // Stop loading on error
+        setLoading(false);
       });
   };
 
