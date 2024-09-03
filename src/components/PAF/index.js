@@ -8,6 +8,8 @@ import ContactPerson from "./contactPerson";
 import ContactDetails from "./contactDetails";
 import PortingFee from "./portingFee";
 import PortingNumbers from "./portingNumbers";
+import ListCurrentCarrier from "./listCurrentCarrier";
+import ProofLocationIdentity from "./proofLocationIdentity";
 
 
 const PAF = () => {
@@ -21,6 +23,8 @@ const PAF = () => {
         <ContactDetails />
         <PortingFee />
         <PortingNumbers />
+        <ListCurrentCarrier />
+        <ProofLocationIdentity />
 
     </Container>
   );

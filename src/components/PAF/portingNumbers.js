@@ -1,12 +1,13 @@
 // src/components/PrimaryContactPerson.js
-import React from "react";
+import React, { useContext } from "react";
 import { Box, Grid, TextField, Typography } from "@mui/material";
 import { sectionTitle } from "../../utils/sectionTitleUtils";
 import { PAFSectionTitles } from "../../constants/sectionTitles";
 import CustomTextFieldAsCheckbox from "../../utils/CustomTextFieldAsCheckbox";
+import { AuthContext } from "../../config/AuthContext";
 const PortingNumbers = () => {
   const formRows = Array.from({ length: 18 });
-
+  const { formData, handleChange } = useContext(AuthContext);
   return (
     <Box
       sx={{
@@ -56,7 +57,7 @@ const PortingNumbers = () => {
                       <Typography
                         sx={{
                           transform: "rotate(-90deg)",
-                          whiteSpace: "nowrap", 
+                          whiteSpace: "nowrap",
                         }}
                       >
                         {label}
@@ -89,21 +90,63 @@ const PortingNumbers = () => {
                   xs={2.93}
                   sx={{ display: "flex", alignItems: "center" }}
                 >
-                  <TextField fullWidth size="small" variant="outlined" />
+                  <TextField
+                    fullWidth
+                    size="small"
+                    variant="outlined"
+                    name={`service${index + 1}Number`} // Corrected template literal
+                    value={formData[`service${index + 1}Number`]} // Corrected template literal
+                    onChange={handleChange}
+                    InputProps={{
+                    sx: {
+                      "& input": {
+                        textAlign: "center", 
+                      },
+                    },
+                  }}
+                  />
                 </Grid>
                 <Grid
                   item
                   xs={2.93}
                   sx={{ display: "flex", alignItems: "center" }}
                 >
-                  <TextField fullWidth size="small" variant="outlined" />
+                  <TextField
+                    fullWidth
+                    size="small"
+                    variant="outlined"
+                    name={`service${index + 1}LosingCarrier`} 
+                    value={formData[`service${index + 1}LosingCarrier`]} 
+                    onChange={handleChange}
+                    InputProps={{
+                    sx: {
+                      "& input": {
+                        textAlign: "center",
+                      },
+                    },
+                  }}
+                  />
                 </Grid>
                 <Grid
                   item
                   xs={2.93}
                   sx={{ display: "flex", alignItems: "center" }}
                 >
-                  <TextField fullWidth size="small" variant="outlined" />
+                  <TextField
+                    fullWidth
+                    size="small"
+                    variant="outlined"
+                    name={`service${index + 1}AccountNumber`} // Corrected template literal
+                    value={formData[`service${index + 1}AccountNumber`]} // Corrected template literal
+                    onChange={handleChange}
+                    InputProps={{
+                    sx: {
+                      "& input": {
+                        textAlign: "center", // Align text to the right
+                      },
+                    },
+                  }}
+                  />
                 </Grid>
 
                 <Grid item xs={0.5}>
@@ -120,7 +163,7 @@ const PortingNumbers = () => {
                 </Grid>
                 <Grid item xs={0.5}>
                   <CustomTextFieldAsCheckbox
-                    name={`100Numbers_${index + 1}`}
+                    name={`numbers100_${index + 1}`}
                     index={index + 1}
                   />
                 </Grid>
