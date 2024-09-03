@@ -191,6 +191,18 @@ export const AuthProvider = ({ children }) => {
     //VAF form 12.Contact Period
     minimumContractPeriod: "1",
 
+    //APA form 1. Please select Payment Method
+    creditCard:true,
+    bankDebit:false,
+    //APA form 2. Card Type
+    visaCard:true,
+    masterCard:false,
+    americanExpressCard:false,
+    cardNumber:"",
+    cardExpiryDate:new Date().toISOString().split("T")[0],
+    cardCSVNumber:"0000",
+    nameAsDisplayedOnCard:"",
+
     qtyOfDIDService: true,
     birthDate: "1989-10-09",
     dateEstablished: new Date().toISOString().split("T")[0],

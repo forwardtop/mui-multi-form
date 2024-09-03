@@ -139,3 +139,20 @@ export const VAFSectionTitles = {
       "I understand that by contracting with UC8 for my telephone number/s above, international, local, national long distance and calls to mobiles will be carried by UC8 after it accepts and processes this application. I also give UC8 consent to use any credit information about me, including information about my personal or company history. I have read the terms and conditions applicable to this application and agree to be bound by them. I have the authority to sign and certify that these details are true and correct.",
   },
 };
+export const APASectionTitles = {
+  cardType: {
+    number: "2",
+    title: "",
+    description: "",
+  },
+  directDebitFromBankAccount: {
+    number: "3",
+    title: "For direct debt from a bank account.",
+    description: "",
+  },
+  termsAndConditions: {
+    number: "5",
+    title: "Terms and Conditions.",
+    description: "",
+  },
+};

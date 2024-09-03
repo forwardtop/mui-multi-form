@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Box, Grid, Typography, TextField } from "@mui/material";
 import { AuthContext } from "../../config/AuthContext";
-import TextFieldCheckBox from "../../utils/textFieldCheckBox";
+import { checkBoxUtils } from "../../utils/checkBoxUtils";
 const OfficeUse = () => {
   const { formData, handleChange } = useContext(AuthContext);
 
@@ -61,26 +61,23 @@ const OfficeUse = () => {
                 </Typography>
               </Grid>
               <Grid item xs={6}>
-                <Grid
-                  container
-                  sx={{
-                    paddingBottom: "0.5rem",
-                  }}
-                >
-                  <TextFieldCheckBox
-                    labelSize={5}
-                    checkBoxSize={2}
-                    name="creditCard"
-                    label="Credit Card:"
-                  />
+                <Grid container>
+                  {checkBoxUtils(
+                    12,
+                    "Credit Card:",
+                    "creditCard",
+                    formData,
+                    handleChange
+                  )}
                 </Grid>
                 <Grid container>
-                  <TextFieldCheckBox
-                    labelSize={5}
-                    checkBoxSize={2}
-                    name="bankDebit"
-                    label="Bank Debit:"
-                  />
+                  {checkBoxUtils(
+                    12,
+                    "Bank Debit:",
+                    "bankDebit",
+                    formData,
+                    handleChange
+                  )}
                 </Grid>
               </Grid>
             </Grid>
