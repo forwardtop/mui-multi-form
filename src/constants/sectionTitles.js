@@ -78,18 +78,19 @@ export const VAFSectionTitles = {
   contactDetails: {
     number: "5",
     title: "Contact Details",
-    description:""
+    description: "",
   },
   automaticFailover: {
     number: "6",
     title: "Automatic Failover & Service Redirection",
     description:
-      "You can nominate a default number for automatic redirection of calls if your phone system or VoIP number fails to register on the UC8 network through a power or Internet outage, equipment failure, theft, damage or for any other reason. You can also request a manual redirection of service to a nominated number which is not listed below. The cost of redirected calls will be billed to your account (see plan details for charges).",  
+      "You can nominate a default number for automatic redirection of calls if your phone system or VoIP number fails to register on the UC8 network through a power or Internet outage, equipment failure, theft, damage or for any other reason. You can also request a manual redirection of service to a nominated number which is not listed below. The cost of redirected calls will be billed to your account (see plan details for charges).",
   },
   mobileNumber: {
     number: "7",
     title: "Mobile Numbers",
-    description: "Please list your mobile telephone numbers below that you want to transfer to UC8.",
+    description:
+      "Please list your mobile telephone numbers below that you want to transfer to UC8.",
   },
   serviceDetails: {
     number: "8",
@@ -111,26 +112,23 @@ export const VAFSectionTitles = {
   planAndService: {
     number: "11",
     title: "Plan and Service Details",
-    description:
-      "",
+    description: "",
   },
   contactPeriod: {
     number: "12",
     title: "Contract Period",
-    description:
-      "",
+    description: "",
   },
   proofOfIdentity: {
     number: "13",
     title: "Proof of Identity",
-    description:
-      "",
+    description: "",
   },
   termsAndConditions: {
     number: "14",
-    title: "Terms & Conditions | Preselect / Override / Geographical / VoIP / SIP / PSTN / Mobile Phone",
-    description:
-      "",
+    title:
+      "Terms & Conditions | Preselect / Override / Geographical / VoIP / SIP / PSTN / Mobile Phone",
+    description: "",
   },
   declaration: {
     number: "15",
@@ -149,6 +147,12 @@ export const APASectionTitles = {
     number: "3",
     title: "For direct debt from a bank account.",
     description: "",
+  },
+  declaration: {
+    number: "4",
+    title: "Declaration",
+    description:
+      "I request UC8 to debit my credit card or bank account as specified above. I confirm that I have read and understood the terms and conditions and accept this authority only upon those conditions.",
   },
   termsAndConditions: {
     number: "5",

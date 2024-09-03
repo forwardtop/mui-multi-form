@@ -3,6 +3,9 @@ import { Container } from "@mui/material";
 import APAHeader from "./APAHeader";
 import OfficeUse from "./officeUse";
 import CardType from "./cardType";
+import DirectDebitFromBankAccount from "./directDebitFromBankAccount";
+import Declaration from "./declaration";
+import TermsAndConditions from "./termsAndConditions";
 
 
 const APA = () => {
@@ -11,6 +14,9 @@ const APA = () => {
         <APAHeader />
         <OfficeUse />
         <CardType />
+        <DirectDebitFromBankAccount />
+        <Declaration />
+        <TermsAndConditions />
 
     </Container>
   );

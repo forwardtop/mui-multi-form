@@ -59,7 +59,7 @@ const CardType = () => {
             {FormDatePicker("cardExpiryDate", formData, handleChange)}
           </Grid>
           <Grid item xs={4} sx={{ display: "flex" }}>
-            <Typography variant="text">MM/YY</Typography>
+            <Typography variant="text">MM / YY</Typography>
           </Grid>
         </Grid>
         <Grid container spacing={2}>
@@ -72,7 +72,7 @@ const CardType = () => {
           </Grid>
         </Grid>
         {renderInput(3, 9, "Name as Displayed on Card", "nameAsDisplayedOnCard", formData, handleChange)}
-        {renderInput(3, 9, "", "", formData, handleChange)}
+        {/* {renderInput(3, 9, "", "nameAsDisplayedOnCard2", formData, handleChange)} */}
       </Box>
     </Box>
   );
