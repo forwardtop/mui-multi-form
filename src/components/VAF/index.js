@@ -12,6 +12,8 @@ import ServiceDetails from "./serviceDetails";
 import VoipProvisioningDetails from "./voipProvisioningDetails";
 import DirectInDialNumberRange from "./directInDialNumberRange";
 import PlanAndServiceDetails from "./planAndServiceDetails";
+import ContactPeriod from "./contractPeriod";
+import ProofOfIdentity from "./proofOfIdentity";
 
 const CAA = () => {
   return (
@@ -28,6 +30,8 @@ const CAA = () => {
         <VoipProvisioningDetails />
         <DirectInDialNumberRange />
         <PlanAndServiceDetails />
+        <ContactPeriod />
+        <ProofOfIdentity />
     </Container>
   );
 };

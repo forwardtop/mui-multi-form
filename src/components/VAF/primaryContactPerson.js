@@ -22,7 +22,7 @@ const PrimaryContactPerson = () => {
         VAFSectionTitles.primaryContactPerson.title,
         VAFSectionTitles.primaryContactPerson.description
       )}
-      <Box sx={{ paddingLeft: "3.5rem", paddingY: "0.8rem" }}>
+      <Box sx={{ paddingLeft: "3.5rem", paddingY: "0.8rem", lineHeight:"3rem" }}>
         {renderInput(2, 4, "Title", "title", formData, handleChange)}
         {renderInput(2, 10, "First Name", "firstName", formData, handleChange)}
         {renderInput(2, 10, "Middle Name/s", "middleName", formData, handleChange)}

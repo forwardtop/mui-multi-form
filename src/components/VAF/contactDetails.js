@@ -22,7 +22,7 @@ const ContactDetails = () => {
         VAFSectionTitles.contactDetails.title,
         VAFSectionTitles.contactDetails.description
       )}
-      <Box sx={{ paddingLeft: "3.5rem", paddingY: "0.8rem" }}>
+      <Box sx={{ paddingLeft: "3.5rem", paddingY: "0.8rem", lineHeight:"3rem" }}>
         <div style={{display:'flex'}}>
             {renderInput(4, 7, "FNN Tel", "fnnTel", formData, handleChange)}
             {renderInput(4, 8, "InBound Tel", "inboundTel", formData, handleChange)}

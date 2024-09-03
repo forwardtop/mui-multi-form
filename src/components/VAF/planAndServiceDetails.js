@@ -191,13 +191,6 @@ const PlanAndServiceDetails = () => {
             ))}
           </Grid>
         </Grid>
-
-        <Box sx={{ marginTop: "2rem", marginLeft: "3.5rem" }}>
-          <Typography variant="body2">
-            * Calls within Australia. Call charges apply for special service
-            numbers and international calls.
-          </Typography>
-        </Box>
       </Box>
     </Box>
   );
