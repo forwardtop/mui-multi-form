@@ -1,11 +1,6 @@
 // src/components/PrimaryContactPerson.js
 import React from "react";
-import {
-  Box,
-  Grid,
-  TextField,
-  Typography,
-} from "@mui/material";
+import { Box, Grid, TextField, Typography } from "@mui/material";
 import { sectionTitle } from "../../utils/sectionTitleUtils";
 import { VAFSectionTitles } from "../../constants/sectionTitles";
 import CustomTextFieldAsCheckbox from "../../utils/CustomTextFieldAsCheckbox";
@@ -98,8 +93,10 @@ const PlanAndServiceDetails = () => {
                   >
                     <Typography
                       sx={{
-                        writingMode: "tb-rl",
-                        transform: "rotate(-180deg)",
+                        writingMode: "vertical-rl", 
+                        textOrientation: "upright", 
+                        textAlign: "center", 
+                        lineHeight: "1",
                       }}
                     >
                       {label}
@@ -167,25 +164,46 @@ const PlanAndServiceDetails = () => {
                   />
                 </Grid>
                 <Grid item xs={0.5}>
-                  <CustomTextFieldAsCheckbox name={`sip_${index+1}`} index={index+1} />
+                  <CustomTextFieldAsCheckbox
+                    name={`sip_${index + 1}`}
+                    index={index + 1}
+                  />
                 </Grid>
                 <Grid item xs={0.5}>
-                  <CustomTextFieldAsCheckbox name={`inbound_${index+1}`} index={index+1} />
+                  <CustomTextFieldAsCheckbox
+                    name={`inbound_${index + 1}`}
+                    index={index + 1}
+                  />
                 </Grid>
                 <Grid item xs={0.5}>
-                  <CustomTextFieldAsCheckbox name={`mobile_${index+1}`} index={index+1} />
+                  <CustomTextFieldAsCheckbox
+                    name={`mobile_${index + 1}`}
+                    index={index + 1}
+                  />
                 </Grid>
                 <Grid item xs={0.5}>
-                  <CustomTextFieldAsCheckbox name={`security_${index+1}`} index={index+1} />
+                  <CustomTextFieldAsCheckbox
+                    name={`security_${index + 1}`}
+                    index={index + 1}
+                  />
                 </Grid>
                 <Grid item xs={0.5}>
-                  <CustomTextFieldAsCheckbox name={`hosting_${index+1}`} index={index+1} />
+                  <CustomTextFieldAsCheckbox
+                    name={`hosting_${index + 1}`}
+                    index={index + 1}
+                  />
                 </Grid>
                 <Grid item xs={0.5}>
-                  <CustomTextFieldAsCheckbox name={`support_${index+1}`} index={index+1} />
+                  <CustomTextFieldAsCheckbox
+                    name={`support_${index + 1}`}
+                    index={index + 1}
+                  />
                 </Grid>
                 <Grid item xs={0.5}>
-                  <CustomTextFieldAsCheckbox name={`other_${index+1}`} index={index+1} />
+                  <CustomTextFieldAsCheckbox
+                    name={`other_${index + 1}`}
+                    index={index + 1}
+                  />
                 </Grid>
               </Grid>
             ))}

@@ -14,6 +14,8 @@ import DirectInDialNumberRange from "./directInDialNumberRange";
 import PlanAndServiceDetails from "./planAndServiceDetails";
 import ContactPeriod from "./contractPeriod";
 import ProofOfIdentity from "./proofOfIdentity";
+import TermsAndConditions from "./termsAndConditions";
+import Declaration from "./declaration";
 
 const CAA = () => {
   return (
@@ -32,6 +34,8 @@ const CAA = () => {
         <PlanAndServiceDetails />
         <ContactPeriod />
         <ProofOfIdentity />
+        <TermsAndConditions />
+        <Declaration />
     </Container>
   );
 };
