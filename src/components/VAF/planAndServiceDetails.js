@@ -85,19 +85,9 @@ const PlanAndServiceDetails = () => {
                     item
                     xs={1.7142}
                     key={label}
-                    sx={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "flex-end",
-                    }}
                   >
                     <Typography
-                      sx={{
-                        writingMode: "vertical-rl", 
-                        textOrientation: "upright", 
-                        textAlign: "center", 
-                        lineHeight: "1",
-                      }}
+                      sx={{ transform: "rotate(-90deg)"}}
                     >
                       {label}
                     </Typography>

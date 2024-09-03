@@ -25,3 +25,8 @@ code {
     box-shadow: none;
   }
 }
+.rotated-text {
+   writing-mode: vertical-rl;
+   -webkit-transform: rotate(180deg);
+
+}

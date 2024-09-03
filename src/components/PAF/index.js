@@ -7,6 +7,7 @@ import SiteAddress from "./siteAddress";
 import ContactPerson from "./contactPerson";
 import ContactDetails from "./contactDetails";
 import PortingFee from "./portingFee";
+import PortingNumbers from "./portingNumbers";
 
 
 const PAF = () => {
@@ -19,6 +20,7 @@ const PAF = () => {
         <ContactPerson />
         <ContactDetails />
         <PortingFee />
+        <PortingNumbers />
 
     </Container>
   );
