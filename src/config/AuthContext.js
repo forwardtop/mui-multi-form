@@ -33,11 +33,7 @@ export const AuthProvider = ({ children }) => {
     building: true,
     entertainment: true,
     industry: true,
-    CAAMarketSectorOther:"MarketSector Other",
-    transferChurn: true,
-    newOwners: true,
-    relocateServices: true,
-    newServices: true,
+    CAAMarketSectorOther: "MarketSector Other",
     monthlyReoccurringCost14Days: true,
     monthlyReoccurringCostOther: true,
     equipmentPurchasesCOD: true,
@@ -48,65 +44,91 @@ export const AuthProvider = ({ children }) => {
     consumables7Days: true,
     consumables14Days: true,
     consumablesOther: true,
-    consumablesOtherText:"Consume",
-    monthlyReoccurringCostOtherText:"Monthly Reoccurring",
-    equipmentPurchasesOtherText:"Equipment",
+    consumablesOtherText: "Consume",
+    monthlyReoccurringCostOtherText: "Monthly Reoccurring",
+    equipmentPurchasesOtherText: "Equipment",
   });
-  const [VAFFormData, setVAFFormData] = useState({});
-  const [PAFFormData, setPAFFormData] = useState({});
-  const [IAFFormData, setIAFFormData] = useState({});
-  const [OBSFormData, setOBSFormData] = useState({});
-  const [AAFFormData, setAAFFormData] = useState({});
-  const [APAFormData, setAPAFormData] = useState({});
-  const [TCTFormData, setTCTFormData] = useState({});
+  const [VAFFormData, setVAFFormData] = useState({
+    serviceNumber1: "number 1",
+    serviceNumber2: "",
+    serviceNumber3: "",
+    serviceNumber4: "",
+    serviceNumber5: "",
+    serviceNumber6: "",
+    serviceNumber7: "",
+    serviceNumber8: "",
+    serviceNumber9: "",
+    serviceNumber10: "",
+    serviceNumber11: "",
+    serviceNumber12: "",
 
-  const [formData, setFormData] = useState({
-    clientAccount: "client account",
-    approvedCredit: "approved credit",
-    approvedBy: "approved by",
-    fullName: "Full Name",
-    tradingAs: "Trading As",
-    abn: "ABN",
-    acn: "ACN",
-    addressLine1: "Address Line 1",
-    addressLine2: "Address Line 2",
-    addressLine3: "Address Line 3",
-    suburb: "Suburb",
-    postcode: "Post Code",
-    city: "City",
-    state: "State",
-    title: "Title",
-    firstName: "First Name",
-    position: "Position",
-    middleName: "Middle Name",
-    surname: "Surname",
-    tel: "333333333333",
-    fax: "222222222222",
-    mobile: "1111111111",
-    email: "bmb@bmb.com",
-    webUrl: "bmb@website.com",
-    bsb: "BSB",
-    bank: "BANK",
-    accountNumber: "#123123123",
-    branch: "Branch",
-    accountName: "Account Name",
-    idCheck: true,
-    copyBills: true,
-    faxEndPoint: true,
-    telEndPoint: true,
+    serviceDescription1: "description1",
+    serviceDescription2: "",
+    serviceDescription3: "",
+    serviceDescription4: "",
+    serviceDescription5: "",
+    serviceDescription6: "",
+    serviceDescription7: "",
+    serviceDescription8: "",
+    serviceDescription9: "",
+    serviceDescription10: "",
+    serviceDescription11: "",
+    serviceDescription12: "",
 
-    driverLicenseNumber: "License123",
-    stateTerritory:"State Territory",
-    dlExpiryDate: "2025-01-01",
-    rateNotice: true,
-    electricityBill: true,
-    telephoneBill: true,
-    rentRecept: true,
-    card18: true,
-    otherSpecify: true,
-    requestAFS: true,
-    requireDN: true,
-    salesperson:"sales person",
+    simCost1: "SIM Cost 1",
+    simCost2: "",
+    simCost3: "",
+    simCost4: "",
+    simCost5: "",
+    simCost6: "",
+    simCost7: "",
+    simCost8: "",
+    simCost9: "",
+    simCost10: "",
+    simCost11: "",
+    simCost12: "",
+
+    mro1: "MRO 1",
+    mro2: "",
+    mro3: "",
+    mro4: "",
+    mro5: "",
+    mro6: "",
+    mro7: "",
+    mro8: "",
+    mro9: "",
+    mro10: "",
+    mro11: "",
+    mro12: "",
+
+    planCode1: "Plan Code 1",
+    planCode2: "",
+    planCode3: "",
+    planCode4: "",
+    planCode5: "",
+    planCode6: "",
+    planCode7: "",
+    planCode8: "",
+    planCode9: "",
+    planCode10: "",
+    planCode11: "",
+    planCode12: "",
+
+    monthlySubscription1: "MS 1",
+    monthlySubscription2: "",
+    monthlySubscription3: "",
+    monthlySubscription4: "",
+    monthlySubscription5: "",
+    monthlySubscription6: "",
+    monthlySubscription7: "",
+    monthlySubscription8: "",
+    monthlySubscription9: "",
+    monthlySubscription10: "",
+    monthlySubscription11: "",
+    monthlySubscription12: "",
+
+    numbersOfVoip:10,
+    numbersOfPorting:12,
     uc8Cloud: true,
     softPhone: true,
     ippbx: true,
@@ -114,14 +136,133 @@ export const AuthProvider = ({ children }) => {
     ipCordless: true,
     ipHandset: true,
     ata: true,
-    VoipOther: true,
-    VoipOtherText: "VOIP OTHER",
-    otherSpecifyText: "Other Specify",
-    //CAA form
-    inboundTel: "Inbound Tel",
-    fnnTel: "FNN TEL",
-    inboundFax: "Inbound Fax",
-    fnnFax: "FNN Fax",
+    voipOther: true,
+    voipOtherText: "VOIP OTHER",
+
+    qtyOfDIDService10:true,
+    qtyOfDIDService25:true,
+    qtyOfDIDService50:true,
+    qtyOfDIDService100:true,
+    qtyOfDIDServiceOther:"DID other",
+    requireDN:true,
+    planCode:22222,
+    monthlySubscription:99,
+    administrationFee:19,
+
+    qty1: 23,
+    qty2: "",
+    qty3: "",
+    qty4: "",
+    qty5: "",
+    qty6: "",
+    qty7: "",
+    qty8: "",
+    qty9: "",
+    qty10: "",
+    qty11: "",
+    qty12: "",
+    qty13: "",
+    qty14: "",
+    qty15: "",
+    qty16: "",
+    qty17: "",
+    qty18: "",
+
+    serviceDetails1:"service details",
+    serviceDetails2:"",
+    serviceDetails3:"",
+    serviceDetails4:"",
+    serviceDetails5:"",
+    serviceDetails6:"",
+    serviceDetails7:"",
+    serviceDetails8:"",
+    serviceDetails9:"",
+    serviceDetails10:"",
+    serviceDetails11:"",
+    serviceDetails12:"",
+    serviceDetails13:"",
+    serviceDetails14:"",
+    serviceDetails15:"",
+    serviceDetails16:"",
+    serviceDetails17:"",
+    serviceDetails18:"",
+
+    installationUpfront1:"100",
+    installationUpfront2:"",
+    installationUpfront3:"",
+    installationUpfront4:"",
+    installationUpfront5:"",
+    installationUpfront6:"",
+    installationUpfront7:"",
+    installationUpfront8:"",
+    installationUpfront9:"",
+    installationUpfront10:"",
+    installationUpfront11:"",
+    installationUpfront12:"",
+    installationUpfront13:"",
+    installationUpfront14:"",
+    installationUpfront15:"",
+    installationUpfront16:"",
+    installationUpfront17:"",
+    installationUpfront18:"",
+
+    unitPrice1:"100",
+    unitPrice2:"",
+    unitPrice3:"",
+    unitPrice4:"",
+    unitPrice5:"",
+    unitPrice6:"",
+    unitPrice7:"",
+    unitPrice8:"",
+    unitPrice9:"",
+    unitPrice10:"",
+    unitPrice11:"",
+    unitPrice12:"",
+    unitPrice13:"",
+    unitPrice14:"",
+    unitPrice15:"",
+    unitPrice16:"",
+    unitPrice17:"",
+    unitPrice18:"",
+
+    planCodeService1:"#3333",
+    planCodeService2:"",
+    planCodeService3:"",
+    planCodeService4:"",
+    planCodeService5:"",
+    planCodeService6:"",
+    planCodeService7:"",
+    planCodeService8:"",
+    planCodeService9:"",
+    planCodeService10:"",
+    planCodeService11:"",
+    planCodeService12:"",
+    planCodeService13:"",
+    planCodeService14:"",
+    planCodeService15:"",
+    planCodeService16:"",
+    planCodeService17:"",
+    planCodeService18:"",
+
+    monthlyCost1:"100",
+    monthlyCost2:"",
+    monthlyCost3:"",
+    monthlyCost4:"",
+    monthlyCost5:"",
+    monthlyCost6:"",
+    monthlyCost7:"",
+    monthlyCost8:"",
+    monthlyCost9:"",
+    monthlyCost10:"",
+    monthlyCost11:"",
+    monthlyCost12:"",
+    monthlyCost13:"",
+    monthlyCost14:"",
+    monthlyCost15:"",
+    monthlyCost16:"",
+    monthlyCost17:"",
+    monthlyCost18:"",
+
     //VAF form 11.Plan and Service Details
     sip_1: true,
     sip_2: false,
@@ -214,86 +355,84 @@ export const AuthProvider = ({ children }) => {
     other_11: false,
     other_12: false,
 
+  });
+  const [PAFFormData, setPAFFormData] = useState({});
+  const [IAFFormData, setIAFFormData] = useState({});
+  const [OBSFormData, setOBSFormData] = useState({});
+  const [AAFFormData, setAAFFormData] = useState({});
+  const [APAFormData, setAPAFormData] = useState({});
+  const [TCTFormData, setTCTFormData] = useState({});
+
+  const [formData, setFormData] = useState({
+    clientAccount: "client account",
+    approvedCredit: "approved credit",
+    approvedBy: "approved by",
+    fullName: "Full Name",
+    tradingAs: "Trading As",
+    abn: "ABN",
+    acn: "ACN",
+    addressLine1: "Address Line 1",
+    addressLine2: "Address Line 2",
+    addressLine3: "Address Line 3",
+    suburb: "Suburb",
+    postcode: "Post Code",
+    city: "City",
+    state: "State",
+    title: "Title",
+    firstName: "First Name",
+    position: "Position",
+    middleName: "Middle Name",
+    surname: "Surname",
+    tel: "333333333333",
+    fax: "222222222222",
+    mobile: "1111111111",
+    email: "bmb@bmb.com",
+    webURL: "bmb@website.com",
+    bsb: "BSB",
+    bank: "BANK",
+    accountNumber: "#123123123",
+    branch: "Branch",
+    accountName: "Account Name",
+    idCheck: true,
+    copyBills: true,
+    faxEndPoint: true,
+    telEndPoint: true,
+
+    driverLicenseNumber: "License123",
+    stateTerritory: "State Territory",
+    dlExpiryDate: "2025-01-01",
+    rateNotice: true,
+    electricityBill: true,
+    telephoneBill: true,
+    rentRecept: true,
+    card18: true,
+    otherSpecify: true,
+    requestAFS: true,
+    requireDN: true,
+    salesperson: "sales person",
+
+    
+    otherSpecifyText: "Other Specify",
+    //CAA form
+    inboundTel: "Inbound Tel",
+    fnnTel: "FNN TEL",
+    inboundFax: "Inbound Fax",
+    fnnFax: "FNN Fax",
+    //VAF form Office USE
+    provisioningTicket: "Provisioning Ticket",
+    //VAF form Customer details
+    companyName: "Integra Pty Ltd",
+    //VAF form Contact details
+    telAH: "TEL AH",
+    //VAF form Contact details
+    numberOfRedirectedCalls: 312,
+    transferChurn: true,
+    newOwners: true,
+    relocateServices: true,
+    newServices: true,
+    
     //VAF form 12.Contact Period
     minimumContractPeriod: "1",
-
-    serviceNumber1: "",
-    serviceNumber2: "",
-    serviceNumber3: "",
-    serviceNumber4: "",
-    serviceNumber5: "",
-    serviceNumber6: "",
-    serviceNumber7: "",
-    serviceNumber8: "",
-    serviceNumber9: "",
-    serviceNumber10: "",
-    serviceNumber11: "",
-    serviceNumber12: "",
-
-    serviceDescription1: "",
-    serviceDescription2: "",
-    serviceDescription3: "",
-    serviceDescription4: "",
-    serviceDescription5: "",
-    serviceDescription6: "",
-    serviceDescription7: "",
-    serviceDescription8: "",
-    serviceDescription9: "",
-    serviceDescription10: "",
-    serviceDescription11: "",
-    serviceDescription12: "",
-
-    simCost1: "",
-    simCost2: "",
-    simCost3: "",
-    simCost4: "",
-    simCost5: "",
-    simCost6: "",
-    simCost7: "",
-    simCost8: "",
-    simCost9: "",
-    simCost10: "",
-    simCost11: "",
-    simCost12: "",
-
-    mro1: "",
-    mro2: "",
-    mro3: "",
-    mro4: "",
-    mro5: "",
-    mro6: "",
-    mro7: "",
-    mro8: "",
-    mro9: "",
-    mro10: "",
-    mro11: "",
-    mro12: "",
-
-    planCode1: "",
-    planCode2: "",
-    planCode3: "",
-    planCode4: "",
-    planCode5: "",
-    planCode6: "",
-    planCode7: "",
-    planCode8: "",
-    planCode9: "",
-    planCode10: "",
-    planCode11: "",
-    planCode12: "",
-
-    monthlySubscription1: "",
-    monthlySubscription2: "",
-    monthlySubscription3: "",
-    monthlySubscription4: "",
-    monthlySubscription5: "",
-    monthlySubscription6: "",
-    monthlySubscription7: "",
-    monthlySubscription8: "",
-    monthlySubscription9: "",
-    monthlySubscription10: "",
-    monthlySubscription11: "",
-    monthlySubscription12: "",
 
     //APA form 1. Please select Payment Method
     creditCard: true,
@@ -309,9 +448,6 @@ export const AuthProvider = ({ children }) => {
 
     //APA form 3. For Direct debt from a bank account.
     bankInstitution: "",
-
-    //PAF form 1
-    provisioningTicket: "",
 
     //PAF form 6
     simplePortQty: "1",
@@ -449,7 +585,6 @@ export const AuthProvider = ({ children }) => {
     signDate: new Date().toISOString().split("T")[0],
     declarationDate: new Date().toISOString().split("T")[0],
   });
-  const sharedFields = ["fullName", "email", "tel"];
   const handleChange = (eventOrDate, name = null) => {
     if (eventOrDate && eventOrDate.target) {
       const { name, value, type, checked } = eventOrDate.target;
@@ -457,95 +592,93 @@ export const AuthProvider = ({ children }) => {
         ...prevData,
         [name]: type === "checkbox" ? checked : value,
       }));
-      if (sharedFields.includes(name)) {
-        setCCFFormData((prevData) => ({
-          ...prevData,
-          [name]: type === "checkbox" ? checked : value,
-        }));
-        setCAAFormData((prevData) => ({
-          ...prevData,
-          [name]: type === "checkbox" ? checked : value,
-        }));
 
-        setVAFFormData((prevData) => ({
-          ...prevData,
-          [name]: type === "checkbox" ? checked : value,
-        }));
+      setCCFFormData((prevData) => ({
+        ...prevData,
+        [name]: type === "checkbox" ? checked : value,
+      }));
+      setCAAFormData((prevData) => ({
+        ...prevData,
+        [name]: type === "checkbox" ? checked : value,
+      }));
 
-        setPAFFormData((prevData) => ({
-          ...prevData,
-          [name]: type === "checkbox" ? checked : value,
-        }));
+      setVAFFormData((prevData) => ({
+        ...prevData,
+        [name]: type === "checkbox" ? checked : value,
+      }));
 
-        setIAFFormData((prevData) => ({
-          ...prevData,
-          [name]: type === "checkbox" ? checked : value,
-        }));
+      setPAFFormData((prevData) => ({
+        ...prevData,
+        [name]: type === "checkbox" ? checked : value,
+      }));
 
-        setOBSFormData((prevData) => ({
-          ...prevData,
-          [name]: type === "checkbox" ? checked : value,
-        }));
+      setIAFFormData((prevData) => ({
+        ...prevData,
+        [name]: type === "checkbox" ? checked : value,
+      }));
 
-        setAAFFormData((prevData) => ({
-          ...prevData,
-          [name]: type === "checkbox" ? checked : value,
-        }));
+      setOBSFormData((prevData) => ({
+        ...prevData,
+        [name]: type === "checkbox" ? checked : value,
+      }));
 
-        setAPAFormData((prevData) => ({
-          ...prevData,
-          [name]: type === "checkbox" ? checked : value,
-        }));
+      setAAFFormData((prevData) => ({
+        ...prevData,
+        [name]: type === "checkbox" ? checked : value,
+      }));
 
-        setTCTFormData((prevData) => ({
-          ...prevData,
-          [name]: type === "checkbox" ? checked : value,
-        }));
-      }
+      setAPAFormData((prevData) => ({
+        ...prevData,
+        [name]: type === "checkbox" ? checked : value,
+      }));
+
+      setTCTFormData((prevData) => ({
+        ...prevData,
+        [name]: type === "checkbox" ? checked : value,
+      }));
     } else {
       const dateName = name;
       setFormData((prevData) => ({
         ...prevData,
         [dateName]: eventOrDate,
       }));
-      if (sharedFields.includes(dateName)) {
-        setCCFFormData((prevData) => ({
-          ...prevData,
-          [dateName]: eventOrDate,
-        }));
-        setCAAFormData((prevData) => ({
-          ...prevData,
-          [dateName]: eventOrDate,
-        }));
-        setVAFFormData((prevData) => ({
-          ...prevData,
-          [dateName]: eventOrDate,
-        }));
-        setPAFFormData((prevData) => ({
-          ...prevData,
-          [dateName]: eventOrDate,
-        }));
-        setIAFFormData((prevData) => ({
-          ...prevData,
-          [dateName]: eventOrDate,
-        }));
-        setOBSFormData((prevData) => ({
-          ...prevData,
-          [dateName]: eventOrDate,
-        }));
-        setAAFFormData((prevData) => ({
-          ...prevData,
-          [dateName]: eventOrDate,
-        }));
-        setAPAFormData((prevData) => ({
-          ...prevData,
-          [dateName]: eventOrDate,
-        }));
-        setTCTFormData((prevData) => ({
-          ...prevData,
-          [dateName]: eventOrDate,
-        }));
-      }
+
+      setCCFFormData((prevData) => ({
+        ...prevData,
+        [dateName]: eventOrDate,
+      }));
+      setCAAFormData((prevData) => ({
+        ...prevData,
+        [dateName]: eventOrDate,
+      }));
+      setVAFFormData((prevData) => ({
+        ...prevData,
+        [dateName]: eventOrDate,
+      }));
+      setPAFFormData((prevData) => ({
+        ...prevData,
+        [dateName]: eventOrDate,
+      }));
+      setIAFFormData((prevData) => ({
+        ...prevData,
+        [dateName]: eventOrDate,
+      }));
+      setOBSFormData((prevData) => ({
+        ...prevData,
+        [dateName]: eventOrDate,
+      }));
+      setAAFFormData((prevData) => ({
+        ...prevData,
+        [dateName]: eventOrDate,
+      }));
+      setAPAFormData((prevData) => ({
+        ...prevData,
+        [dateName]: eventOrDate,
+      }));
+      setTCTFormData((prevData) => ({
+        ...prevData,
+        [dateName]: eventOrDate,
+      }));
     }
   };
 

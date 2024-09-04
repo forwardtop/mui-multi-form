@@ -33,7 +33,7 @@ const ContactDetails = () => {
         </div>
         <div style={{display:'flex'}}>
             {renderInput(4, 7, "Mobile", "mobile", formData, handleChange)}
-            {renderInput(4, 8, "Tel AH", "telAh", formData, handleChange)}
+            {renderInput(4, 8, "Tel AH", "telAH", formData, handleChange)}
         </div>
         {renderInput(2, 10, "Email Address", "email", formData, handleChange)}
         {renderInput(2, 10, "Web URL", "webURL", formData, handleChange)}

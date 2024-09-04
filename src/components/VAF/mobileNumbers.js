@@ -7,7 +7,7 @@ import { AuthContext } from "../../config/AuthContext";
 
 const MobileNumbers = () => {
   const formRows = Array.from({ length: 12 });
-  const { formData, handleChange } = useContext(AuthContext);
+  const { VAFFormData, handleChange } = useContext(AuthContext);
 
   return (
     <Box
@@ -89,7 +89,7 @@ const MobileNumbers = () => {
                     size="small"
                     variant="outlined"
                     name={`serviceNumber${index+1}`}
-                    value={formData[`serviceNumber${index+1}`]}
+                    value={VAFFormData[`serviceNumber${index+1}`]}
                     onChange={handleChange}
                     InputProps={{
                       sx: {
@@ -106,7 +106,8 @@ const MobileNumbers = () => {
                     size="small"
                     variant="outlined"
                     name={`serviceDescription${index+1}`}
-                    value={formData[`serviceDescription${index+1}`]}
+                    value={VAFFormData[`serviceDescription${index+1}`]}
+                    onChange={handleChange}
                     InputProps={{
                       sx: {
                         "& input": {
@@ -122,7 +123,8 @@ const MobileNumbers = () => {
                     size="small"
                     variant="outlined"
                     name={`simCost${index+1}`}
-                    value={formData[`simCost${index+1}`]}
+                    value={VAFFormData[`simCost${index+1}`]}
+                    onChange={handleChange}
                     InputProps={{
                       startAdornment: <Typography>$</Typography>,
                       sx: {
@@ -139,7 +141,8 @@ const MobileNumbers = () => {
                     size="small"
                     variant="outlined"
                     name={`mro${index+1}`}
-                    value={formData[`mro${index+1}`]}
+                    value={VAFFormData[`mro${index+1}`]}
+                    onChange={handleChange}
                     InputProps={{
                       startAdornment: <Typography>$</Typography>,
                       sx: {
@@ -156,7 +159,8 @@ const MobileNumbers = () => {
                     size="small"
                     variant="outlined"
                     name={`planCode${index+1}`}
-                    value={formData[`planCode${index+1}`]}
+                    value={VAFFormData[`planCode${index+1}`]}
+                    onChange={handleChange}
                     InputProps={{
                       sx: {
                         "& input": {
@@ -172,7 +176,8 @@ const MobileNumbers = () => {
                     size="small"
                     variant="outlined"
                     name={`monthlySubscription${index+1}`}
-                    value={formData[`monthlySubscription${index+1}`]}
+                    value={VAFFormData[`monthlySubscription${index+1}`]}
+                    onChange={handleChange}
                     InputProps={{
                       startAdornment: <Typography>$</Typography>,
                       sx: {

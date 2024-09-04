@@ -9,7 +9,7 @@ import { YesNoCheckBoxUtils } from "../../utils/yesNoCheckBoxUtils";
 import { renderInput } from "../../utils/renderInput";
 
 const DirectInDialNumberRange = () => {
-  const { formData, handleChange } = useContext(AuthContext);
+  const { VAFFormData, handleChange } = useContext(AuthContext);
 
   return (
     <Box
@@ -36,7 +36,7 @@ const DirectInDialNumberRange = () => {
           </Grid>
           <Grid item sm={4}>
             <Grid container spacing={1}>
-              {YesNoCheckBoxUtils("requireDN", formData, handleChange)}
+              {YesNoCheckBoxUtils("requireDN", VAFFormData, handleChange)}
             </Grid>
           </Grid>
         </Grid>
@@ -50,10 +50,10 @@ const DirectInDialNumberRange = () => {
             </Typography>
           </Grid>
           <Grid item xs={12} sm={5} sx={{ display: "flex" }}>
-            {checkBoxUtils(3, "10", "qtyOfDIDService", formData, handleChange)}
-            {checkBoxUtils(3, "25", "qtyOfDIDService", formData, handleChange)}
-            {checkBoxUtils(3, "50", "qtyOfDIDService", formData, handleChange)}
-            {checkBoxUtils(3, "100", "qtyOfDIDService", formData, handleChange)}
+            {checkBoxUtils(3, "10", "qtyOfDIDService10", VAFFormData, handleChange)}
+            {checkBoxUtils(3, "25", "qtyOfDIDService25", VAFFormData, handleChange)}
+            {checkBoxUtils(3, "50", "qtyOfDIDService50", VAFFormData, handleChange)}
+            {checkBoxUtils(3, "100", "qtyOfDIDService100", VAFFormData, handleChange)}
           </Grid>
           <Grid item xs={12} sm={3}>
             {renderInput(
@@ -61,7 +61,7 @@ const DirectInDialNumberRange = () => {
               9,
               "Other",
               "qtyOfDIDServiceOther",
-              formData,
+              VAFFormData,
               handleChange
             )}
           </Grid>
@@ -81,7 +81,7 @@ const DirectInDialNumberRange = () => {
               name="planCode"
               size="small"
               variant="outlined"
-              value={formData.planCode}
+              value={VAFFormData.planCode}
               onChange={handleChange}
             />
           </Grid>
@@ -101,7 +101,7 @@ const DirectInDialNumberRange = () => {
               name="monthlySubscription"
               size="small"
               variant="outlined"
-              value={formData.monthlySubscription}
+              value={VAFFormData.monthlySubscription}
               onChange={handleChange}
               InputProps={{
                 startAdornment: <Typography>$</Typography>,
@@ -124,7 +124,7 @@ const DirectInDialNumberRange = () => {
               name="administrationFee"
               size="small"
               variant="outlined"
-              value={formData.administrationFee}
+              value={VAFFormData.administrationFee}
               onChange={handleChange}
               InputProps={{
                 startAdornment: <Typography>$</Typography>,

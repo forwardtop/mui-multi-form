@@ -4,8 +4,8 @@ import { Box} from "@mui/material";
 import { AuthContext } from "../config/AuthContext";
 
 function CustomTextFieldAsCheckbox({ name }) {
-  const { formData, handleChange } = useContext(AuthContext);
-  const checked = Boolean(formData[name]);
+  const { VAFFormData, handleChange } = useContext(AuthContext);
+  const checked = Boolean(VAFFormData[name]);
   const handleClick = () => {
     const unchecked = !checked;
     handleChange({

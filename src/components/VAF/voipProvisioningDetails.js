@@ -12,7 +12,7 @@ import { VAFSectionTitles } from "../../constants/sectionTitles";
 import { checkBoxUtils } from "../../utils/checkBoxUtils";
 
 const VoipProvisioningDetails = () => {
-  const { formData, handleChange } = useContext(AuthContext);
+  const { VAFFormData, handleChange } = useContext(AuthContext);
   return (
     <Box
       sx={{
@@ -42,7 +42,7 @@ const VoipProvisioningDetails = () => {
               name="numbersOfVoip"
               size="small"
               variant="outlined"
-              value={formData.numbersOfVoip}
+              value={VAFFormData.numbersOfVoip}
               onChange={handleChange}
             />
           </Grid>
@@ -62,7 +62,7 @@ const VoipProvisioningDetails = () => {
               name="numbersOfPorting"
               size="small"
               variant="outlined"
-              value={formData.numbersOfPorting}
+              value={VAFFormData.numbersOfPorting}
               onChange={handleChange}
             />
           </Grid>
@@ -79,29 +79,29 @@ const VoipProvisioningDetails = () => {
           </Grid>
         </Grid>
         <Grid container spacing={1} sx={{ marginLeft: "3.5rem" }}>
-          {checkBoxUtils(2, "UC8 Cloud:", "uc8Cloud", formData, handleChange)}
-          {checkBoxUtils(2, "Softphone:", "softPhone", formData, handleChange)}
-          {checkBoxUtils(2, "IP PBX:", "ippbx", formData, handleChange)}
+          {checkBoxUtils(2, "UC8 Cloud:", "uc8Cloud", VAFFormData, handleChange)}
+          {checkBoxUtils(2, "Softphone:", "softPhone", VAFFormData, handleChange)}
+          {checkBoxUtils(2, "IP PBX:", "ippbx", VAFFormData, handleChange)}
           {checkBoxUtils(
             4,
             "On Premise Hardware:",
             "premiseHardware",
-            formData,
+            VAFFormData,
             handleChange
           )}
         </Grid>
         <Grid container spacing={1} sx={{ marginLeft: "3.5rem" }}>
-          {checkBoxUtils(2, "IP Cordless:", "ipCordless", formData, handleChange)}
-          {checkBoxUtils(2, "IP Handset:", "ipHandset", formData, handleChange)}
-          {checkBoxUtils(2, "ATA:", "ata", formData, handleChange)}
-          {checkBoxUtils(2, "Other:", "VoipOther", formData, handleChange)}
+          {checkBoxUtils(2, "IP Cordless:", "ipCordless", VAFFormData, handleChange)}
+          {checkBoxUtils(2, "IP Handset:", "ipHandset", VAFFormData, handleChange)}
+          {checkBoxUtils(2, "ATA:", "ata", VAFFormData, handleChange)}
+          {checkBoxUtils(2, "Other:", "voipOther", VAFFormData, handleChange)}
           <Grid item xs={12} sm={2}>
             <TextField
               fullWidth
               name="voipOtherText"
               size="small"
               variant="outlined"
-              value={formData.voipOtherText}
+              value={VAFFormData.voipOtherText}
               onChange={handleChange}
             />
           </Grid>
