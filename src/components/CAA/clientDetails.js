@@ -14,8 +14,9 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import dayjs from "dayjs";
 import { CIFSectionTitles } from "../../constants/sectionTitles";
 import { sectionTitle } from "../../utils/sectionTitleUtils";
+import { YesNoCheckBoxUtils } from "../../utils/yesNoCheckBoxUtils";
 const ClientDetails = () => {
-  const { formData, handleChange } = useContext(AuthContext);
+  const { formData, CAAFormData, handleChange } = useContext(AuthContext);
 
   return (
     <Box
@@ -140,7 +141,7 @@ const ClientDetails = () => {
                 <Checkbox
                   color="primary"
                   name="trader"
-                  checked={Boolean(Number(formData.trader))}
+                  checked={Boolean(Number(CAAFormData.trader))}
                   onChange={handleChange}
                   sx={{ marginLeft: 1 }}
                 />
@@ -163,7 +164,7 @@ const ClientDetails = () => {
                 <Checkbox
                   color="primary"
                   name="trust"
-                  checked={Boolean(Number(formData.trust))}
+                  checked={Boolean(Number(CAAFormData.trust))}
                   onChange={handleChange}
                   sx={{ marginLeft: 1 }}
                 />
@@ -182,7 +183,7 @@ const ClientDetails = () => {
                 <Checkbox
                   color="primary"
                   name="partnership"
-                  checked={Boolean(Number(formData.partnership))}
+                  checked={Boolean(Number(CAAFormData.partnership))}
                   onChange={handleChange}
                   sx={{ marginLeft: 1 }}
                 />
@@ -212,7 +213,7 @@ const ClientDetails = () => {
                 <Checkbox
                   color="primary"
                   name="company"
-                  checked={Boolean(Number(formData.company))}
+                  checked={Boolean(Number(CAAFormData.company))}
                   onChange={handleChange}
                   sx={{ marginLeft: 1 }}
                 />
@@ -239,7 +240,7 @@ const ClientDetails = () => {
                 <Checkbox
                   color="primary"
                   name="notForProfit"
-                  checked={Boolean(Number(formData.notForProfit))}
+                  checked={Boolean(Number(CAAFormData.notForProfit))}
                   onChange={handleChange}
                   sx={{ marginLeft: 1 }}
                 />
@@ -260,10 +261,10 @@ const ClientDetails = () => {
             <Grid item xs={12} sm={3}>
               <TextField
                 fullWidth
-                name="other"
+                name="entityTypeOther"
                 size="small"
                 variant="outlined"
-                value={formData.other}
+                value={CAAFormData.entityTypeOther}
                 onChange={handleChange}
               />
             </Grid>
@@ -289,7 +290,7 @@ const ClientDetails = () => {
             >
               <DatePicker
                 onChange={handleChange}
-                value={dayjs(formData.dateEstablished)}
+                value={dayjs(CAAFormData.CAADateEstablished)}
                 format="DD/MM/YYYY"
                 slotProps={{
                   textField: {
@@ -328,42 +329,10 @@ const ClientDetails = () => {
         <Grid
           item
           xs={12}
-          sm={1.4}
+          sm={3}
           sx={{ display: "flex", justifyContent: "flex-end" }}
         >
-          <FormGroup
-            sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}
-          >
-            <Typography>Yes:</Typography>
-            <Checkbox
-              color="primary"
-              name="registeredGST"
-              value="yes"
-              checked={formData.registeredGST === true}
-              onChange={handleChange}
-              sx={{ marginLeft: 1 }}
-            />
-          </FormGroup>
-        </Grid>
-        <Grid
-          item
-          xs={12}
-          sm={1.4}
-          sx={{ display: "flex", justifyContent: "flex-end" }}
-        >
-          <FormGroup
-            sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}
-          >
-            <Typography>No:</Typography>
-            <Checkbox
-              color="primary"
-              name="registeredGST"
-              value="no"
-              checked={formData.registeredGST === false}
-              onChange={handleChange}
-              sx={{ marginLeft: 1 }}
-            />
-          </FormGroup>
+          {YesNoCheckBoxUtils("registeredGST", CAAFormData, handleChange)}
         </Grid>
       </Grid>
     </Box>

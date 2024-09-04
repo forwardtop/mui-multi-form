@@ -12,7 +12,7 @@ import { AuthContext } from "../../config/AuthContext";
 import { sectionTitle } from "../../utils/sectionTitleUtils";
 import { CIFSectionTitles } from "../../constants/sectionTitles";
 const AccountTerms = () => {
-  const { formData, handleChange } = useContext(AuthContext);
+  const { CAAFormData, handleChange } = useContext(AuthContext);
 
   return (
     <Box
@@ -46,7 +46,7 @@ const AccountTerms = () => {
                     color="primary"
                     name="monthlyReoccurringCostDays"
                     checked={Boolean(
-                      Number(formData.monthlyReoccurringCost14Days)
+                      Number(CAAFormData.monthlyReoccurringCost14Days)
                     )}
                     onChange={handleChange}
                   />
@@ -62,7 +62,7 @@ const AccountTerms = () => {
                   color="primary"
                   name="monthlyReoccurringCostOther"
                   checked={Boolean(
-                    Number(formData.monthlyReoccurringCostOther)
+                    Number(CAAFormData.monthlyReoccurringCostOther)
                   )}
                   onChange={handleChange}
                 />
@@ -73,6 +73,7 @@ const AccountTerms = () => {
               fullWidth
               size="small"
               name="monthlyReoccurringCostOtherText"
+              value={CAAFormData.monthlyReoccurringCostOtherText}
               onChange={handleChange}
               type="text"
             />
@@ -96,7 +97,7 @@ const AccountTerms = () => {
                   <Checkbox
                     color="primary"
                     name="equipmentPurchasesCOD"
-                    checked={Boolean(Number(formData.equipmentPurchasesCOD))}
+                    checked={Boolean(Number(CAAFormData.equipmentPurchasesCOD))}
                     onChange={handleChange}
                   />
                 }
@@ -107,7 +108,7 @@ const AccountTerms = () => {
                   <Checkbox
                     color="primary"
                     name="equipmentPurchases7Days"
-                    checked={Boolean(Number(formData.equipmentPurchases7Days))}
+                    checked={Boolean(Number(CAAFormData.equipmentPurchases7Days))}
                     onChange={handleChange}
                   />
                 }
@@ -122,7 +123,7 @@ const AccountTerms = () => {
                   <Checkbox
                     color="primary"
                     name="equipmentPurchases14Days"
-                    checked={Boolean(Number(formData.equipmentPurchases14Days))}
+                    checked={Boolean(Number(CAAFormData.equipmentPurchases14Days))}
                     onChange={handleChange}
                   />
                 }
@@ -136,7 +137,7 @@ const AccountTerms = () => {
                 <Checkbox
                   color="primary"
                   name="equipmentPurchasesOther"
-                  checked={Boolean(Number(formData.equipmentPurchasesOther))}
+                  checked={Boolean(Number(CAAFormData.equipmentPurchasesOther))}
                   onChange={handleChange}
                 />
               }
@@ -146,6 +147,7 @@ const AccountTerms = () => {
               fullWidth
               size="small"
               name="equipmentPurchasesOtherText"
+              value={CAAFormData.equipmentPurchasesOtherText}
               onChange={handleChange}
               type="text"
             />
@@ -169,7 +171,7 @@ const AccountTerms = () => {
                   <Checkbox
                     color="primary"
                     name="consumablesCOD"
-                    checked={Boolean(Number(formData.consumablesCOD))}
+                    checked={Boolean(Number(CAAFormData.consumablesCOD))}
                     onChange={handleChange}
                   />
                 }
@@ -180,7 +182,7 @@ const AccountTerms = () => {
                   <Checkbox
                     color="primary"
                     name="consumables7Days"
-                    checked={Boolean(Number(formData.consumables7Days))}
+                    checked={Boolean(Number(CAAFormData.consumables7Days))}
                     onChange={handleChange}
                   />
                 }
@@ -195,7 +197,7 @@ const AccountTerms = () => {
                   <Checkbox
                     color="primary"
                     name="consumables14Days"
-                    checked={Boolean(Number(formData.consumables14Days))}
+                    checked={Boolean(Number(CAAFormData.consumables14Days))}
                     onChange={handleChange}
                   />
                 }
@@ -209,7 +211,7 @@ const AccountTerms = () => {
                 <Checkbox
                   color="primary"
                   name="consumablesOther"
-                  checked={Boolean(Number(formData.consumablesOther))}
+                  checked={Boolean(Number(CAAFormData.consumablesOther))}
                   onChange={handleChange}
                 />
               }
@@ -219,6 +221,7 @@ const AccountTerms = () => {
               fullWidth
               size="small"
               name="consumablesOtherText"
+              value={CAAFormData.consumablesOtherText}
               onChange={handleChange}
               type="text"
             />

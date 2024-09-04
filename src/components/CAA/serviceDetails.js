@@ -4,7 +4,7 @@ import { AuthContext } from "../../config/AuthContext";
 import { sectionTitle } from "../../utils/sectionTitleUtils";
 import { CIFSectionTitles } from "../../constants/sectionTitles";
 const CompanyContactDetails = () => {
-  const { formData, handleChange } = useContext(AuthContext);
+  const { CAAFormData, handleChange } = useContext(AuthContext);
 
   return (
     <Box
@@ -44,7 +44,7 @@ const CompanyContactDetails = () => {
             <Checkbox
               color="primary"
               name="transferChurn"
-              checked={Boolean(Number(formData.transferChurn))}
+              checked={Boolean(Number(CAAFormData.transferChurn))}
               onChange={handleChange}
               sx={{ marginLeft: 1 }}
             />
@@ -67,7 +67,7 @@ const CompanyContactDetails = () => {
             <Checkbox
               color="primary"
               name="newOwners"
-              checked={Boolean(Number(formData.newOwners))}
+              checked={Boolean(Number(CAAFormData.newOwners))}
               onChange={handleChange}
               sx={{ marginLeft: 1 }}
             />
@@ -90,7 +90,7 @@ const CompanyContactDetails = () => {
             <Checkbox
               color="primary"
               name="relocateServices"
-              checked={Boolean(Number(formData.relocateServices))}
+              checked={Boolean(Number(CAAFormData.relocateServices))}
               onChange={handleChange}
               sx={{ marginLeft: 1 }}
             />
@@ -113,7 +113,7 @@ const CompanyContactDetails = () => {
             <Checkbox
               color="primary"
               name="newServices"
-              checked={Boolean(Number(formData.newServices))}
+              checked={Boolean(Number(CAAFormData.newServices))}
               onChange={handleChange}
               sx={{ marginLeft: 1 }}
             />

@@ -13,8 +13,6 @@ import { checkBoxUtils } from "../../utils/checkBoxUtils";
 
 const VoipProvisioningDetails = () => {
   const { formData, handleChange } = useContext(AuthContext);
-  console.log("formData:", formData["uc8Cloud"]);
-
   return (
     <Box
       sx={{

@@ -96,11 +96,11 @@ const ProofOfIdentity = () => {
         </Grid>
         <Grid item xs={12} sm={3}>
           <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <DemoContainer components={["DatePicker"]}>
+            <DemoContainer components={["DatePicker"]} sx={{padding:"0px"}}>
               <DatePicker
                 format="DD/MM/YYYY"
                 onChange={handleChange}
-                value={dayjs(formData.expiryDate)}
+                value={dayjs(formData.dlExpiryDate)}
                 slotProps={{
                   textField: {
                     size: "small",
@@ -160,7 +160,7 @@ const ProofOfIdentity = () => {
         </Grid>
         <Grid item xs={12} sm={3}>
           <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <DemoContainer components={["DatePicker"]}>
+            <DemoContainer components={["DatePicker"]} sx={{padding:"0px"}}>
               <DatePicker
                 onChange={handleChange}
                 value={dayjs(formData.birthDate)}

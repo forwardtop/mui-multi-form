@@ -9,43 +9,16 @@ export const AuthContext = createContext({
 });
 
 export const AuthProvider = ({ children }) => {
-  const [formData, setFormData] = useState({
-    clientAccount: "",
-    approvedCredit: "",
-    approvedBy: "",
-    fullName: "",
-    tradingAs: "",
-    abn: "",
-    acn: "",
-    addressLine1: "",
-    addressLine2: "",
-    addressLine3: "",
-    suburb: "",
-    postcode: "",
-    city: "",
-    state: "",
-    title: "",
-    firstName: "",
-    position: "",
-    middleNames: "",
-    surname: "",
-    tel: "",
-    fax: "",
-    mobile: "",
-    email: "",
-    webUrl: "",
-    bsb: "",
-    bank: "",
-    accountNumber: "",
-    branch: "",
-    accountName: "",
-    idCheck: true,
-    copyBills: true,
+  const [CCFFormData, setCCFFormData] = useState({});
+  const [CAAFormData, setCAAFormData] = useState({
     trader: true,
     trust: true,
     partnership: true,
     company: true,
     notForProfit: true,
+    entityTypeOther: "entityTypeOther",
+    CAADateEstablished: new Date().toISOString().split("T")[0],
+    registeredGST: false,
     education: true,
     healthCare: true,
     retail: true,
@@ -60,8 +33,7 @@ export const AuthProvider = ({ children }) => {
     building: true,
     entertainment: true,
     industry: true,
-    faxEndPoint: true,
-    telEndPoint: true,
+    CAAMarketSectorOther:"MarketSector Other",
     transferChurn: true,
     newOwners: true,
     relocateServices: true,
@@ -76,6 +48,56 @@ export const AuthProvider = ({ children }) => {
     consumables7Days: true,
     consumables14Days: true,
     consumablesOther: true,
+    consumablesOtherText:"Consume",
+    monthlyReoccurringCostOtherText:"Monthly Reoccurring",
+    equipmentPurchasesOtherText:"Equipment",
+  });
+  const [VAFFormData, setVAFFormData] = useState({});
+  const [PAFFormData, setPAFFormData] = useState({});
+  const [IAFFormData, setIAFFormData] = useState({});
+  const [OBSFormData, setOBSFormData] = useState({});
+  const [AAFFormData, setAAFFormData] = useState({});
+  const [APAFormData, setAPAFormData] = useState({});
+  const [TCTFormData, setTCTFormData] = useState({});
+
+  const [formData, setFormData] = useState({
+    clientAccount: "client account",
+    approvedCredit: "approved credit",
+    approvedBy: "approved by",
+    fullName: "Full Name",
+    tradingAs: "Trading As",
+    abn: "ABN",
+    acn: "ACN",
+    addressLine1: "Address Line 1",
+    addressLine2: "Address Line 2",
+    addressLine3: "Address Line 3",
+    suburb: "Suburb",
+    postcode: "Post Code",
+    city: "City",
+    state: "State",
+    title: "Title",
+    firstName: "First Name",
+    position: "Position",
+    middleName: "Middle Name",
+    surname: "Surname",
+    tel: "333333333333",
+    fax: "222222222222",
+    mobile: "1111111111",
+    email: "bmb@bmb.com",
+    webUrl: "bmb@website.com",
+    bsb: "BSB",
+    bank: "BANK",
+    accountNumber: "#123123123",
+    branch: "Branch",
+    accountName: "Account Name",
+    idCheck: true,
+    copyBills: true,
+    faxEndPoint: true,
+    telEndPoint: true,
+
+    driverLicenseNumber: "License123",
+    stateTerritory:"State Territory",
+    dlExpiryDate: "2025-01-01",
     rateNotice: true,
     electricityBill: true,
     telephoneBill: true,
@@ -84,7 +106,7 @@ export const AuthProvider = ({ children }) => {
     otherSpecify: true,
     requestAFS: true,
     requireDN: true,
-
+    salesperson:"sales person",
     uc8Cloud: true,
     softPhone: true,
     ippbx: true,
@@ -93,9 +115,13 @@ export const AuthProvider = ({ children }) => {
     ipHandset: true,
     ata: true,
     VoipOther: true,
-    VoipOtherText: "",
-    otherSpecifyText: "",
-
+    VoipOtherText: "VOIP OTHER",
+    otherSpecifyText: "Other Specify",
+    //CAA form
+    inboundTel: "Inbound Tel",
+    fnnTel: "FNN TEL",
+    inboundFax: "Inbound Fax",
+    fnnFax: "FNN Fax",
     //VAF form 11.Plan and Service Details
     sip_1: true,
     sip_2: false,
@@ -191,34 +217,112 @@ export const AuthProvider = ({ children }) => {
     //VAF form 12.Contact Period
     minimumContractPeriod: "1",
 
+    serviceNumber1: "",
+    serviceNumber2: "",
+    serviceNumber3: "",
+    serviceNumber4: "",
+    serviceNumber5: "",
+    serviceNumber6: "",
+    serviceNumber7: "",
+    serviceNumber8: "",
+    serviceNumber9: "",
+    serviceNumber10: "",
+    serviceNumber11: "",
+    serviceNumber12: "",
+
+    serviceDescription1: "",
+    serviceDescription2: "",
+    serviceDescription3: "",
+    serviceDescription4: "",
+    serviceDescription5: "",
+    serviceDescription6: "",
+    serviceDescription7: "",
+    serviceDescription8: "",
+    serviceDescription9: "",
+    serviceDescription10: "",
+    serviceDescription11: "",
+    serviceDescription12: "",
+
+    simCost1: "",
+    simCost2: "",
+    simCost3: "",
+    simCost4: "",
+    simCost5: "",
+    simCost6: "",
+    simCost7: "",
+    simCost8: "",
+    simCost9: "",
+    simCost10: "",
+    simCost11: "",
+    simCost12: "",
+
+    mro1: "",
+    mro2: "",
+    mro3: "",
+    mro4: "",
+    mro5: "",
+    mro6: "",
+    mro7: "",
+    mro8: "",
+    mro9: "",
+    mro10: "",
+    mro11: "",
+    mro12: "",
+
+    planCode1: "",
+    planCode2: "",
+    planCode3: "",
+    planCode4: "",
+    planCode5: "",
+    planCode6: "",
+    planCode7: "",
+    planCode8: "",
+    planCode9: "",
+    planCode10: "",
+    planCode11: "",
+    planCode12: "",
+
+    monthlySubscription1: "",
+    monthlySubscription2: "",
+    monthlySubscription3: "",
+    monthlySubscription4: "",
+    monthlySubscription5: "",
+    monthlySubscription6: "",
+    monthlySubscription7: "",
+    monthlySubscription8: "",
+    monthlySubscription9: "",
+    monthlySubscription10: "",
+    monthlySubscription11: "",
+    monthlySubscription12: "",
+
     //APA form 1. Please select Payment Method
-    creditCard:true,
-    bankDebit:false,
+    creditCard: true,
+    bankDebit: false,
     //APA form 2. Card Type
-    visaCard:true,
-    masterCard:false,
-    americanExpressCard:false,
-    cardNumber:"",
-    cardExpiryDate:new Date().toISOString().split("T")[0],
-    cardCSVNumber:"0000",
-    nameAsDisplayedOnCard:"",
+    visaCard: true,
+    masterCard: false,
+    americanExpressCard: false,
+    cardNumber: "",
+    cardExpiryDate: new Date().toISOString().split("T")[0],
+    cardCSVNumber: "0000",
+    nameAsDisplayedOnCard: "",
 
     //APA form 3. For Direct debt from a bank account.
-    bankInstitution:"",
-    
+    bankInstitution: "",
+
     //PAF form 1
-    provisioningTicket:"",
+    provisioningTicket: "",
 
     //PAF form 6
-    simplePortQty:"1",
-    simplePortUnitCost:"9",
-    simplePortPortingFee:"",
-    complexPortQty:"1",
-    complexPortUnitCost:"99",
-    complexPortPortingFee:"0",
-    numberRangeQty:"0",
-    numberRangeUnitCost:"199",
-    numberRangePortingFee:"0",
+    simplePortQty: "1",
+    simplePortUnitCost: "9",
+    simplePortPortingFee: "",
+    complexPortQty: "1",
+    complexPortUnitCost: "99",
+    complexPortPortingFee: "0",
+    numberRangeQty: "0",
+    numberRangeUnitCost: "199",
+    numberRangePortingFee: "0",
     //PAF form 7
     singleNumber_1: true,
     singleNumber_2: false,
@@ -277,66 +381,66 @@ export const AuthProvider = ({ children }) => {
     numbers100_17: false,
     numbers100_18: false,
 
-    service1Number:123123,
-    service2Number:"",
-    service3Number:"",
-    service4Number:"",
-    service5Number:"",
-    service6Number:"",
-    service7Number:"",
-    service8Number:"",
-    service9Number:"",
-    service10Number:"",
-    service11Number:"",
-    service12Number:"",
-    service13Number:"",
-    service14Number:"",
-    service15Number:"",
-    service16Number:"",
-    service17Number:"",
-    service18Number:"",
+    service1Number: 123123,
+    service2Number: "",
+    service3Number: "",
+    service4Number: "",
+    service5Number: "",
+    service6Number: "",
+    service7Number: "",
+    service8Number: "",
+    service9Number: "",
+    service10Number: "",
+    service11Number: "",
+    service12Number: "",
+    service13Number: "",
+    service14Number: "",
+    service15Number: "",
+    service16Number: "",
+    service17Number: "",
+    service18Number: "",
 
-    service1LosingCarrier:123123,
-    service2LosingCarrier:"",
-    service3LosingCarrier:"",
-    service4LosingCarrier:"",
-    service5LosingCarrier:"",
-    service6LosingCarrier:"",
-    service7LosingCarrier:"",
-    service8LosingCarrier:"",
-    service9LosingCarrier:"",
-    service10LosingCarrier:"",
-    service11LosingCarrier:"",
-    service12LosingCarrier:"",
-    service13LosingCarrier:"",
-    service14LosingCarrier:"",
-    service15LosingCarrier:"",
-    service16LosingCarrier:"",
-    service17LosingCarrier:"",
-    service18LosingCarrier:"",
+    service1LosingCarrier: 123123,
+    service2LosingCarrier: "",
+    service3LosingCarrier: "",
+    service4LosingCarrier: "",
+    service5LosingCarrier: "",
+    service6LosingCarrier: "",
+    service7LosingCarrier: "",
+    service8LosingCarrier: "",
+    service9LosingCarrier: "",
+    service10LosingCarrier: "",
+    service11LosingCarrier: "",
+    service12LosingCarrier: "",
+    service13LosingCarrier: "",
+    service14LosingCarrier: "",
+    service15LosingCarrier: "",
+    service16LosingCarrier: "",
+    service17LosingCarrier: "",
+    service18LosingCarrier: "",
 
-    service1AccountNumber:123123,
-    service2AccountNumber:"",
-    service3AccountNumber:"",
-    service4AccountNumber:"",
-    service5AccountNumber:"",
-    service6AccountNumber:"",
-    service7AccountNumber:"",
-    service8AccountNumber:"",
-    service9AccountNumber:"",
-    service10AccountNumber:"",
-    service11AccountNumber:"",
-    service12AccountNumber:"",
-    service13AccountNumber:"",
-    service14AccountNumber:"",
-    service15AccountNumber:"",
-    service16AccountNumber:"",
-    service17AccountNumber:"",
-    service18AccountNumber:"",
+    service1AccountNumber: 123123,
+    service2AccountNumber: "",
+    service3AccountNumber: "",
+    service4AccountNumber: "",
+    service5AccountNumber: "",
+    service6AccountNumber: "",
+    service7AccountNumber: "",
+    service8AccountNumber: "",
+    service9AccountNumber: "",
+    service10AccountNumber: "",
+    service11AccountNumber: "",
+    service12AccountNumber: "",
+    service13AccountNumber: "",
+    service14AccountNumber: "",
+    service15AccountNumber: "",
+    service16AccountNumber: "",
+    service17AccountNumber: "",
+    service18AccountNumber: "",
 
     //PAF form 8 List Current Carrier or Carriage Service Provider
-    currentProvider:"",
-    currentProviderAccountNumber:"",
+    currentProvider: "",
+    currentProviderAccountNumber: "",
 
     qtyOfDIDService: true,
     birthDate: "1989-10-09",
@@ -345,22 +449,103 @@ export const AuthProvider = ({ children }) => {
     signDate: new Date().toISOString().split("T")[0],
     declarationDate: new Date().toISOString().split("T")[0],
   });
-
+  const sharedFields = ["fullName", "email", "tel"];
   const handleChange = (eventOrDate, name = null) => {
     if (eventOrDate && eventOrDate.target) {
-      // Handles input fields like text, checkbox, etc.
       const { name, value, type, checked } = eventOrDate.target;
       setFormData((prevData) => ({
         ...prevData,
         [name]: type === "checkbox" ? checked : value,
       }));
+      if (sharedFields.includes(name)) {
+        setCCFFormData((prevData) => ({
+          ...prevData,
+          [name]: type === "checkbox" ? checked : value,
+        }));
+        setCAAFormData((prevData) => ({
+          ...prevData,
+          [name]: type === "checkbox" ? checked : value,
+        }));
+
+        setVAFFormData((prevData) => ({
+          ...prevData,
+          [name]: type === "checkbox" ? checked : value,
+        }));
+
+        setPAFFormData((prevData) => ({
+          ...prevData,
+          [name]: type === "checkbox" ? checked : value,
+        }));
+
+        setIAFFormData((prevData) => ({
+          ...prevData,
+          [name]: type === "checkbox" ? checked : value,
+        }));
+
+        setOBSFormData((prevData) => ({
+          ...prevData,
+          [name]: type === "checkbox" ? checked : value,
+        }));
+
+        setAAFFormData((prevData) => ({
+          ...prevData,
+          [name]: type === "checkbox" ? checked : value,
+        }));
+
+        setAPAFormData((prevData) => ({
+          ...prevData,
+          [name]: type === "checkbox" ? checked : value,
+        }));
+
+        setTCTFormData((prevData) => ({
+          ...prevData,
+          [name]: type === "checkbox" ? checked : value,
+        }));
+      }
     } else {
-      // Handles DatePicker or other cases where eventOrDate is not an event object
-      const dateName = name; // Use the name passed as an argument
+      const dateName = name;
       setFormData((prevData) => ({
         ...prevData,
         [dateName]: eventOrDate,
       }));
+      if (sharedFields.includes(dateName)) {
+        setCCFFormData((prevData) => ({
+          ...prevData,
+          [dateName]: eventOrDate,
+        }));
+        setCAAFormData((prevData) => ({
+          ...prevData,
+          [dateName]: eventOrDate,
+        }));
+        setVAFFormData((prevData) => ({
+          ...prevData,
+          [dateName]: eventOrDate,
+        }));
+        setPAFFormData((prevData) => ({
+          ...prevData,
+          [dateName]: eventOrDate,
+        }));
+        setIAFFormData((prevData) => ({
+          ...prevData,
+          [dateName]: eventOrDate,
+        }));
+        setOBSFormData((prevData) => ({
+          ...prevData,
+          [dateName]: eventOrDate,
+        }));
+        setAAFFormData((prevData) => ({
+          ...prevData,
+          [dateName]: eventOrDate,
+        }));
+        setAPAFormData((prevData) => ({
+          ...prevData,
+          [dateName]: eventOrDate,
+        }));
+        setTCTFormData((prevData) => ({
+          ...prevData,
+          [dateName]: eventOrDate,
+        }));
+      }
     }
   };
 
@@ -369,6 +554,15 @@ export const AuthProvider = ({ children }) => {
     authToken: "",
     authUser: {},
     formData,
+    CCFFormData,
+    CAAFormData,
+    VAFFormData,
+    PAFFormData,
+    IAFFormData,
+    OBSFormData,
+    AAFFormData,
+    APAFormData,
+    TCTFormData,
     handleChange,
   };
 

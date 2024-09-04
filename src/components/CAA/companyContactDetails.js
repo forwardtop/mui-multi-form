@@ -65,7 +65,7 @@ const ServiceDetails = () => {
             name="fnnTel"
             size="small"
             variant="outlined"
-            value={formData.fnnT}
+            value={formData.fnnTel}
             onChange={handleChange}
           />
         </Grid>

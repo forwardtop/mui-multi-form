@@ -11,7 +11,7 @@ import { AuthContext } from "../../config/AuthContext";
 import { sectionTitle } from "../../utils/sectionTitleUtils";
 import { CIFSectionTitles } from "../../constants/sectionTitles";
 const BusinessMarketSector = () => {
-  const { formData, handleChange } = useContext(AuthContext);
+  const { CAAFormData, handleChange } = useContext(AuthContext);
 
   return (
     <Box
@@ -58,7 +58,7 @@ const BusinessMarketSector = () => {
                 <Checkbox
                   color="primary"
                   name="education"
-                  checked={Boolean(Number(formData.education))}
+                  checked={Boolean(Number(CAAFormData.education))}
                   onChange={handleChange}
                   sx={{ marginLeft: 1 }}
                 />
@@ -81,7 +81,7 @@ const BusinessMarketSector = () => {
                 <Checkbox
                   color="primary"
                   name="healthCare"
-                  checked={Boolean(Number(formData.healthCare))}
+                  checked={Boolean(Number(CAAFormData.healthCare))}
                   onChange={handleChange}
                   sx={{ marginLeft: 1 }}
                 />
@@ -100,7 +100,7 @@ const BusinessMarketSector = () => {
                 <Checkbox
                   color="primary"
                   name="retail"
-                  checked={Boolean(Number(formData.retail))}
+                  checked={Boolean(Number(CAAFormData.retail))}
                   onChange={handleChange}
                   sx={{ marginLeft: 1 }}
                 />
@@ -119,7 +119,7 @@ const BusinessMarketSector = () => {
                 <Checkbox
                   color="primary"
                   name="manufacturing"
-                  checked={Boolean(Number(formData.manufacturing))}
+                  checked={Boolean(Number(CAAFormData.manufacturing))}
                   onChange={handleChange}
                   sx={{ marginLeft: 1 }}
                 />
@@ -144,7 +144,7 @@ const BusinessMarketSector = () => {
                 <Checkbox
                   color="primary"
                   name="government"
-                  checked={Boolean(Number(formData.government))}
+                  checked={Boolean(Number(CAAFormData.government))}
                   onChange={handleChange}
                   sx={{ marginLeft: 1 }}
                 />
@@ -167,7 +167,7 @@ const BusinessMarketSector = () => {
                 <Checkbox
                   color="primary"
                   name="transport"
-                  checked={Boolean(Number(formData.transport))}
+                  checked={Boolean(Number(CAAFormData.transport))}
                   onChange={handleChange}
                   sx={{ marginLeft: 1 }}
                 />
@@ -186,7 +186,7 @@ const BusinessMarketSector = () => {
                 <Checkbox
                   color="primary"
                   name="finance"
-                  checked={Boolean(Number(formData.finance))}
+                  checked={Boolean(Number(CAAFormData.finance))}
                   onChange={handleChange}
                   sx={{ marginLeft: 1 }}
                 />
@@ -205,7 +205,7 @@ const BusinessMarketSector = () => {
                 <Checkbox
                   color="primary"
                   name="residential"
-                  checked={Boolean(Number(formData.residential))}
+                  checked={Boolean(Number(CAAFormData.residential))}
                   onChange={handleChange}
                   sx={{ marginLeft: 1 }}
                 />
@@ -230,7 +230,7 @@ const BusinessMarketSector = () => {
                 <Checkbox
                   color="primary"
                   name="hospitality"
-                  checked={Boolean(Number(formData.hospitality))}
+                  checked={Boolean(Number(CAAFormData.hospitality))}
                   onChange={handleChange}
                   sx={{ marginLeft: 1 }}
                 />
@@ -253,7 +253,7 @@ const BusinessMarketSector = () => {
                 <Checkbox
                   color="primary"
                   name="legal"
-                  checked={Boolean(Number(formData.legal))}
+                  checked={Boolean(Number(CAAFormData.legal))}
                   onChange={handleChange}
                   sx={{ marginLeft: 1 }}
                 />
@@ -272,7 +272,7 @@ const BusinessMarketSector = () => {
                 <Checkbox
                   color="primary"
                   name="advertising"
-                  checked={Boolean(Number(formData.advertising))}
+                  checked={Boolean(Number(CAAFormData.advertising))}
                   onChange={handleChange}
                   sx={{ marginLeft: 1 }}
                 />
@@ -291,7 +291,7 @@ const BusinessMarketSector = () => {
                 <Checkbox
                   color="primary"
                   name="building"
-                  checked={Boolean(Number(formData.building))}
+                  checked={Boolean(Number(CAAFormData.building))}
                   onChange={handleChange}
                   sx={{ marginLeft: 1 }}
                 />
@@ -320,7 +320,7 @@ const BusinessMarketSector = () => {
                 <Checkbox
                   color="primary"
                   name="entertainment"
-                  checked={Boolean(Number(formData.entertainment))}
+                  checked={Boolean(Number(CAAFormData.entertainment))}
                   onChange={handleChange}
                   sx={{ marginLeft: 1 }}
                 />
@@ -347,7 +347,7 @@ const BusinessMarketSector = () => {
                 <Checkbox
                   color="primary"
                   name="industry"
-                  checked={Boolean(Number(formData.industry))}
+                  checked={Boolean(Number(CAAFormData.industry))}
                   onChange={handleChange}
                   sx={{ marginLeft: 1 }}
                 />
@@ -371,7 +371,7 @@ const BusinessMarketSector = () => {
                 name="other"
                 size="small"
                 variant="outlined"
-                value={formData.other}
+                value={CAAFormData.CAAMarketSectorOther}
                 onChange={handleChange}
               />
             </Grid>
