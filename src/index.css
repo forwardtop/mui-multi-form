@@ -1,15 +1,15 @@
 body {
   margin: 0;
-  font-family: 'DM Sans',sans-serif;
+  font-family: "DM Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: 'DM Sans',sans-serif;
+  font-family: "DM Sans", sans-serif;
 }
 #pdfContent {
-  width: 100%;  /* Use the full width of the container */
+  width: 100%; /* Use the full width of the container */
   min-height: 297mm;
 }
 .pdf-container {
@@ -25,12 +25,27 @@ code {
     box-shadow: none;
   }
 }
+@media print {
+  .MuiTypography-root {
+    vertical-align: middle; /* Or adjust as needed */
+  }
+}
 .rotated-text {
-   writing-mode: vertical-rl;
-   -webkit-transform: rotate(180deg);
-
+  writing-mode: vertical-rl;
+  -webkit-transform: rotate(180deg);
 }
 .page-break {
   page-break-before: always;
   break-before: always;
+}
+.centered-content {
+  display: flex!important;
+  justify-content: center;
+  align-items: center;
+}
+.adorment {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
 }

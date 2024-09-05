@@ -8,6 +8,7 @@ export const AuthContext = createContext({
 });
 
 export const AuthProvider = ({ children }) => {
+  
   const [CCFFormData, setCCFFormData] = useState({});
   const [CAAFormData, setCAAFormData] = useState({
     trader: true,
@@ -113,7 +114,7 @@ export const AuthProvider = ({ children }) => {
     planCode11: "",
     planCode12: "",
 
-    monthlySubscription1: "MS 1",
+    monthlySubscription1: "5,990",
     monthlySubscription2: "",
     monthlySubscription3: "",
     monthlySubscription4: "",

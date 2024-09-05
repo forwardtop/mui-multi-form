@@ -1,17 +1,14 @@
 // src/components/PrimaryContactPerson.js
-import React, { useCallback, useContext } from "react";
+import React, { useContext } from "react";
 import { Box, Grid, TextField, Typography } from "@mui/material";
 import { sectionTitle } from "../../utils/sectionTitleUtils";
 import { VAFSectionTitles } from "../../constants/sectionTitles";
 import { AuthContext } from "../../config/AuthContext";
 
-const MobileNumbers = React.memo(() => {
+const MobileNumbers = () => {
   const formRows = Array.from({ length: 12 });
   const { VAFFormData, handleChange } = useContext(AuthContext);
-  const handleInputChange = useCallback((event) => {
-    handleChange(event);
-  }, [handleChange]);
-
+console.log(VAFFormData);
   return (
     <Box
       sx={{
@@ -92,12 +89,12 @@ const MobileNumbers = React.memo(() => {
                     size="small"
                     variant="outlined"
                     name={`serviceNumber${index+1}`}
-                    value={VAFFormData[`serviceNumber${index+1}`]}
-                    onChange={handleInputChange}
+                    defaultValue={VAFFormData[`serviceNumber${index+1}`]}
+                    onBlur={handleChange}
                     InputProps={{
                       sx: {
                         "& input": {
-                          textAlign: "center", // Align text to the right
+                          textAlign: "left", // Align text to the right
                         },
                       },
                     }}
@@ -109,12 +106,12 @@ const MobileNumbers = React.memo(() => {
                     size="small"
                     variant="outlined"
                     name={`serviceDescription${index+1}`}
-                    value={VAFFormData[`serviceDescription${index+1}`]}
-                    onChange={handleInputChange}
+                    defaultValue={VAFFormData[`serviceDescription${index+1}`]}
+                    onBlur={handleChange}
                     InputProps={{
                       sx: {
                         "& input": {
-                          textAlign: "center", // Align text to the right
+                          textAlign: "left", // Align text to the right
                         },
                       },
                     }}
@@ -126,13 +123,13 @@ const MobileNumbers = React.memo(() => {
                     size="small"
                     variant="outlined"
                     name={`simCost${index+1}`}
-                    value={VAFFormData[`simCost${index+1}`]}
-                    onChange={handleInputChange}
+                    defaultValue={VAFFormData[`simCost${index+1}`]}
+                    onBlur={handleChange}
                     InputProps={{
                       startAdornment: <Typography>$</Typography>,
                       sx: {
                         "& input": {
-                          textAlign: "right", // Align text to the right
+                          textAlign: "left", // Align text to the right
                         },
                       },
                     }}
@@ -144,13 +141,13 @@ const MobileNumbers = React.memo(() => {
                     size="small"
                     variant="outlined"
                     name={`mro${index+1}`}
-                    value={VAFFormData[`mro${index+1}`]}
-                    onChange={handleInputChange}
+                    defaultValue={VAFFormData[`mro${index+1}`]}
+                    onBlur={handleChange}
                     InputProps={{
                       startAdornment: <Typography>$</Typography>,
                       sx: {
                         "& input": {
-                          textAlign: "right", // Align text to the right
+                          textAlign: "left", // Align text to the right
                         },
                       },
                     }}
@@ -162,12 +159,12 @@ const MobileNumbers = React.memo(() => {
                     size="small"
                     variant="outlined"
                     name={`planCode${index+1}`}
-                    value={VAFFormData[`planCode${index+1}`]}
-                    onChange={handleInputChange}
+                    defaultValue={VAFFormData[`planCode${index+1}`]}
+                    onBlur={handleChange}
                     InputProps={{
                       sx: {
                         "& input": {
-                          textAlign: "center", // Align text to the right
+                          textAlign: "left", // Align text to the right
                         },
                       },
                     }}
@@ -179,13 +176,13 @@ const MobileNumbers = React.memo(() => {
                     size="small"
                     variant="outlined"
                     name={`monthlySubscription${index+1}`}
-                    value={VAFFormData[`monthlySubscription${index+1}`]}
-                    onChange={handleInputChange}
+                    defaultValue={VAFFormData[`monthlySubscription${index+1}`]}
+                    onBlur={handleChange}
                     InputProps={{
-                      startAdornment: <Typography>$</Typography>,
+                      startAdornment: <Typography variant="body1">$</Typography>,
                       sx: {
                         "& input": {
-                          textAlign: "right", // Align text to the right
+                          textAlign: "left", // Align text to the right
                         },
                       },
                     }}
@@ -205,6 +202,6 @@ const MobileNumbers = React.memo(() => {
       </Box>
     </Box>
   );
-});
+};
 
 export default MobileNumbers;

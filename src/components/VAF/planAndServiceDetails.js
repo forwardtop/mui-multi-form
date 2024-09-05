@@ -1,5 +1,4 @@
-// src/components/PrimaryContactPerson.js
-import React, { useContext } from "react";
+import React, { useContext, useMemo } from "react";
 import { Box, Grid, TextField, Typography } from "@mui/material";
 import { sectionTitle } from "../../utils/sectionTitleUtils";
 import { VAFSectionTitles } from "../../constants/sectionTitles";
@@ -7,8 +6,131 @@ import CustomTextFieldAsCheckbox from "../../utils/CustomTextFieldAsCheckbox";
 import { AuthContext } from "../../config/AuthContext";
 
 const PlanAndServiceDetails = () => {
-  const formRows = Array.from({ length: 18 });
   const { VAFFormData, handleChange } = useContext(AuthContext);
+
+  // Memoize the formRows array
+  const formRows = useMemo(() => Array.from({ length: 18 }), []);
+
+  // Memoize the rendering of form fields to prevent re-rendering
+  const renderFormFields = useMemo(() => {
+    return formRows.map((_, index) => (
+      <Grid container spacing={0.5} key={index} sx={{ marginTop: "0.5rem" }}>
+        <Grid item xs={1} sx={{ display: "flex", alignItems: "center" }}>
+          <TextField
+            fullWidth
+            size="small"
+            variant="outlined"
+            name={`qty${index + 1}`}
+            defaultValue={VAFFormData[`qty${index + 1}`]}
+            onBlur={handleChange}
+            sx={{
+                "& input": {
+                  textAlign: "center",
+                },
+              }}
+          />
+        </Grid>
+        <Grid item xs={2} sx={{ display: "flex", alignItems: "center" }}>
+          <TextField
+            fullWidth
+            size="small"
+            variant="outlined"
+            name={`serviceDetails${index + 1}`}
+            defaultValue={VAFFormData[`serviceDetails${index + 1}`]}
+            onBlur={handleChange}
+            InputProps={{
+              sx: {
+                "& input": {
+                  textAlign: "left",
+                },
+              },
+            }}
+          />
+        </Grid>
+        <Grid item xs={1.5}>
+          <TextField
+            fullWidth
+            size="small"
+            variant="outlined"
+            name={`installationUpfront${index + 1}`}
+            defaultValue={VAFFormData[`installationUpfront${index + 1}`]}
+            onBlur={handleChange}
+            className="centered-content"
+            InputProps={{
+              startAdornment: <div>$</div>,
+              sx: {
+                "& input": {
+                  textAlign: "left",
+                },
+              },
+            }}
+          />
+        </Grid>
+        <Grid item xs={1.5}>
+            <TextField
+            fullWidth
+            size="small"
+            variant="outlined"
+            name={`unitPrice${index + 1}`}
+            defaultValue={VAFFormData[`unitPrice${index + 1}`]}
+            onBlur={handleChange}
+            InputProps={{
+              startAdornment: <Typography>$</Typography>,
+              sx: {
+                "& input": {
+                  textAlign: "left",
+                },
+              },
+            }}
+          />
+        </Grid>
+        <Grid item xs={1}>
+          <TextField
+            fullWidth
+            size="small"
+            variant="outlined"
+            name={`planCodeService${index + 1}`}
+            defaultValue={VAFFormData[`planCodeService${index + 1}`]}
+            onBlur={handleChange}
+            InputProps={{
+              sx: {
+                "& input": {
+                  textAlign: "left",
+                },
+              },
+            }}
+          />
+        </Grid>
+        <Grid item xs={1}>
+          <TextField
+            fullWidth
+            size="small"
+            variant="outlined"
+            name={`monthlyCost${index + 1}`}
+            defaultValue={VAFFormData[`monthlyCost${index + 1}`]}
+            onBlur={handleChange}
+            InputProps={{
+              startAdornment: <Typography>$</Typography>,
+              sx: {
+                "& input": {
+                  textAlign: "left",
+                },
+              },
+            }}
+          />
+        </Grid>
+        {["sip", "inbound", "mobile", "security", "hosting", "support", "other"].map((label) => (
+          <Grid item xs={0.5} key={`${label}_${index + 1}`}>
+            <CustomTextFieldAsCheckbox
+              name={`${label}_${index + 1}`}
+              index={index + 1}
+            />
+          </Grid>
+        ))}
+      </Grid>
+    ));
+  }, [formRows, VAFFormData, handleChange]);
+
   return (
     <Box
       sx={{
@@ -49,27 +171,27 @@ const PlanAndServiceDetails = () => {
             </Grid>
             <Grid item xs={2}>
               <Typography variant="subtitle1" sx={{ textAlign: "center" }}>
-                Service<br></br> Details
+                Service<br /> Details
               </Typography>
             </Grid>
             <Grid item xs={1.5}>
               <Typography variant="subtitle1" sx={{ textAlign: "center" }}>
-                Installation <br></br>Upfront
+                Installation <br />Upfront
               </Typography>
             </Grid>
             <Grid item xs={1.5}>
               <Typography variant="subtitle1" sx={{ textAlign: "center" }}>
-                Unit<br></br>Price
+                Unit<br />Price
               </Typography>
             </Grid>
             <Grid item xs={1}>
               <Typography variant="subtitle1" sx={{ textAlign: "center" }}>
-                Plan<br></br> Code
+                Plan<br /> Code
               </Typography>
             </Grid>
             <Grid item xs={1}>
               <Typography variant="subtitle1" sx={{ textAlign: "center" }}>
-                Monthly<br></br> Cost
+                Monthly<br /> Cost
               </Typography>
             </Grid>
             <Grid item xs={3.5}>
@@ -95,170 +217,7 @@ const PlanAndServiceDetails = () => {
         </Grid>
         <Grid container sx={{ display: "flex" }}>
           <Grid item xs={12}>
-            {formRows.map((_, index) => (
-              <Grid
-                container
-                spacing={0.5}
-                key={index}
-                sx={{ marginTop: "0.5rem" }}
-              >
-                <Grid
-                  item
-                  xs={1}
-                  sx={{ display: "flex", alignItems: "center" }}
-                >
-                  <TextField
-                    fullWidth
-                    size="small"
-                    variant="outlined"
-                    name={`qty${index + 1}`}
-                    value={VAFFormData[`qty${index + 1}`]}
-                    onChange={handleChange}
-                    InputProps={{
-                      sx: {
-                        "& input": {
-                          textAlign: "center",
-                        },
-                      },
-                    }}
-                  />
-                </Grid>
-                <Grid
-                  item
-                  xs={2}
-                  sx={{ display: "flex", alignItems: "center" }}
-                >
-                  <TextField
-                    fullWidth
-                    size="small"
-                    variant="outlined"
-                    name={`serviceDetails${index + 1}`}
-                    value={VAFFormData[`serviceDetails${index + 1}`]}
-                    onChange={handleChange}
-                    InputProps={{
-                      sx: {
-                        "& input": {
-                          textAlign: "center",
-                        },
-                      },
-                    }}
-                  />
-                </Grid>
-                <Grid item xs={1.5}>
-                  <TextField
-                    fullWidth
-                    size="small"
-                    variant="outlined"
-                    name={`installationUpfront${index + 1}`}
-                    value={VAFFormData[`installationUpfront${index + 1}`]}
-                    onChange={handleChange}
-                    InputProps={{
-                      startAdornment: <Typography>$</Typography>,
-                      sx: {
-                        "& input": {
-                          textAlign: "right",
-                        },
-                      },
-                    }}
-                  />
-                </Grid>
-                <Grid item xs={1.5}>
-                  <TextField
-                    fullWidth
-                    size="small"
-                    variant="outlined"
-                    name={`unitPrice${index + 1}`}
-                    value={VAFFormData[`unitPrice${index + 1}`]}
-                    onChange={handleChange}
-                    InputProps={{
-                      startAdornment: <Typography>$</Typography>,
-                      sx: {
-                        "& input": {
-                          textAlign: "right", // Align text to the right
-                        },
-                      },
-                    }}
-                  />
-                </Grid>
-                <Grid item xs={1}>
-                  <TextField
-                    fullWidth
-                    size="small"
-                    variant="outlined"
-                    name={`planCodeService${index + 1}`}
-                    value={VAFFormData[`planCodeService${index + 1}`]}
-                    onChange={handleChange}
-                    InputProps={{
-                      sx: {
-                        "& input": {
-                          textAlign: "center", // Align text to the right
-                        },
-                      },
-                    }}
-                  />
-                </Grid>
-                <Grid item xs={1}>
-                  <TextField
-                    fullWidth
-                    size="small"
-                    variant="outlined"
-                    name={`monthlyCost${index + 1}`}
-                    value={VAFFormData[`monthlyCost${index + 1}`]}
-                    onChange={handleChange}
-                    InputProps={{
-                      startAdornment: <Typography>$</Typography>,
-                      sx: {
-                        "& input": {
-                          textAlign: "right", // Align text to the right
-                        },
-                      },
-                    }}
-                  />
-                </Grid>
-                <Grid item xs={0.5}>
-                  <CustomTextFieldAsCheckbox
-                    name={`sip_${index + 1}`}
-                    index={index + 1}
-                  />
-                </Grid>
-                <Grid item xs={0.5}>
-                  <CustomTextFieldAsCheckbox
-                    name={`inbound_${index + 1}`}
-                    index={index + 1}
-                  />
-                </Grid>
-                <Grid item xs={0.5}>
-                  <CustomTextFieldAsCheckbox
-                    name={`mobile_${index + 1}`}
-                    index={index + 1}
-                  />
-                </Grid>
-                <Grid item xs={0.5}>
-                  <CustomTextFieldAsCheckbox
-                    name={`security_${index + 1}`}
-                    index={index + 1}
-                  />
-                </Grid>
-                <Grid item xs={0.5}>
-                  <CustomTextFieldAsCheckbox
-                    name={`hosting_${index + 1}`}
-                    index={index + 1}
-                  />
-                </Grid>
-                <Grid item xs={0.5}>
-                  <CustomTextFieldAsCheckbox
-                    name={`support_${index + 1}`}
-                    index={index + 1}
-                  />
-                </Grid>
-                <Grid item xs={0.5}>
-                  <CustomTextFieldAsCheckbox
-                    name={`other_${index + 1}`}
-                    index={index + 1}
-                  />
-                </Grid>
-              </Grid>
-            ))}
+            {renderFormFields}
           </Grid>
         </Grid>
       </Box>
