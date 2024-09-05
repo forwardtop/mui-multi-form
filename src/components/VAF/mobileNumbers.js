@@ -1,13 +1,16 @@
 // src/components/PrimaryContactPerson.js
-import React, { useContext } from "react";
+import React, { useCallback, useContext } from "react";
 import { Box, Grid, TextField, Typography } from "@mui/material";
 import { sectionTitle } from "../../utils/sectionTitleUtils";
 import { VAFSectionTitles } from "../../constants/sectionTitles";
 import { AuthContext } from "../../config/AuthContext";
 
-const MobileNumbers = () => {
+const MobileNumbers = React.memo(() => {
   const formRows = Array.from({ length: 12 });
   const { VAFFormData, handleChange } = useContext(AuthContext);
+  const handleInputChange = useCallback((event) => {
+    handleChange(event);
+  }, [handleChange]);
 
   return (
     <Box
@@ -90,7 +93,7 @@ const MobileNumbers = () => {
                     variant="outlined"
                     name={`serviceNumber${index+1}`}
                     value={VAFFormData[`serviceNumber${index+1}`]}
-                    onChange={handleChange}
+                    onChange={handleInputChange}
                     InputProps={{
                       sx: {
                         "& input": {
@@ -107,7 +110,7 @@ const MobileNumbers = () => {
                     variant="outlined"
                     name={`serviceDescription${index+1}`}
                     value={VAFFormData[`serviceDescription${index+1}`]}
-                    onChange={handleChange}
+                    onChange={handleInputChange}
                     InputProps={{
                       sx: {
                         "& input": {
@@ -124,7 +127,7 @@ const MobileNumbers = () => {
                     variant="outlined"
                     name={`simCost${index+1}`}
                     value={VAFFormData[`simCost${index+1}`]}
-                    onChange={handleChange}
+                    onChange={handleInputChange}
                     InputProps={{
                       startAdornment: <Typography>$</Typography>,
                       sx: {
@@ -142,7 +145,7 @@ const MobileNumbers = () => {
                     variant="outlined"
                     name={`mro${index+1}`}
                     value={VAFFormData[`mro${index+1}`]}
-                    onChange={handleChange}
+                    onChange={handleInputChange}
                     InputProps={{
                       startAdornment: <Typography>$</Typography>,
                       sx: {
@@ -160,7 +163,7 @@ const MobileNumbers = () => {
                     variant="outlined"
                     name={`planCode${index+1}`}
                     value={VAFFormData[`planCode${index+1}`]}
-                    onChange={handleChange}
+                    onChange={handleInputChange}
                     InputProps={{
                       sx: {
                         "& input": {
@@ -177,7 +180,7 @@ const MobileNumbers = () => {
                     variant="outlined"
                     name={`monthlySubscription${index+1}`}
                     value={VAFFormData[`monthlySubscription${index+1}`]}
-                    onChange={handleChange}
+                    onChange={handleInputChange}
                     InputProps={{
                       startAdornment: <Typography>$</Typography>,
                       sx: {
@@ -202,6 +205,6 @@ const MobileNumbers = () => {
       </Box>
     </Box>
   );
-};
+});
 
 export default MobileNumbers;

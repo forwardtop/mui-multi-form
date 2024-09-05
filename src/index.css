@@ -30,3 +30,7 @@ code {
    -webkit-transform: rotate(180deg);
 
 }
+.page-break {
+  page-break-before: always;
+  break-before: always;
+}

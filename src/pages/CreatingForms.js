@@ -1,20 +1,24 @@
-import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom';
-import { Box, Button, CircularProgress, Container, Typography } from '@mui/material';
-import jsPDF from "jspdf";
-import html2canvas from "html2canvas";
+import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
+import {
+  Box,
+  Button,
+  CircularProgress,
+  Container,
+  Typography,
+} from "@mui/material";
 
 // Import your form components here
-import CCF from '../components/CCF/index.js';
-import CAA from '../components/CAA/index.js';
-import VAF from '../components/VAF/index.js';
-import PAF from '../components/PAF/index.js';
-import IAF from '../components/IAF/index.js';
-import OBS from '../components/OBS/index.js';
-import APA from '../components/APA/index.js';
-import AAF from '../components/AAF/index.js';
-import TCT from '../components/TCT/index.js';
-
+import CCF from "../components/CCF/index.js";
+import CAA from "../components/CAA/index.js";
+import VAF from "../components/VAF/index.js";
+import PAF from "../components/PAF/index.js";
+import IAF from "../components/IAF/index.js";
+import OBS from "../components/OBS/index.js";
+import APA from "../components/APA/index.js";
+import AAF from "../components/AAF/index.js";
+import TCT from "../components/TCT/index.js";
+import { usePDF } from "react-to-pdf";
 
 const formComponents = {
   CCF: CCF,
@@ -33,84 +37,60 @@ const CreatingForms = () => {
   const { selectedForms } = location.state || { selectedForms: [] };
   const [loading, setLoading] = useState(false);
   const [sending, setSending] = useState(false);
-
+  const { toPDF, targetRef } = usePDF({ filename: "page.pdf" });
   const sendingEmail = () => {
-    setSending(true); 
+    setSending(true);
     setTimeout(() => {
-      setSending(false); 
+      setSending(false);
     }, 2000);
-  }
-
-  const generatePDF = () => {
-    setLoading(true); 
-
-    const input = document.getElementById("pdfContent");
-    if (!input) {
-      console.error("Element not found: #pdfContent");
-      setLoading(false); 
-      return;
-    }
-
-    html2canvas(input, {
-      scale: 2, 
-      scrollX: -window.scrollX, 
-      scrollY: -window.scrollY,
-      windowWidth: document.documentElement.offsetWidth,
-      windowHeight: document.documentElement.offsetHeight,
-    })
-      .then((canvas) => {
-        const imgData = canvas.toDataURL("image/png");
-        const pdf = new jsPDF({
-          orientation: "portrait",
-          unit: "mm",
-          format: [canvas.width * 0.264583, canvas.height * 0.264583], // Adjust dimensions based on canvas size
-        });
-
-        pdf.addImage(imgData, "PNG", 0, 0, pdf.internal.pageSize.getWidth(), pdf.internal.pageSize.getHeight());
-        pdf.save("caa_document.pdf"); 
-
-        setLoading(false); 
-      })
-      .catch((error) => {
-        console.error("Failed to generate PDF:", error);
-        setLoading(false);
-      });
   };
 
   return (
     <>
-      <Container id="pdfContent">
-        {selectedForms.length > 0 ? (
-          selectedForms.map((form, index) => {
-            const FormComponent = formComponents[form];
+      <div>
+        <div ref={targetRef}>
+          <Container id="pdfContent">
+            {selectedForms.length > 0 ? (
+              selectedForms.map((form, index) => {
+                const FormComponent = formComponents[form];
 
-            return (
-              <Box key={index} sx={{ marginBottom: 2 }} className="pdf-container">
-                {FormComponent ? (
-                  <FormComponent />
-                ) : (
-                  <Typography variant="body1">
-                    Component {form} not found.
-                  </Typography>
-                )}
-              </Box>
-            );
-          })
-        ) : (
-          <Typography variant="h6">No forms selected.</Typography>
-        )}
-      </Container>
-      <div style={{ display: "flex", justifyContent: "center", marginBottom:"3rem" }}>
+                return (
+                  <Box
+                    key={index}
+                    sx={{ marginBottom: 2 }}
+                    className="pdf-container"
+                    style={{ pageBreakAfter: "always" }}
+                  >
+                    {FormComponent ? (
+                      <FormComponent />
+                    ) : (
+                      <Typography variant="body1">
+                        Component {form} not found.
+                      </Typography>
+                    )}
+                  </Box>
+                );
+              })
+            ) : (
+              <Typography variant="h6">No forms selected.</Typography>
+            )}
+          </Container>
+        </div>
+        <div style={{display:'flex', justifyContent:'center'}}>
         <Button
           variant="outlined"
           color="primary"
-          onClick={generatePDF}
           sx={{ marginTop: "2rem" }}
+          onClick={async () => {
+            setLoading(true); // Start loading when PDF generation starts
+            await toPDF(); // Wait for the PDF generation to complete
+            setLoading(false); // Stop loading when it's done
+          }}
         >
           {loading ? (
             <>
-              Downloading...  
-              <CircularProgress size={18} sx={{marginLeft:'5px'}} />
+              Downloading...
+              <CircularProgress size={18} sx={{ marginLeft: "5px" }} />
             </>
           ) : (
             "Download PDF"
@@ -119,18 +99,20 @@ const CreatingForms = () => {
         <Button
           variant="outlined"
           color="primary"
-          onClick={sendingEmail}
           sx={{ marginTop: "2rem", marginLeft: "2rem" }}
+          onClick={sendingEmail}
         >
           {sending ? (
             <>
-              Sending PDF...
-              <CircularProgress size={18} sx={{marginLeft:'5px'}} />
+              Sending...
+              <CircularProgress size={18} sx={{ marginLeft: "5px" }} />
             </>
           ) : (
-            "Send PDF"
+            "Send to my Email"
           )}
         </Button>
+        </div>
+        
       </div>
     </>
   );
