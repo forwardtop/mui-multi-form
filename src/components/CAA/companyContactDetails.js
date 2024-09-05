@@ -44,8 +44,8 @@ const ServiceDetails = () => {
             name="inboundTel"
             size="small"
             variant="outlined"
-            value={formData.inboundTel}
-            onChange={handleChange}
+            defaultValue={formData.inboundTel}
+            onBlur={handleChange}
           />
         </Grid>
         <Grid
@@ -65,8 +65,8 @@ const ServiceDetails = () => {
             name="fnnTel"
             size="small"
             variant="outlined"
-            value={formData.fnnTel}
-            onChange={handleChange}
+            defaultValue={formData.fnnTel}
+            onBlur={handleChange}
           />
         </Grid>
         <Grid
@@ -96,7 +96,7 @@ const ServiceDetails = () => {
               color="primary"
               name="faxEndPoint"
               checked={Boolean(Number(formData.faxEndPoint))}
-              onChange={handleChange}
+              onBlur={handleChange}
               sx={{ marginLeft: 1 }}
             />
           </FormGroup>
@@ -118,8 +118,8 @@ const ServiceDetails = () => {
             name="inboundFax"
             size="small"
             variant="outlined"
-            value={formData.inboundFax}
-            onChange={handleChange}
+            defaultValue={formData.inboundFax}
+            onBlur={handleChange}
           />
         </Grid>
         <Grid
@@ -139,8 +139,8 @@ const ServiceDetails = () => {
             name="fnnFax"
             size="small"
             variant="outlined"
-            value={formData.fnnFax}
-            onChange={handleChange}
+            defaultValue={formData.fnnFax}
+            onBlur={handleChange}
           />
         </Grid>
         <Grid
@@ -170,7 +170,7 @@ const ServiceDetails = () => {
               color="primary"
               name="telEndPoint"
               checked={Boolean(Number(formData.telEndPoint))}
-              onChange={handleChange}
+              onBlur={handleChange}
               sx={{ marginLeft: 1 }}
             />
           </FormGroup>
@@ -190,8 +190,8 @@ const ServiceDetails = () => {
             name="email"
             size="small"
             variant="outlined"
-            value={formData.email}
-            onChange={handleChange}
+            defaultValue={formData.email}
+            onBlur={handleChange}
           />
         </Grid>
         <Grid
@@ -205,11 +205,11 @@ const ServiceDetails = () => {
         <Grid item xs={12} sm={10.5}>
           <TextField
             fullWidth
-            name="webUrl"
+            name="webURL"
             size="small"
             variant="outlined"
-            value={formData.webUrl}
-            onChange={handleChange}
+            defaultValue={formData.webURL}
+            onBlur={handleChange}
           />
         </Grid>
       </Grid>

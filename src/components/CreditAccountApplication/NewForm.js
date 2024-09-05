@@ -282,8 +282,8 @@ const NewForm = () => {
                     name="clientAccount"
                     size="small"
                     variant="outlined"
-                    value={formData.clientAccount}
-                    onChange={handleChange}
+                    defaultValue={formData.clientAccount}
+                    onBlur={handleChange}
                   />
                 </Grid>
                 <Grid
@@ -307,8 +307,8 @@ const NewForm = () => {
                     name="approvedCredit"
                     size="small"
                     variant="outlined"
-                    value={formData.approvedCredit}
-                    onChange={handleChange}
+                    defaultValue={formData.approvedCredit}
+                    onBlur={handleChange}
                   />
                 </Grid>
                 <Grid
@@ -332,8 +332,8 @@ const NewForm = () => {
                     name="approvedBy"
                     size="small"
                     variant="outlined"
-                    value={formData.approvedBy}
-                    onChange={handleChange}
+                    defaultValue={formData.approvedBy}
+                    onBlur={handleChange}
                   />
                 </Grid>
               </Grid>
@@ -394,8 +394,8 @@ const NewForm = () => {
                 name="fullName"
                 size="small"
                 variant="outlined"
-                value={formData.fullName}
-                onChange={handleChange}
+                defaultValue={formData.fullName}
+                onBlur={handleChange}
               />
             </Grid>
             <Grid
@@ -412,8 +412,8 @@ const NewForm = () => {
                 name="tradingAs"
                 size="small"
                 variant="outlined"
-                value={formData.tradingAs}
-                onChange={handleChange}
+                defaultValue={formData.tradingAs}
+                onBlur={handleChange}
               />
             </Grid>
             <Grid
@@ -430,8 +430,8 @@ const NewForm = () => {
                 name="abn"
                 size="small"
                 variant="outlined"
-                value={formData.abn}
-                onChange={handleChange}
+                defaultValue={formData.abn}
+                onBlur={handleChange}
               />
             </Grid>
             <Grid
@@ -455,8 +455,8 @@ const NewForm = () => {
                 name="acn"
                 size="small"
                 variant="outlined"
-                value={formData.acn}
-                onChange={handleChange}
+                defaultValue={formData.acn}
+                onBlur={handleChange}
               />
             </Grid>
             <Grid
@@ -491,7 +491,7 @@ const NewForm = () => {
                       color="primary"
                       name="trader"
                       checked={Boolean(Number(formData.trader))}
-                      onChange={handleChange}
+                      onBlur={handleChange}
                       sx={{ marginLeft: 1 }}
                     />
                   </FormGroup>
@@ -514,7 +514,7 @@ const NewForm = () => {
                       color="primary"
                       name="trust"
                       checked={Boolean(Number(formData.trust))}
-                      onChange={handleChange}
+                      onBlur={handleChange}
                       sx={{ marginLeft: 1 }}
                     />
                   </FormGroup>
@@ -533,7 +533,7 @@ const NewForm = () => {
                       color="primary"
                       name="partnership"
                       checked={Boolean(Number(formData.partnership))}
-                      onChange={handleChange}
+                      onBlur={handleChange}
                       sx={{ marginLeft: 1 }}
                     />
                   </FormGroup>
@@ -562,7 +562,7 @@ const NewForm = () => {
                       color="primary"
                       name="company"
                       checked={Boolean(Number(formData.company))}
-                      onChange={handleChange}
+                      onBlur={handleChange}
                       sx={{ marginLeft: 1 }}
                     />
                   </FormGroup>
@@ -589,7 +589,7 @@ const NewForm = () => {
                       color="primary"
                       name="notForProfit"
                       checked={Boolean(Number(formData.notForProfit))}
-                      onChange={handleChange}
+                      onBlur={handleChange}
                       sx={{ marginLeft: 1 }}
                     />
                   </FormGroup>
@@ -612,8 +612,8 @@ const NewForm = () => {
                     name="other"
                     size="small"
                     variant="outlined"
-                    value={formData.other}
-                    onChange={handleChange}
+                    defaultValue={formData.other}
+                    onBlur={handleChange}
                   />
                 </Grid>
               </Grid>
@@ -706,7 +706,7 @@ const NewForm = () => {
                       color="primary"
                       name="education"
                       checked={Boolean(Number(formData.education))}
-                      onChange={handleChange}
+                      onBlur={handleChange}
                       sx={{ marginLeft: 1 }}
                     />
                   </FormGroup>
@@ -729,7 +729,7 @@ const NewForm = () => {
                       color="primary"
                       name="healthCare"
                       checked={Boolean(Number(formData.healthCare))}
-                      onChange={handleChange}
+                      onBlur={handleChange}
                       sx={{ marginLeft: 1 }}
                     />
                   </FormGroup>
@@ -748,7 +748,7 @@ const NewForm = () => {
                       color="primary"
                       name="retail"
                       checked={Boolean(Number(formData.retail))}
-                      onChange={handleChange}
+                      onBlur={handleChange}
                       sx={{ marginLeft: 1 }}
                     />
                   </FormGroup>
@@ -767,7 +767,7 @@ const NewForm = () => {
                       color="primary"
                       name="retail"
                       checked={Boolean(Number(formData.retail))}
-                      onChange={handleChange}
+                      onBlur={handleChange}
                       sx={{ marginLeft: 1 }}
                     />
                   </FormGroup>
@@ -815,7 +815,7 @@ const NewForm = () => {
                       color="primary"
                       name="healthCare"
                       checked={Boolean(Number(formData.healthCare))}
-                      onChange={handleChange}
+                      onBlur={handleChange}
                       sx={{ marginLeft: 1 }}
                     />
                   </FormGroup>
@@ -834,7 +834,7 @@ const NewForm = () => {
                       color="primary"
                       name="finance"
                       checked={Boolean(Number(formData.finance))}
-                      onChange={handleChange}
+                      onBlur={handleChange}
                       sx={{ marginLeft: 1 }}
                     />
                   </FormGroup>
@@ -853,7 +853,7 @@ const NewForm = () => {
                       color="primary"
                       name="residential"
                       checked={Boolean(Number(formData.residential))}
-                      onChange={handleChange}
+                      onBlur={handleChange}
                       sx={{ marginLeft: 1 }}
                     />
                   </FormGroup>
@@ -878,7 +878,7 @@ const NewForm = () => {
                       color="primary"
                       name="hospitality"
                       checked={Boolean(Number(formData.hospitality))}
-                      onChange={handleChange}
+                      onBlur={handleChange}
                       sx={{ marginLeft: 1 }}
                     />
                   </FormGroup>
@@ -901,7 +901,7 @@ const NewForm = () => {
                       color="primary"
                       name="legal"
                       checked={Boolean(Number(formData.legal))}
-                      onChange={handleChange}
+                      onBlur={handleChange}
                       sx={{ marginLeft: 1 }}
                     />
                   </FormGroup>
@@ -920,7 +920,7 @@ const NewForm = () => {
                       color="primary"
                       name="advertising"
                       checked={Boolean(Number(formData.advertising))}
-                      onChange={handleChange}
+                      onBlur={handleChange}
                       sx={{ marginLeft: 1 }}
                     />
                   </FormGroup>
@@ -939,7 +939,7 @@ const NewForm = () => {
                       color="primary"
                       name="building"
                       checked={Boolean(Number(formData.building))}
-                      onChange={handleChange}
+                      onBlur={handleChange}
                       sx={{ marginLeft: 1 }}
                     />
                   </FormGroup>
@@ -968,7 +968,7 @@ const NewForm = () => {
                       color="primary"
                       name="entertainment"
                       checked={Boolean(Number(formData.entertainment))}
-                      onChange={handleChange}
+                      onBlur={handleChange}
                       sx={{ marginLeft: 1 }}
                     />
                   </FormGroup>
@@ -995,7 +995,7 @@ const NewForm = () => {
                       color="primary"
                       name="industry"
                       checked={Boolean(Number(formData.industry))}
-                      onChange={handleChange}
+                      onBlur={handleChange}
                       sx={{ marginLeft: 1 }}
                     />
                   </FormGroup>
@@ -1018,8 +1018,8 @@ const NewForm = () => {
                     name="other"
                     size="small"
                     variant="outlined"
-                    value={formData.other}
-                    onChange={handleChange}
+                    defaultValue={formData.other}
+                    onBlur={handleChange}
                   />
                 </Grid>
               </Grid>
@@ -1080,8 +1080,8 @@ const NewForm = () => {
                 name="addressLine1"
                 size="small"
                 variant="outlined"
-                value={formData.addressLine1}
-                onChange={handleChange}
+                defaultValue={formData.addressLine1}
+                onBlur={handleChange}
               />
             </Grid>
             <Grid
@@ -1098,8 +1098,8 @@ const NewForm = () => {
                 name="addressLine2"
                 size="small"
                 variant="outlined"
-                value={formData.addressLine2}
-                onChange={handleChange}
+                defaultValue={formData.addressLine2}
+                onBlur={handleChange}
               />
             </Grid>
             <Grid
@@ -1116,8 +1116,8 @@ const NewForm = () => {
                 name="addressLine3"
                 size="small"
                 variant="outlined"
-                value={formData.addressLine3}
-                onChange={handleChange}
+                defaultValue={formData.addressLine3}
+                onBlur={handleChange}
               />
             </Grid>
             <Grid
@@ -1134,8 +1134,8 @@ const NewForm = () => {
                 name="suburb"
                 size="small"
                 variant="outlined"
-                value={formData.suburb}
-                onChange={handleChange}
+                defaultValue={formData.suburb}
+                onBlur={handleChange}
               />
             </Grid>
             <Grid
@@ -1159,8 +1159,8 @@ const NewForm = () => {
                 name="postcode"
                 size="small"
                 variant="outlined"
-                value={formData.postcode}
-                onChange={handleChange}
+                defaultValue={formData.postcode}
+                onBlur={handleChange}
               />
             </Grid>
 
@@ -1178,8 +1178,8 @@ const NewForm = () => {
                 name="city"
                 size="small"
                 variant="outlined"
-                value={formData.city}
-                onChange={handleChange}
+                defaultValue={formData.city}
+                onBlur={handleChange}
               />
             </Grid>
             <Grid
@@ -1203,8 +1203,8 @@ const NewForm = () => {
                 name="postcode"
                 size="small"
                 variant="outlined"
-                value={formData.state}
-                onChange={handleChange}
+                defaultValue={formData.state}
+                onBlur={handleChange}
               />
             </Grid>
           </Grid>
@@ -1266,8 +1266,8 @@ const NewForm = () => {
                 name="title"
                 size="small"
                 variant="outlined"
-                value={formData.title}
-                onChange={handleChange}
+                defaultValue={formData.title}
+                onBlur={handleChange}
               />
             </Grid>
             <Grid
@@ -1287,8 +1287,8 @@ const NewForm = () => {
                 name="firstName"
                 size="small"
                 variant="outlined"
-                value={formData.firstName}
-                onChange={handleChange}
+                defaultValue={formData.firstName}
+                onBlur={handleChange}
               />
             </Grid>
             <Grid
@@ -1308,8 +1308,8 @@ const NewForm = () => {
                 name="position"
                 size="small"
                 variant="outlined"
-                value={formData.position}
-                onChange={handleChange}
+                defaultValue={formData.position}
+                onBlur={handleChange}
               />
             </Grid>
             <Grid
@@ -1326,8 +1326,8 @@ const NewForm = () => {
                 name="middleName"
                 size="small"
                 variant="outlined"
-                value={formData.middleName}
-                onChange={handleChange}
+                defaultValue={formData.middleName}
+                onBlur={handleChange}
               />
             </Grid>
             <Grid
@@ -1351,8 +1351,8 @@ const NewForm = () => {
                 name="surname"
                 size="small"
                 variant="outlined"
-                value={formData.surname}
-                onChange={handleChange}
+                defaultValue={formData.surname}
+                onBlur={handleChange}
               />
             </Grid>
             <Grid
@@ -1369,8 +1369,8 @@ const NewForm = () => {
                 name="tel"
                 size="small"
                 variant="outlined"
-                value={formData.tel}
-                onChange={handleChange}
+                defaultValue={formData.tel}
+                onBlur={handleChange}
               />
             </Grid>
             <Grid
@@ -1394,8 +1394,8 @@ const NewForm = () => {
                 name="fax"
                 size="small"
                 variant="outlined"
-                value={formData.fax}
-                onChange={handleChange}
+                defaultValue={formData.fax}
+                onBlur={handleChange}
               />
             </Grid>
             <Grid
@@ -1419,8 +1419,8 @@ const NewForm = () => {
                 name="mobile"
                 size="small"
                 variant="outlined"
-                value={formData.mobile}
-                onChange={handleChange}
+                defaultValue={formData.mobile}
+                onBlur={handleChange}
               />
             </Grid>
             <Grid
@@ -1437,8 +1437,8 @@ const NewForm = () => {
                 name="email"
                 size="small"
                 variant="outlined"
-                value={formData.email}
-                onChange={handleChange}
+                defaultValue={formData.email}
+                onBlur={handleChange}
               />
             </Grid>
             <Grid
@@ -1455,8 +1455,8 @@ const NewForm = () => {
                 name="webUrl"
                 size="small"
                 variant="outlined"
-                value={formData.webUrl}
-                onChange={handleChange}
+                defaultValue={formData.webUrl}
+                onBlur={handleChange}
               />
             </Grid>
           </Grid>
@@ -1579,8 +1579,8 @@ const NewForm = () => {
                 name="bsb"
                 size="small"
                 variant="outlined"
-                value={formData.bsb}
-                onChange={handleChange}
+                defaultValue={formData.bsb}
+                onBlur={handleChange}
               />
             </Grid>
             <Grid
@@ -1604,8 +1604,8 @@ const NewForm = () => {
                 name="bank"
                 size="small"
                 variant="outlined"
-                value={formData.bank}
-                onChange={handleChange}
+                defaultValue={formData.bank}
+                onBlur={handleChange}
               />
             </Grid>
             <Grid
@@ -1625,8 +1625,8 @@ const NewForm = () => {
                 name="accountNumber"
                 size="small"
                 variant="outlined"
-                value={formData.accountNumber}
-                onChange={handleChange}
+                defaultValue={formData.accountNumber}
+                onBlur={handleChange}
               />
             </Grid>
             <Grid
@@ -1650,8 +1650,8 @@ const NewForm = () => {
                 name="bank"
                 size="small"
                 variant="outlined"
-                value={formData.bank}
-                onChange={handleChange}
+                defaultValue={formData.bank}
+                onBlur={handleChange}
               />
             </Grid>
             <Grid
@@ -1671,8 +1671,8 @@ const NewForm = () => {
                 name="accountName"
                 size="small"
                 variant="outlined"
-                value={formData.accountName}
-                onChange={handleChange}
+                defaultValue={formData.accountName}
+                onBlur={handleChange}
               />
             </Grid>
           </Grid>

@@ -12,8 +12,8 @@ export const renderInput = (x, y, label, name, formData, handleChange) => (
         name={name}
         size="small"
         variant="outlined"
-        value={formData[name]}
-        onChange={handleChange}
+        defaultValue={formData[name]}
+        onBlur={handleChange}
       />
     </Grid>
   </Grid>

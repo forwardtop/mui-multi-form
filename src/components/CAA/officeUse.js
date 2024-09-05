@@ -121,8 +121,8 @@ const OfficeUse = ( ) => {
                 name="clientAccount"
                 size="small"
                 variant="outlined"
-                value={formData.clientAccount}
-                onChange={handleChange}
+                defaultValue={formData.clientAccount}
+                onBlur={handleChange}
               />
             </Grid>
             <Grid
@@ -146,8 +146,8 @@ const OfficeUse = ( ) => {
                 name="approvedCredit"
                 size="small"
                 variant="outlined"
-                value={formData.approvedCredit}
-                onChange={handleChange}
+                defaultValue={formData.approvedCredit}
+                onBlur={handleChange}
               />
             </Grid>
             <Grid
@@ -171,8 +171,8 @@ const OfficeUse = ( ) => {
                 name="approvedBy"
                 size="small"
                 variant="outlined"
-                value={formData.approvedBy}
-                onChange={handleChange}
+                defaultValue={formData.approvedBy}
+                onBlur={handleChange}
               />
             </Grid>
           </Grid>

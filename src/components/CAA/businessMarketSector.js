@@ -371,8 +371,8 @@ const BusinessMarketSector = () => {
                 name="other"
                 size="small"
                 variant="outlined"
-                value={CAAFormData.CAAMarketSectorOther}
-                onChange={handleChange}
+                defaultValue={CAAFormData.CAAMarketSectorOther}
+                onBlur={handleChange}
               />
             </Grid>
           </Grid>

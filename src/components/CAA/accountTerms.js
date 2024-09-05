@@ -44,7 +44,7 @@ const AccountTerms = () => {
                 control={
                   <Checkbox
                     color="primary"
-                    name="monthlyReoccurringCostDays"
+                    name="monthlyReoccurringCost14Days"
                     checked={Boolean(
                       Number(CAAFormData.monthlyReoccurringCost14Days)
                     )}
@@ -73,8 +73,8 @@ const AccountTerms = () => {
               fullWidth
               size="small"
               name="monthlyReoccurringCostOtherText"
-              value={CAAFormData.monthlyReoccurringCostOtherText}
-              onChange={handleChange}
+              defaultValue={CAAFormData.monthlyReoccurringCostOtherText}
+              onBlur={handleChange}
               type="text"
             />
           </Grid>
@@ -147,8 +147,8 @@ const AccountTerms = () => {
               fullWidth
               size="small"
               name="equipmentPurchasesOtherText"
-              value={CAAFormData.equipmentPurchasesOtherText}
-              onChange={handleChange}
+              defaultValue={CAAFormData.equipmentPurchasesOtherText}
+              onBlur={handleChange}
               type="text"
             />
           </Grid>
@@ -221,8 +221,8 @@ const AccountTerms = () => {
               fullWidth
               size="small"
               name="consumablesOtherText"
-              value={CAAFormData.consumablesOtherText}
-              onChange={handleChange}
+              defaultValue={CAAFormData.consumablesOtherText}
+              onBlur={handleChange}
               type="text"
             />
           </Grid>

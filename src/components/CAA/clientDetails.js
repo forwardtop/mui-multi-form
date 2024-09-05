@@ -45,8 +45,8 @@ const ClientDetails = () => {
             name="fullName"
             size="small"
             variant="outlined"
-            value={formData.fullName}
-            onChange={handleChange}
+            defaultValue={formData.fullName}
+            onBlur={handleChange}
           />
         </Grid>
         <Grid
@@ -63,8 +63,8 @@ const ClientDetails = () => {
             name="tradingAs"
             size="small"
             variant="outlined"
-            value={formData.tradingAs}
-            onChange={handleChange}
+            defaultValue={formData.tradingAs}
+            onBlur={handleChange}
           />
         </Grid>
         <Grid
@@ -81,8 +81,8 @@ const ClientDetails = () => {
             name="abn"
             size="small"
             variant="outlined"
-            value={formData.abn}
-            onChange={handleChange}
+            defaultValue={formData.abn}
+            onBlur={handleChange}
           />
         </Grid>
         <Grid
@@ -106,8 +106,8 @@ const ClientDetails = () => {
             name="acn"
             size="small"
             variant="outlined"
-            value={formData.acn}
-            onChange={handleChange}
+            defaultValue={formData.acn}
+            onBlur={handleChange}
           />
         </Grid>
         <Grid
@@ -264,8 +264,8 @@ const ClientDetails = () => {
                 name="entityTypeOther"
                 size="small"
                 variant="outlined"
-                value={CAAFormData.entityTypeOther}
-                onChange={handleChange}
+                defaultValue={CAAFormData.entityTypeOther}
+                onBlur={handleChange}
               />
             </Grid>
           </Grid>

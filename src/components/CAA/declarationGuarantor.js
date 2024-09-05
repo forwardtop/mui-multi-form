@@ -67,8 +67,8 @@ const DeclarationGuarantor = () => {
                 name="title"
                 size="small"
                 variant="outlined"
-                value={formData.title}
-                onChange={handleChange}
+                defaultValue={formData.title}
+                onBlur={handleChange}
               />
             </Grid>
             <Grid item xs={12} sm={6.5}></Grid>
@@ -89,8 +89,8 @@ const DeclarationGuarantor = () => {
                 name="firstName"
                 size="small"
                 variant="outlined"
-                value={formData.firstName}
-                onChange={handleChange}
+                defaultValue={formData.firstName}
+                onBlur={handleChange}
               />
             </Grid>
             <Grid
@@ -110,8 +110,8 @@ const DeclarationGuarantor = () => {
                 name="middleName"
                 size="small"
                 variant="outlined"
-                value={formData.middleName}
-                onChange={handleChange}
+                defaultValue={formData.middleName}
+                onBlur={handleChange}
               />
             </Grid>
 
@@ -132,8 +132,8 @@ const DeclarationGuarantor = () => {
                 name="surname"
                 size="small"
                 variant="outlined"
-                value={formData.surname}
-                onChange={handleChange}
+                defaultValue={formData.surname}
+                onBlur={handleChange}
               />
             </Grid>
             <Grid

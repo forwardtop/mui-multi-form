@@ -113,8 +113,8 @@ const AutomaticFailover = () => {
               name="tradingAs"
               size="small"
               variant="outlined"
-              value={formData.numberOfRedirectedCalls}
-              onChange={handleChange}
+              defaultValue={formData.numberOfRedirectedCalls}
+              onBlur={handleChange}
             />
           </Grid>
         </Grid>

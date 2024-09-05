@@ -136,8 +136,8 @@ const OfficeUse = () => {
                 name="accountNumber"
                 size="small"
                 variant="outlined"
-                value={formData.accountNumber}
-                onChange={handleChange}
+                defaultValue={formData.accountNumber}
+                onBlur={handleChange}
               />
             </Grid>
             <Grid
@@ -161,8 +161,8 @@ const OfficeUse = () => {
                 name="accountName"
                 size="small"
                 variant="outlined"
-                value={formData.accountName}
-                onChange={handleChange}
+                defaultValue={formData.accountName}
+                onBlur={handleChange}
               />
             </Grid>
           </Grid>

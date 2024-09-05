@@ -42,8 +42,8 @@ const VoipProvisioningDetails = () => {
               name="numbersOfVoip"
               size="small"
               variant="outlined"
-              value={VAFFormData.numbersOfVoip}
-              onChange={handleChange}
+              defaultValue={VAFFormData.numbersOfVoip}
+              onBlur={handleChange}
             />
           </Grid>
         </Grid>
@@ -62,8 +62,8 @@ const VoipProvisioningDetails = () => {
               name="numbersOfPorting"
               size="small"
               variant="outlined"
-              value={VAFFormData.numbersOfPorting}
-              onChange={handleChange}
+              defaultValue={VAFFormData.numbersOfPorting}
+              onBlur={handleChange}
             />
           </Grid>
         </Grid>
@@ -101,8 +101,8 @@ const VoipProvisioningDetails = () => {
               name="voipOtherText"
               size="small"
               variant="outlined"
-              value={VAFFormData.voipOtherText}
-              onChange={handleChange}
+              defaultValue={VAFFormData.voipOtherText}
+              onBlur={handleChange}
             />
           </Grid>
         </Grid>

@@ -9,7 +9,7 @@ export const FormDatePicker = (name, formData, handleChange) => (
       <DemoContainer components={["DatePicker"]} sx={{ paddingTop: "0px" }}>
         <DatePicker
           format="MM/YY"
-          onChange={handleChange}
+          onBlur={handleChange}
           value={dayjs(formData[name])}
           slotProps={{
             textField: {

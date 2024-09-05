@@ -45,7 +45,7 @@ const CompanyContactDetails = () => {
               color="primary"
               name="transferChurn"
               checked={Boolean(Number(CAAFormData.transferChurn))}
-              onChange={handleChange}
+              onBlur={handleChange}
               sx={{ marginLeft: 1 }}
             />
           </FormGroup>
@@ -68,7 +68,7 @@ const CompanyContactDetails = () => {
               color="primary"
               name="newOwners"
               checked={Boolean(Number(CAAFormData.newOwners))}
-              onChange={handleChange}
+              onBlur={handleChange}
               sx={{ marginLeft: 1 }}
             />
           </FormGroup>
@@ -91,7 +91,7 @@ const CompanyContactDetails = () => {
               color="primary"
               name="relocateServices"
               checked={Boolean(Number(CAAFormData.relocateServices))}
-              onChange={handleChange}
+              onBlur={handleChange}
               sx={{ marginLeft: 1 }}
             />
           </FormGroup>
@@ -114,7 +114,7 @@ const CompanyContactDetails = () => {
               color="primary"
               name="newServices"
               checked={Boolean(Number(CAAFormData.newServices))}
-              onChange={handleChange}
+              onBlur={handleChange}
               sx={{ marginLeft: 1 }}
             />
           </FormGroup>

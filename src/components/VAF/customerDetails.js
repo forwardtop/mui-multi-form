@@ -35,8 +35,8 @@ const CustomerDetails = () => {
             name="companyName"
             size="small"
             variant="outlined"
-            value={formData.companyName}
-            onChange={handleChange}
+            defaultValue={formData.companyName}
+            onBlur={handleChange}
           />
         </Grid>
         <Grid
@@ -53,8 +53,8 @@ const CustomerDetails = () => {
             name="tradingAs"
             size="small"
             variant="outlined"
-            value={formData.tradingAs}
-            onChange={handleChange}
+            defaultValue={formData.tradingAs}
+            onBlur={handleChange}
           />
         </Grid>
         <Grid
@@ -71,8 +71,8 @@ const CustomerDetails = () => {
             name="suburb"
             size="small"
             variant="outlined"
-            value={formData.abn}
-            onChange={handleChange}
+            defaultValue={formData.abn}
+            onBlur={handleChange}
           />
         </Grid>
         <Grid
@@ -96,8 +96,8 @@ const CustomerDetails = () => {
             name="acn"
             size="small"
             variant="outlined"
-            value={formData.acn}
-            onChange={handleChange}
+            defaultValue={formData.acn}
+            onBlur={handleChange}
           />
         </Grid>
       </Grid>

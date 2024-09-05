@@ -45,8 +45,8 @@ const PrimaryContactPerson = () => {
             name="title"
             size="small"
             variant="outlined"
-            value={formData.title}
-            onChange={handleChange}
+            defaultValue={formData.title}
+            onBlur={handleChange}
           />
         </Grid>
         <Grid item xs={12} sm={7.5}></Grid>
@@ -67,8 +67,8 @@ const PrimaryContactPerson = () => {
             name="firstName"
             size="small"
             variant="outlined"
-            value={formData.firstName}
-            onChange={handleChange}
+            defaultValue={formData.firstName}
+            onBlur={handleChange}
           />
         </Grid>
         <Grid item xs={12} sm={4.5}></Grid>
@@ -89,8 +89,8 @@ const PrimaryContactPerson = () => {
             name="firstName"
             size="small"
             variant="outlined"
-            value={formData.middleName}
-            onChange={handleChange}
+            defaultValue={formData.middleName}
+            onBlur={handleChange}
           />
         </Grid>
         <Grid item xs={12} sm={4.5}></Grid>
@@ -112,8 +112,8 @@ const PrimaryContactPerson = () => {
             name="surname"
             size="small"
             variant="outlined"
-            value={formData.surname}
-            onChange={handleChange}
+            defaultValue={formData.surname}
+            onBlur={handleChange}
           />
         </Grid>
 
@@ -132,8 +132,8 @@ const PrimaryContactPerson = () => {
             name="position"
             size="small"
             variant="outlined"
-            value={formData.position}
-            onChange={handleChange}
+            defaultValue={formData.position}
+            onBlur={handleChange}
           />
         </Grid>
         <Grid
@@ -150,8 +150,8 @@ const PrimaryContactPerson = () => {
             name="tel"
             size="small"
             variant="outlined"
-            value={formData.tel}
-            onChange={handleChange}
+            defaultValue={formData.tel}
+            onBlur={handleChange}
           />
         </Grid>
 
@@ -176,8 +176,8 @@ const PrimaryContactPerson = () => {
             name="mobile"
             size="small"
             variant="outlined"
-            value={formData.mobile}
-            onChange={handleChange}
+            defaultValue={formData.mobile}
+            onBlur={handleChange}
           />
         </Grid>
         <Grid
@@ -194,8 +194,8 @@ const PrimaryContactPerson = () => {
             name="email"
             size="small"
             variant="outlined"
-            value={formData.email}
-            onChange={handleChange}
+            defaultValue={formData.email}
+            onBlur={handleChange}
           />
         </Grid>
       </Grid>

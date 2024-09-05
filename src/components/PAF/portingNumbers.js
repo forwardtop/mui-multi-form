@@ -95,8 +95,8 @@ const PortingNumbers = () => {
                     size="small"
                     variant="outlined"
                     name={`service${index + 1}Number`} // Corrected template literal
-                    value={formData[`service${index + 1}Number`]} // Corrected template literal
-                    onChange={handleChange}
+                    defaultValue={formData[`service${index + 1}Number`]} // Corrected template literal
+                    onBlur={handleChange}
                     InputProps={{
                     sx: {
                       "& input": {
@@ -116,8 +116,8 @@ const PortingNumbers = () => {
                     size="small"
                     variant="outlined"
                     name={`service${index + 1}LosingCarrier`} 
-                    value={formData[`service${index + 1}LosingCarrier`]} 
-                    onChange={handleChange}
+                    defaultValue={formData[`service${index + 1}LosingCarrier`]} 
+                    onBlur={handleChange}
                     InputProps={{
                     sx: {
                       "& input": {
@@ -137,8 +137,8 @@ const PortingNumbers = () => {
                     size="small"
                     variant="outlined"
                     name={`service${index + 1}AccountNumber`} // Corrected template literal
-                    value={formData[`service${index + 1}AccountNumber`]} // Corrected template literal
-                    onChange={handleChange}
+                    defaultValue={formData[`service${index + 1}AccountNumber`]} // Corrected template literal
+                    onBlur={handleChange}
                     InputProps={{
                     sx: {
                       "& input": {

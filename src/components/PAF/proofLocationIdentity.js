@@ -75,8 +75,8 @@ const ProofLocationIdentity = () => {
             name="driverLicenseNumber"
             size="small"
             variant="outlined"
-            value={formData.driverLicenseNumber}
-            onChange={handleChange}
+            defaultValue={formData.driverLicenseNumber}
+            onBlur={handleChange}
           />
         </Grid>
         <Grid
@@ -99,7 +99,7 @@ const ProofLocationIdentity = () => {
             <DemoContainer components={["DatePicker"]} sx={{padding:"0px"}}>
               <DatePicker
                 format="DD/MM/YYYY"
-                onChange={handleChange}
+                onBlur={handleChange}
                 value={dayjs(formData.expiryDate)}
                 slotProps={{
                   textField: {
@@ -139,8 +139,8 @@ const ProofLocationIdentity = () => {
             name="stateTerritory"
             size="small"
             variant="outlined"
-            value={formData.stateTerritory}
-            onChange={handleChange}
+            defaultValue={formData.stateTerritory}
+            onBlur={handleChange}
           />
         </Grid>
         <Grid
@@ -162,7 +162,7 @@ const ProofLocationIdentity = () => {
           <LocalizationProvider dateAdapter={AdapterDayjs}>
             <DemoContainer components={["DatePicker"]} sx={{padding:"0px"}}>
               <DatePicker
-                onChange={handleChange}
+                onBlur={handleChange}
                 value={dayjs(formData.birthDate)}
                 format="DD/MM/YYYY"
                 slotProps={{
@@ -316,8 +316,8 @@ const ProofLocationIdentity = () => {
                 name="otherSpecifyText"
                 size="small"
                 variant="outlined"
-                value={formData.otherSpecifyText}
-                onChange={handleChange}
+                defaultValue={formData.otherSpecifyText}
+                onBlur={handleChange}
               />
             </Grid>
           </Grid>
@@ -379,8 +379,8 @@ const ProofLocationIdentity = () => {
                     name="salesperson"
                     size="small"
                     variant="outlined"
-                    value={formData.salesperson}
-                    onChange={handleChange}
+                    defaultValue={formData.salesperson}
+                    onBlur={handleChange}
                   />
                 </Grid>
                 <Grid
@@ -403,7 +403,7 @@ const ProofLocationIdentity = () => {
                     >
                       <DatePicker
                         format="DD/MM/YYYY"
-                        onChange={handleChange}
+                        onBlur={handleChange}
                         value={dayjs(formData.signDate)}
                         slotProps={{
                           textField: {

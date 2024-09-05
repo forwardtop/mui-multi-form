@@ -77,8 +77,8 @@ const PortingFee = () => {
                   name="simplePortQty"
                   size="small"
                   variant="outlined"
-                  value={formData.simplePortQty}
-                  onChange={handleChange}
+                  defaultValue={formData.simplePortQty}
+                  onBlur={handleChange}
                   InputProps={{
                     sx: {
                       "& input": {
@@ -94,8 +94,8 @@ const PortingFee = () => {
                   name="simplePortUnitCost"
                   size="small"
                   variant="outlined"
-                  value={formData.simplePortUnitCost}
-                  onChange={handleChange}
+                  defaultValue={formData.simplePortUnitCost}
+                  onBlur={handleChange}
                   InputProps={{
                     startAdornment: <Typography>$</Typography>,
                     sx: {
@@ -112,8 +112,8 @@ const PortingFee = () => {
                   name="simplePortPortingFee"
                   size="small"
                   variant="outlined"
-                  value={formData.simplePortPortingFee}
-                  onChange={handleChange}
+                  defaultValue={formData.simplePortPortingFee}
+                  onBlur={handleChange}
                   InputProps={{
                     startAdornment: <Typography>$</Typography>,
                     sx: {
@@ -142,8 +142,8 @@ const PortingFee = () => {
                   name="complexPortQty"
                   size="small"
                   variant="outlined"
-                  value={formData.complexPortQty}
-                  onChange={handleChange}
+                  defaultValue={formData.complexPortQty}
+                  onBlur={handleChange}
                   InputProps={{
                     sx: {
                       "& input": {
@@ -159,8 +159,8 @@ const PortingFee = () => {
                   name="complexPortUnitCost"
                   size="small"
                   variant="outlined"
-                  value={formData.complexPortUnitCost}
-                  onChange={handleChange}
+                  defaultValue={formData.complexPortUnitCost}
+                  onBlur={handleChange}
                   InputProps={{
                     startAdornment: <Typography>$</Typography>,
                     sx: {
@@ -177,8 +177,8 @@ const PortingFee = () => {
                   name="complexPortPortingFee"
                   size="small"
                   variant="outlined"
-                  value={formData.complexPortPortingFee}
-                  onChange={handleChange}
+                  defaultValue={formData.complexPortPortingFee}
+                  onBlur={handleChange}
                   InputProps={{
                     startAdornment: <Typography>$</Typography>,
                     sx: {
@@ -207,8 +207,8 @@ const PortingFee = () => {
                   name="numberRangeQty"
                   size="small"
                   variant="outlined"
-                  value={formData.numberRangeQty}
-                  onChange={handleChange}
+                  defaultValue={formData.numberRangeQty}
+                  onBlur={handleChange}
                   InputProps={{
                     sx: {
                       "& input": {
@@ -224,8 +224,8 @@ const PortingFee = () => {
                   name="numberRangeUnitCost"
                   size="small"
                   variant="outlined"
-                  value={formData.numberRangeUnitCost}
-                  onChange={handleChange}
+                  defaultValue={formData.numberRangeUnitCost}
+                  onBlur={handleChange}
                   InputProps={{
                     startAdornment: <Typography>$</Typography>,
                     sx: {
@@ -242,8 +242,8 @@ const PortingFee = () => {
                   name="numberRangePortingFee"
                   size="small"
                   variant="outlined"
-                  value={formData.numberRangePortingFee}
-                  onChange={handleChange}
+                  defaultValue={formData.numberRangePortingFee}
+                  onBlur={handleChange}
                   InputProps={{
                     startAdornment: <Typography>$</Typography>,
                     sx: {

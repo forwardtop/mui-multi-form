@@ -34,8 +34,8 @@ const SiteAddress = () => {
             name="addressLine1"
             size="small"
             variant="outlined"
-            value={formData.addressLine1}
-            onChange={handleChange}
+            defaultValue={formData.addressLine1}
+            onBlur={handleChange}
           />
         </Grid>
         <Grid
@@ -52,8 +52,8 @@ const SiteAddress = () => {
             name="addressLine2"
             size="small"
             variant="outlined"
-            value={formData.addressLine2}
-            onChange={handleChange}
+            defaultValue={formData.addressLine2}
+            onBlur={handleChange}
           />
         </Grid>
         <Grid
@@ -70,8 +70,8 @@ const SiteAddress = () => {
             name="addressLine3"
             size="small"
             variant="outlined"
-            value={formData.addressLine3}
-            onChange={handleChange}
+            defaultValue={formData.addressLine3}
+            onBlur={handleChange}
           />
         </Grid>
         <Grid
@@ -88,8 +88,8 @@ const SiteAddress = () => {
             name="suburb"
             size="small"
             variant="outlined"
-            value={formData.suburb}
-            onChange={handleChange}
+            defaultValue={formData.suburb}
+            onBlur={handleChange}
           />
         </Grid>
         <Grid
@@ -113,8 +113,8 @@ const SiteAddress = () => {
             name="postcode"
             size="small"
             variant="outlined"
-            value={formData.postcode}
-            onChange={handleChange}
+            defaultValue={formData.postcode}
+            onBlur={handleChange}
           />
         </Grid>
 
@@ -132,8 +132,8 @@ const SiteAddress = () => {
             name="city"
             size="small"
             variant="outlined"
-            value={formData.city}
-            onChange={handleChange}
+            defaultValue={formData.city}
+            onBlur={handleChange}
           />
         </Grid>
         <Grid
@@ -157,8 +157,8 @@ const SiteAddress = () => {
             name="state"
             size="small"
             variant="outlined"
-            value={formData.state}
-            onChange={handleChange}
+            defaultValue={formData.state}
+            onBlur={handleChange}
           />
         </Grid>
       </Grid>

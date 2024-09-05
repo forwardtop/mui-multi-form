@@ -81,8 +81,8 @@ const DirectInDialNumberRange = () => {
               name="planCode"
               size="small"
               variant="outlined"
-              value={VAFFormData.planCode}
-              onChange={handleChange}
+              defaultValue={VAFFormData.planCode}
+              onBlur={handleChange}
             />
           </Grid>
         </Grid>
@@ -101,8 +101,8 @@ const DirectInDialNumberRange = () => {
               name="monthlySubscription"
               size="small"
               variant="outlined"
-              value={VAFFormData.monthlySubscription}
-              onChange={handleChange}
+              defaultValue={VAFFormData.monthlySubscription}
+              onBlur={handleChange}
               InputProps={{
                 startAdornment: <Typography>$</Typography>,
               }}
@@ -124,8 +124,8 @@ const DirectInDialNumberRange = () => {
               name="administrationFee"
               size="small"
               variant="outlined"
-              value={VAFFormData.administrationFee}
-              onChange={handleChange}
+              defaultValue={VAFFormData.administrationFee}
+              onBlur={handleChange}
               InputProps={{
                 startAdornment: <Typography>$</Typography>,
               }}

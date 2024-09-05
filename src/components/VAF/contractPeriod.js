@@ -34,8 +34,8 @@ const ContactPeriod = () => {
               name="minimumContractPeriod"
               size="small"
               variant="outlined"
-              value={formData.minimumContractPeriod}
-              onChange={handleChange}
+              defaultValue={formData.minimumContractPeriod}
+              onBlur={handleChange}
             />
           </Grid>
           <Grid item xs={4}>
