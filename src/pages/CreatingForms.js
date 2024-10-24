@@ -37,7 +37,7 @@ const CreatingForms = () => {
   const { selectedForms } = location.state || { selectedForms: [] };
   const [loading, setLoading] = useState(false);
   const [sending, setSending] = useState(false);
-  const { toPDF, targetRef } = usePDF({ filename: "page.pdf" });
+  const { toPDF, targetRef } = usePDF({ filename: "BMB-Staff-form.pdf" });
   const sendingEmail = () => {
     setSending(true);
     setTimeout(() => {
@@ -59,7 +59,6 @@ const CreatingForms = () => {
                     key={index}
                     sx={{ marginBottom: 2 }}
                     className="pdf-container"
-                    style={{ pageBreakAfter: "always" }}
                   >
                     {FormComponent ? (
                       <FormComponent />

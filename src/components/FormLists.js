@@ -6,6 +6,8 @@ import {
   Checkbox,
   FormGroup,
   Button,
+  CircularProgress,
+  Box,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 const listsData = [
@@ -73,64 +75,90 @@ const FormCards = () => {
       return updatedLists;
     });
   };
-  const handleCreate = () => {
+  const [loading, setLoading] = useState(false);
+  const handleCreate = async () => {
+    setLoading(true);
+
+    // Simulate data syncing delay
+    await new Promise((resolve) => setTimeout(resolve, 300));
     const selectedForms = lists
       .filter((list) => list.checked)
       .map((list) => list.form);
     navigate("/creatingForms", { state: { selectedForms } });
+    setLoading(false);
   };
   return (
-    <Container
-      sx={{
-        height: "100vh",
-        width: "700px",
-        margin:'auto'
-      }}
-    >
-      <Typography variant="h4"></Typography>
-      <Grid container spacing={2} sx={{}}>
-        {lists.map((list, index) => (
-          <Grid
-            item
-            xs={12}
-            key={index}
-            sx={{ display: "flex", alignItems: "center" }}
-          >
-            <FormGroup
-              sx={{
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-              }}
-            >
-              <Checkbox
-                color="primary"
-                size="large"
-                checked={list.checked}
-                onChange={() => handleChange(index)}
-                sx={{ marginLeft: 1 }}
-              />
-            </FormGroup>
-            <Typography
-              variant="h5"
-              onClick={() => handleChange(index)}
-              sx={{ cursor: "pointer", marginLeft: 1 }}
-            >
-              {list.title}
-            </Typography>
-          </Grid>
-        ))}
-      </Grid>
-      <Grid
-        item
-        xs={12}
-        sx={{ display: "flex", justifyContent: "center", marginTop: "3rem" }}
+    <>
+      {loading && (
+        <Box
+          sx={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            backgroundColor: "rgba(0, 0, 0, 0.5)",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            zIndex: 1000, // Ensures it appears on top
+          }}
+        >
+          <CircularProgress size={80} color="primary" />
+        </Box>
+      )}
+      <Container
+        sx={{
+          height: "100vh",
+          width: "700px",
+          margin: "auto",
+        }}
       >
-        <Button variant="contained" color="info" onClick={handleCreate}>
-          Create A Form
-        </Button>
-      </Grid>
-    </Container>
+        <Typography variant="h4"></Typography>
+        <Grid container spacing={2} sx={{}}>
+          {lists.map((list, index) => (
+            <Grid
+              item
+              xs={12}
+              key={index}
+              sx={{ display: "flex", alignItems: "center" }}
+            >
+              <FormGroup
+                sx={{
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                }}
+              >
+                <Checkbox
+                  color="primary"
+                  size="large"
+                  checked={list.checked}
+                  onChange={() => handleChange(index)}
+                  sx={{ marginLeft: 1 }}
+                />
+              </FormGroup>
+              <Typography
+                variant="h5"
+                onClick={() => handleChange(index)}
+                sx={{ cursor: "pointer", marginLeft: 1 }}
+              >
+                {list.title}
+              </Typography>
+            </Grid>
+          ))}
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          sx={{ display: "flex", justifyContent: "center", marginTop: "3rem" }}
+        >
+          <Button variant="contained" color="info" onClick={handleCreate}>
+            Create A Form
+          </Button>
+        </Grid>
+      </Container>
+    </>
   );
 };
 
